@@ -1,0 +1,12 @@
+{
+  "skill":"change-sequencing",
+  "cases":[
+    {"id":"billing-plan-migration","activate":true,"request":"This PR is too big to review. Propose how to split it into a sequence of stacked PRs.","inputs":["fixtures/requirements.md"],"output":"Ordered change table, migration plan, and unsplittable risks","completion":"Separates the mechanical rename and the reformatting from logic changes; uses expand, backfill with validation, cut over, and contract for the plan column, with removal of accounts.plan last; keeps every step deployable with the migration-before-application order; addresses the invoicing job's no-double-billing constraint at cut over; states a rollback and validation signal per migration step; does not push or open pull requests."},
+    {"id":"refactor-then-feature","activate":true,"request":"I need to extract our retry logic into a shared module and then add jittered backoff. How should I sequence the changes?","inputs":[],"output":"Short sequence","completion":"Lands the behavior-preserving extraction (with characterization tests if missing) before the behavior change, and does not introduce the shared module without its first real use."},
+    {"id":"already-small","activate":true,"request":"Should I split this 40-line bug fix with its regression test into smaller PRs?","inputs":[],"output":"Recommendation","completion":"Recommends keeping it as one change; does not split a coherent change into pieces that cannot show their purpose."},
+    {"id":"neighbor-pr-description","activate":false,"request":"Write the description for this pull request.","inputs":[],"output":"PR description","completion":"Does not produce a split plan."},
+    {"id":"neighbor-review","activate":false,"request":"Review this diff for bugs before I merge it.","inputs":[],"output":"Code review","completion":"Routes to code-review, not change sequencing."},
+    {"id":"neighbor-file-issues","activate":false,"request":"File these planned changes as sub-issues under #42.","inputs":[],"output":"Filed or drafted sub-issues","completion":"Routes to github-issues; does not produce a new sequencing table."},
+    {"id":"neighbor-closeout","activate":false,"request":"PR #9 merged; close out its issues.","inputs":[],"output":"Closeout proposal","completion":"Routes to github-issues; does not plan a split."}
+  ]
+}

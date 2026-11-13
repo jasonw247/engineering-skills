@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/Library/Developer/CommandLineTools/usr/bin/python3",
+    "-B",
+    "-c",
+    "<verbatim fenced Python from fixtures/example-semantics.md>"
+  ],
+  "code_sha256": "86bc55957075f6c38485200b12e89126d318b33b2eb27b9dd2252e01ba9cd488",
+  "exit_code": 0,
+  "stdout": "{\"peak_active\": 2, \"created_tasks\": 12, \"results\": 12}\n",
+  "stderr": "",
+  "observed": {
+    "peak_active": 2,
+    "created_tasks": 12,
+    "results": 12
+  },
+  "scope": "Independent deterministic fixture check, not a model behavioral trial or production resource benchmark",
+  "arithmetic": {
+    "original_percentage_points": 5,
+    "original_relative_percent": 7.142857142857142,
+    "clean_percentage_points": 9.999999999999998,
+    "clean_relative_percent": 12.5,
+    "mixed_percentage_points": 9.999999999999998
+  }
+}

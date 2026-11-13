@@ -1,0 +1,5 @@
+limit=0: original=[], proposed=[]
+limit=1: original=['first'], proposed=['second']
+limit=2: original=['first', 'second'], proposed=['second', 'older']
+limit=3: original=['first', 'second', 'older'], proposed=['second', 'older']
+200,000 unique timestamps, limit=10: peak traced temporary bytes: original=3200268, proposed=41703060, ratio=13.03

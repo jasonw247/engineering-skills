@@ -1,0 +1,55 @@
+{
+  "id": "assess-clean",
+  "arm": "candidate",
+  "repeat": "matched",
+  "started_at": "2026-10-29T16:18:21.262907+00:00",
+  "execution": "completed",
+  "exit_code": 0,
+  "elapsed_seconds": 41.106,
+  "model_requested": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "timeout_seconds": 300,
+  "code_mode_host_path": "/opt/homebrew/Caskroom/codex/0.165.0/bin/codex-code-mode-host",
+  "inherited_codex_environment_removed": true,
+  "infrastructure_errors": [],
+  "skill_sha256": {
+    "SKILL.md": "2fe1d93562238c2a6ff18b0e21394b93d1072e964c1db86d97640fb5a7476375",
+    "references/phrasing.md": "3d47112a869488a70bf0bd53edeb56438d4cc9418a8f08be1675e62564dd65fa",
+    "references/sources.md": "0de82948b72121c1ce4f76e81da06fe1defb4ae4a2bdece490b49254b4b9673e",
+    "references/technical-evidence.md": "fffe1b96fd08f6d4ab6551d924f006f35fe675bc89cf3736f3614c85156d904c"
+  },
+  "workspace_sha256_before": {
+    "clean-note.md": "0666464962c4fd83341fd7f5ba3a463cea3a7141198f87ce755848f798f7efb3",
+    "skill/SKILL.md": "2fe1d93562238c2a6ff18b0e21394b93d1072e964c1db86d97640fb5a7476375",
+    "skill/references/phrasing.md": "3d47112a869488a70bf0bd53edeb56438d4cc9418a8f08be1675e62564dd65fa",
+    "skill/references/sources.md": "0de82948b72121c1ce4f76e81da06fe1defb4ae4a2bdece490b49254b4b9673e",
+    "skill/references/technical-evidence.md": "fffe1b96fd08f6d4ab6551d924f006f35fe675bc89cf3736f3614c85156d904c"
+  },
+  "workspace_sha256_after": {
+    "assessment.md": "bbe533ccdc8a1bf15492b157762304803b9f9307d2bc27c353a577b150aada7f",
+    "clean-note.md": "0666464962c4fd83341fd7f5ba3a463cea3a7141198f87ce755848f798f7efb3",
+    "skill/SKILL.md": "2fe1d93562238c2a6ff18b0e21394b93d1072e964c1db86d97640fb5a7476375",
+    "skill/references/phrasing.md": "3d47112a869488a70bf0bd53edeb56438d4cc9418a8f08be1675e62564dd65fa",
+    "skill/references/sources.md": "0de82948b72121c1ce4f76e81da06fe1defb4ae4a2bdece490b49254b4b9673e",
+    "skill/references/technical-evidence.md": "fffe1b96fd08f6d4ab6551d924f006f35fe675bc89cf3736f3614c85156d904c"
+  },
+  "inputs_unchanged": {
+    "clean-note.md": true
+  },
+  "read_only_inputs_preserved": true,
+  "protected_section_unchanged": null,
+  "skill_unchanged": true,
+  "turn_completed": true,
+  "invalid_trace_lines": 0,
+  "usage": [
+    {
+      "input_tokens": 84762,
+      "cached_input_tokens": 78080,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1241,
+      "reasoning_output_tokens": 200
+    }
+  ],
+  "command_count": 6,
+  "grading": "pending; execution completion is not semantic acceptance"
+}

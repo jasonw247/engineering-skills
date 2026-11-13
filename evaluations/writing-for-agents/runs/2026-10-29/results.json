@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-29",
+  "skill": "writing-for-agents",
+  "version": "0.2.0",
+  "method": "Author assessment and visible-criteria cleanup exercise; no independent evaluator or host activation trial",
+  "checks": {
+    "quick_validate": "passed using uv run --with pyyaml; system python lacked PyYAML",
+    "bootstrap_unittest": "25 passed",
+    "local_markdown_references": "6 checked",
+    "case_fixture_paths": "passed",
+    "cleanup_preservation": "passed: factual and operational body, fenced command, link target unchanged"
+  },
+  "cases": [
+    {
+      "id": "agent-instructions",
+      "status": "not run"
+    },
+    {
+      "id": "llm-cleanup",
+      "status": "author exercise"
+    },
+    {
+      "id": "plain-drafting",
+      "status": "not run"
+    },
+    {
+      "id": "ambiguous-sentence",
+      "status": "not run"
+    },
+    {
+      "id": "effective-prose",
+      "status": "not run"
+    },
+    {
+      "id": "neighbor-code",
+      "status": "not run"
+    },
+    {
+      "id": "neighbor-factual-audit",
+      "status": "not run"
+    },
+    {
+      "id": "neighbor-agent-runtime",
+      "status": "not run"
+    }
+  ],
+  "limits": [
+    "No measured activation rate",
+    "No matched baseline or independent behavioral trial"
+  ],
+  "sha256": {
+    "skills/writing-for-agents/LICENSE": "685634c6e232fdac26bc3b35a646d416da3b562f1a6368dfa9d796bbb6e4a80a",
+    "skills/writing-for-agents/SKILL-MECHANICS.md": "26794c3b0044f61e1038195671b19c272cd8593097ccfd778c644f4c26ce7983",
+    "skills/writing-for-agents/SKILL.md": "a3bb78c4e974d60cded4a76cb81ca2ea27f9d59d955c51a7b2b4752fa07ea36b",
+    "skills/writing-for-agents/agents/openai.yaml": "765ac00312d101f183bae63c1249970ff092c080de237f8a26c14a1761469b7b",
+    "skills/writing-for-agents/references/editing-examples.md": "d7180421e8849476aceee2f343a34577706106b575781cede2277b9e45483b30",
+    "skills/writing-for-agents/references/sources.md": "1a3582c22e387610ba3c691c4519c3e5ea3c2db881f08894ec5dee9d45773445"
+  }
+}

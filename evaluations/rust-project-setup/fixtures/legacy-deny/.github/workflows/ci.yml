@@ -1,0 +1,13 @@
+name: CI
+on: [pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      RUSTFLAGS: -Dwarnings
+    steps:
+      - uses: actions/checkout@v4
+      - run: cargo clippy --all-targets --locked
+      - run: cargo test --locked
+      - run: cargo install cargo-machete && cargo machete
+      - run: cargo install cargo-deny --locked && cargo deny check

@@ -1,0 +1,160 @@
+Independent rerun: six successful calls. Per-query answers checked against fixture labels. Aggregates and paired outcomes match retained run. Raw inputs unchanged.
+{
+  "aggregates": {
+    "baseline": {
+      "candidate_complete_evidence": {
+        "numerator": 2,
+        "denominator": 2,
+        "rate": 1.0
+      },
+      "delivered_complete_evidence": {
+        "numerator": 1,
+        "denominator": 2,
+        "rate": 0.5
+      },
+      "answerable_correctness": {
+        "numerator": 1,
+        "denominator": 2,
+        "rate": 0.5
+      },
+      "answerable_completeness": {
+        "numerator": 1,
+        "denominator": 2,
+        "rate": 0.5
+      },
+      "task_correctness": {
+        "numerator": 1,
+        "denominator": 3,
+        "rate": 0.3333333333333333
+      },
+      "supported_claims": {
+        "numerator": 1,
+        "denominator": 3,
+        "rate": 0.3333333333333333
+      },
+      "citation_support": {
+        "numerator": 1,
+        "denominator": 3,
+        "rate": 0.3333333333333333
+      },
+      "citation_coverage": {
+        "numerator": 3,
+        "denominator": 3,
+        "rate": 1.0
+      },
+      "unanswerable_abstention": {
+        "numerator": 0,
+        "denominator": 1,
+        "rate": 0.0
+      },
+      "answered_fraction": {
+        "numerator": 3,
+        "denominator": 3,
+        "rate": 1.0
+      },
+      "execution_failures": {
+        "numerator": 0,
+        "denominator": 3,
+        "rate": 0.0
+      },
+      "delivered_scope_violations": {
+        "numerator": 1,
+        "denominator": 3,
+        "rate": 0.3333333333333333
+      },
+      "delivered_outside_candidates": {
+        "numerator": 1,
+        "denominator": 3,
+        "rate": 0.3333333333333333
+      }
+    },
+    "candidate": {
+      "candidate_complete_evidence": {
+        "numerator": 2,
+        "denominator": 2,
+        "rate": 1.0
+      },
+      "delivered_complete_evidence": {
+        "numerator": 2,
+        "denominator": 2,
+        "rate": 1.0
+      },
+      "answerable_correctness": {
+        "numerator": 2,
+        "denominator": 2,
+        "rate": 1.0
+      },
+      "answerable_completeness": {
+        "numerator": 2,
+        "denominator": 2,
+        "rate": 1.0
+      },
+      "task_correctness": {
+        "numerator": 3,
+        "denominator": 3,
+        "rate": 1.0
+      },
+      "supported_claims": {
+        "numerator": 2,
+        "denominator": 2,
+        "rate": 1.0
+      },
+      "citation_support": {
+        "numerator": 2,
+        "denominator": 2,
+        "rate": 1.0
+      },
+      "citation_coverage": {
+        "numerator": 2,
+        "denominator": 2,
+        "rate": 1.0
+      },
+      "unanswerable_abstention": {
+        "numerator": 1,
+        "denominator": 1,
+        "rate": 1.0
+      },
+      "answered_fraction": {
+        "numerator": 2,
+        "denominator": 3,
+        "rate": 0.6666666666666666
+      },
+      "execution_failures": {
+        "numerator": 0,
+        "denominator": 3,
+        "rate": 0.0
+      },
+      "delivered_scope_violations": {
+        "numerator": 0,
+        "denominator": 2,
+        "rate": 0.0
+      },
+      "delivered_outside_candidates": {
+        "numerator": 0,
+        "denominator": 2,
+        "rate": 0.0
+      }
+    }
+  },
+  "paired": [
+    {
+      "query_id": "hot",
+      "baseline_task_correct": false,
+      "candidate_task_correct": true,
+      "change": 1
+    },
+    {
+      "query_id": "ordinary",
+      "baseline_task_correct": true,
+      "candidate_task_correct": true,
+      "change": 0
+    },
+    {
+      "query_id": "missing",
+      "baseline_task_correct": false,
+      "candidate_task_correct": true,
+      "change": 1
+    }
+  ],
+  "raw_inputs_unchanged": true
+}

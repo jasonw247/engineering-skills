@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-12",
+  "skill": "rag-engineering",
+  "scope": "Isolated task by an independent evaluator, with author semantic and artifact review",
+  "skill_sha256": {
+    "SKILL.md": "23207399e1c063439af02c91bc562bcf15d36a35c59c0849dde79933db92aa46",
+    "references/adaptation-and-lifecycle.md": "f30a4ec0c156811272277b53309eb86b9fe7d503c843008f30102a3b30421b66",
+    "references/extended-evidence.md": "b612b7f800dce367c3a21f5a647753c74b3b43ef03f125546172c67b669e7a42",
+    "references/sources.md": "da288b6a40dbb18a6ac673f9ecec4f34f447a2e5a492a97dff46b4dd72d524a8",
+    "references/validation-contract.md": "fb15cb19c284c28a72f6de3cec8ee7b9e256a5e21b5c2eedc273c43c304aad54"
+  },
+  "input_sha256_before": {
+    "trace.json": "1b008b66cfff1af276dd58451257f70a540ceeba034c7d5b86d9c35385fe08ad",
+    "sources.md": "bbc465c1dca00f1a25c1b69080ea12bbb90c9f2728745216e6398b56f5aa06ad"
+  },
+  "input_sha256_after": {
+    "trace.json": "1b008b66cfff1af276dd58451257f70a540ceeba034c7d5b86d9c35385fe08ad",
+    "sources.md": "bbc465c1dca00f1a25c1b69080ea12bbb90c9f2728745216e6398b56f5aa06ad"
+  },
+  "raw_inputs_unchanged": true,
+  "cases": [
+    {
+      "id": "trace-missing-condition",
+      "status": "pass",
+      "level": "behavioral"
+    },
+    {
+      "id": "build-baseline",
+      "status": "not-run",
+      "level": "scenario-only"
+    },
+    {
+      "id": "ann-diagnosis",
+      "status": "not-run",
+      "level": "scenario-only"
+    },
+    {
+      "id": "neighbor-answer",
+      "status": "pass",
+      "level": "routing-only"
+    }
+  ],
+  "evidence": [
+    "work/routing.md",
+    "work/diagnosis.md",
+    "work/trace.json",
+    "work/sources.md"
+  ],
+  "limits": [
+    "No unskilled baseline comparison",
+    "Metadata routing only; no host auto-discovery test",
+    "Unexecuted scenario cases remain not-run",
+    "No live provider or model calls",
+    "Supplied-trace diagnosis and proposed repair; implementation not supplied or executed"
+  ]
+}

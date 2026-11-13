@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-12",
+  "skill": "rag-evaluation",
+  "scope": "Isolated task by an independent evaluator, with author semantic and artifact review",
+  "skill_sha256": {
+    "SKILL.md": "b097deab11afbab684c1d0d03adefa64311fe06c88a607105fc05604b167edfc",
+    "references/comparison-protocols.md": "659e8ec6d13d8582bafd0db6bc8c06a51dcfde9352f1b118dcd7e6085dcc9a70",
+    "references/metrics-and-reporting.md": "ec7c289148303a382cc8dee43e2310bc6ae2dd126f67eae4d6282b1ab22a3924",
+    "references/sources.md": "2c4e51ccc055a1192a5fd721b0c74701e8502f36a6ac755a08641d07e86f579f"
+  },
+  "input_sha256_before": {
+    "corpus.json": "d2af799e80f3e159a0e565113ebf66ae00fede31d5683c134293ea1593d6858f",
+    "fixture_system.py": "27e42c042c8921cfcce653eaccc5837519d9610dde02c3d52bf3079785138b1b",
+    "queries.json": "eab47863cabbe8fe62c303cd7f1017ac5c27b6af0fc2d3ab6948c88924780cc8"
+  },
+  "input_sha256_after": {
+    "corpus.json": "d2af799e80f3e159a0e565113ebf66ae00fede31d5683c134293ea1593d6858f",
+    "fixture_system.py": "27e42c042c8921cfcce653eaccc5837519d9610dde02c3d52bf3079785138b1b",
+    "queries.json": "eab47863cabbe8fe62c303cd7f1017ac5c27b6af0fc2d3ab6948c88924780cc8"
+  },
+  "raw_inputs_unchanged": true,
+  "cases": [
+    {
+      "id": "design-only",
+      "status": "pass",
+      "level": "behavioral"
+    },
+    {
+      "id": "run-synthetic-system",
+      "status": "pass",
+      "level": "behavioral"
+    },
+    {
+      "id": "confounded-comparison",
+      "status": "not-run",
+      "level": "scenario-only"
+    },
+    {
+      "id": "neighbor-component-fix",
+      "status": "pass",
+      "level": "routing-only"
+    }
+  ],
+  "evidence": [
+    "work/routing.md",
+    "work/protocol.md",
+    "work/evaluate.py",
+    "work/results.json",
+    "work/report.md",
+    "work/design-only.md",
+    "work/fixture_system.py",
+    "work/queries.json",
+    "work/corpus.json"
+  ],
+  "limits": [
+    "No unskilled baseline comparison",
+    "Metadata routing only; no host auto-discovery test",
+    "Unexecuted scenario cases remain not-run",
+    "No live provider or model calls"
+  ],
+  "author_verification": {
+    "command": "python3 -B evaluate.py (in fresh temporary copy)",
+    "exit_code": 0,
+    "calls": 6,
+    "failures": 0,
+    "per_query_answers_checked": true,
+    "aggregates_match_retained_run": true,
+    "output": "verification-output.txt"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-28",
+  "skill": "rust-idioms",
+  "scope": "Isolated forward trials by fresh evaluators (one behavioral, two metadata-only routing rounds), with author review of artifacts",
+  "skill_sha256_behavioral_trial": {
+    "SKILL.md": "4417bb3ed4995f3d7ea61900fd421da37747936fd328404a1ad0bc3a733e0f11",
+    "references/canonical-style.md": "045376af56dc8fd92cdf98718a5e1a9d5863f6daa7515c70bf171e496a8e600c",
+    "references/design-patterns.md": "3eddee23e9f297a30938cb4e3eb9fab8ac58f853a40beb9465af4d52cface160",
+    "references/errors-and-panics.md": "edd913ec99123eb629916879cb0a3e097817ddcddfd71e0a35ef87ddd1e08ef8",
+    "references/ffi.md": "410721634ebf25392d9744062875ae2c2b2334fa7040267325ad40d6ebce226f",
+    "references/further-reading.md": "3f3beb78f6f4aa0587b319a874ff751c57d0df3ae0769063eb4f3b4575c16688",
+    "references/idioms.md": "bde50bd5491b680cf3eab3c3d127658aae0a2a0187aa485d3aa51b0e38f556c3",
+    "references/sources.md": "136459fd9de2c31527a3ffbe22a47fcf4331cd7c203ebab50704c6f2db68d3e7"
+  },
+  "post_trial_changes": [
+    "SKILL.md description: added 'and Canonical's Rust house style where adopted' after routing round 1 missed canonical-profile-opt-in; routing round 2 used the revised description",
+    "SKILL.md trap and references/idioms.md: impl Trait turbofish limit narrowed to the impl Trait parameter's own type, after the evaluator's probe showed named generics still accept a turbofish (confirmed by the author: E0107 only for the impl Trait type)",
+    "references/idioms.md guard row: restore the previous value so nested and reentrant use stays correct, from the evaluator's nested-run finding",
+    "The behavioral result is recorded against the tested hashes above; it is not transferred to the revised files"
+  ],
+  "input_sha256": {
+    "fixtures/review/src/lib.rs": "6777faa1057ade5babb48364e0828a53388b4fa10abd3f695cdb02e9bc6ec7f3"
+  },
+  "input_unchanged_checks": {
+    "fixtures/review (all files)": true
+  },
+  "cases": [
+    {
+      "id": "review-consequential-idioms",
+      "status": "pass",
+      "level": "behavioral",
+      "notes": "All four expected findings reported, each with a probe: guard bound to `_` (flag false inside f), dangling CString pointer (poisoning allocator showed C receiving '#####'), panic on interior NUL, &String rejecting &str (E0308). greet push_str and the establish clone were classed as style. Missing Default/Debug went in a 'minor, cheap to fix' bucket with a stated downstream consequence. Additional valid finding beyond the case: a guard that writes a fixed false breaks nested run(); restoring the previous value fixes both. Fixture unchanged (shasum -c)."
+    },
+    {
+      "id": "remove-transition-clone",
+      "status": "not-run",
+      "level": "scenario-only"
+    },
+    {
+      "id": "ffi-string-boundary",
+      "status": "not-run",
+      "level": "scenario-only"
+    },
+    {
+      "id": "non-exhaustive-decision",
+      "status": "pass",
+      "level": "routing-only"
+    },
+    {
+      "id": "error-type-design",
+      "status": "pass",
+      "level": "routing-only"
+    },
+    {
+      "id": "pattern-restraint",
+      "status": "pass",
+      "level": "routing-only"
+    },
+    {
+      "id": "canonical-profile-opt-in",
+      "status": "pass",
+      "level": "routing-only",
+      "notes": "Failed round 1 (no skill selected: description did not mention house style); passed round 2 after the description fix"
+    },
+    {
+      "id": "no-house-style-imposed",
+      "status": "pass",
+      "level": "routing-only",
+      "notes": "Routing only; the behavior of not reporting house conventions was not exercised"
+    },
+    {
+      "id": "neighbor-lint-setup",
+      "status": "pass",
+      "level": "routing-only"
+    },
+    {
+      "id": "neighbor-logic-bug",
+      "status": "pass",
+      "level": "routing-only"
+    }
+  ],
+  "evidence": [
+    "review.md",
+    "probes/batch_probe.rs",
+    "probes/ffi_probe.rs",
+    "probes/fixed-lib.rs",
+    "routing.md"
+  ],
+  "limits": [
+    "Synthetic fixture; one evaluator per case; not a matched comparison against an agent without the skill",
+    "Routing checks use metadata only and do not exercise a host's automatic selection",
+    "The evaluator ran Clippy and tests on stable 1.92.0 and 1.99.1 offline"
+  ]
+}

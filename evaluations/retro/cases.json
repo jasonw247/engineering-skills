@@ -1,0 +1,37 @@
+{
+  "skill": "retro",
+  "cases": [
+    {
+      "id": "mechanical-fixes-over-prose",
+      "activate": true,
+      "request": "Run a retrospective on this session: the agent ran pytest three times without `-m 'not live'` before finding the flag in CI, and introduced a blocking `requests.get` call inside an async FastAPI route.",
+      "inputs": [],
+      "output": "Timeline-traced root causes and verified mechanical interventions",
+      "completion": "Traces each issue to its earliest wrong step, recommends configuring pytest defaults/task-runner entry points and a deterministic lint/AST check (verified to fail on the blocking call in async code) ahead of prose warnings, and inspects actual repository files without assuming CODING_STANDARDS.md or a reviewer agent exists."
+    },
+    {
+      "id": "clean-run-no-bloat",
+      "activate": true,
+      "request": "Do a quick retro on the session that just finished—everything passed on the first run with no wasted turns.",
+      "inputs": [],
+      "output": "No-change verdict",
+      "completion": "States plainly that no environment or instruction change is warranted rather than inventing redundant rules."
+    },
+    {
+      "id": "neighbor-active-bug",
+      "activate": false,
+      "request": "Diagnose why test_invoice_rounding fails on leap-year dates.",
+      "inputs": [],
+      "output": "Bug reproduction and fix",
+      "completion": "Routes to diagnosing-bugs rather than running a session retrospective."
+    },
+    {
+      "id": "neighbor-harness-context-audit",
+      "activate": false,
+      "request": "Audit our coding-agent harness's prompt builder to see why Anthropic prefix cache hits are under 20%.",
+      "inputs": [],
+      "output": "Harness context and cache audit",
+      "completion": "Routes to agent-harness-audit rather than a session retrospective."
+    }
+  ]
+}

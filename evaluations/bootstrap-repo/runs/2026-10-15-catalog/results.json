@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-15",
+  "status": "passed",
+  "installer_tests": 17,
+  "tested_files": {
+    "skills/bootstrap-repo/scripts/bootstrap.py": "e4ef83c9a6c08ad28063b5637dc19d6bd498a9a421da902f07562ba3d86ee817",
+    "skills/bootstrap-repo/references/registry.json": "a98f7601a0ace6e6433d2bc29fbb7ab746c11886599b98ab2e1f39ce28afd2dd",
+    "evaluations/bootstrap-repo/consumer_catalog.rs": "17645c1f7624f9cc982798c213e0ae570c5fcfc1a7445bbab9ed1b2518c2b411"
+  },
+  "consumer_library": {
+    "file": "<consumer>/target/debug/deps/libconsumer.rlib",
+    "sha256": "5d0c6427745cd737405ac08252e1474db2a974ea38526e0835c9557c0f333b00",
+    "compiler": "rustc 1.92.0 (ded5c06cf 2025-12-08)",
+    "rebuilt": false
+  },
+  "checks": [
+    "The consumer rejects legacy metadata; installer rejects partial upgrade without writes; explicit upgrade loads successfully",
+    "Every registered role selects its dependency closure within the default byte budget",
+    "Retro actor proposal and selection succeed; reviewer selection fails",
+    "Design plus simplification and code-review succeed; TDD plus simplification is rejected",
+    "Project package overrides a newer-version host record"
+  ],
+  "artifacts": [
+    "probe-output.txt",
+    "../../consumer_catalog.rs"
+  ],
+  "limits": [
+    "Temporary catalogs only; no live rollout or complete model workflow",
+    "No skill-effectiveness comparison; five simplification scenarios remain unrun"
+  ]
+}

@@ -1,0 +1,3 @@
+Created [example-assessment.md](/var/folders/6t/qzw8ch3s0q72y0bmdzm32k8w0000gn/T/document-trial-4hc1q0_e/work/example-assessment.md).
+
+The unchanged fixture created **12 worker tasks** and reported **peak active work of 2**, contradicting the task-creation claim. The assessment separates local observations from deployment claims and proposes corrected wording. Input and implementation remain unchanged.

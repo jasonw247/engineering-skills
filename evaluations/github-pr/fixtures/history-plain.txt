@@ -1,0 +1,9 @@
+$ git log --oneline -8
+a1c9e02 Remove the legacy v1 export path
+77b3f10 Document cache invalidation for plugin authors
+5d0e4aa Add per-tenant rate limits to the gateway
+c2a8b19 Fix duplicate webhook delivery after reconnect
+90f1d3e Rename SessionStore to TokenStore
+4be7c51 Add metrics for queue depth
+e3d2209 Stop logging request bodies at debug level
+1f0a6c8 Upgrade the HTTP client to 3.2

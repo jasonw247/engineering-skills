@@ -1,0 +1,7 @@
+{
+  "id": "assess-evidence",
+  "arm": "no-skill",
+  "exit_code": null,
+  "execution": "infrastructure-interrupted",
+  "grading": "blocked: code-mode host negotiation failure; no semantic acceptance"
+}

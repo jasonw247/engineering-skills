@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-28",
+  "skill": "rust-project-setup",
+  "scope": "Isolated forward trial by a fresh evaluator (behavioral) plus metadata-only routing, with author review of artifacts",
+  "skill_sha256_behavioral_trial": {
+    "SKILL.md": "79a1820a06702e2bbc8484986ada8242fe4184eb5cbce6cda5735bc1bd691bea",
+    "references/agent-verification.md": "e50bd23bb1b69535a8c543c89c9abacff04f6bb9261c0ef3b9fcb8ca74ad9955",
+    "references/ci-and-commands.md": "a72999d3f1c8c3bd41f25866aeda5ff64867ef0eda8c108080862d6ba3a7537d",
+    "references/dependencies-and-tests.md": "9413fc8e2865705562c370b2f999e4e76c47a1ed700a3ad23ef93fa3e494847b",
+    "references/lint-policy.md": "d4b0057752140e94a7de9abe890bc64ccddd0b0239676143be12fa4792de768f",
+    "references/sources.md": "e35d570d497b10cc13c52e4bf3560f7a297ac7e8dee7e4574d3c7555d5a0d883"
+  },
+  "input_sha256_before": {
+    "fixtures/legacy-deny/deny.toml": "65052be50b3596ce89bc818194c93942c32241602b56f2754a32a6c52e73c14e"
+  },
+  "input_sha256_after": {
+    "deny.toml": "832fea108ce230c60bdd790b29d56f3acdaa04ad8d0c5fe4a42ec050da1c71b0"
+  },
+  "authorized_input_changes": [
+    "deny.toml"
+  ],
+  "input_unchanged_checks": {
+    "all other fixture files": true
+  },
+  "cases": [
+    {
+      "id": "new-workspace",
+      "status": "pass",
+      "level": "routing-only"
+    },
+    {
+      "id": "legacy-deny-schema",
+      "status": "pass",
+      "level": "behavioral",
+      "notes": "Migrated all six rejected keys (vulnerability, notice, unlicensed, copyleft, default removed; unmaintained given a scope). Kept cargo-machete, RUSTFLAGS, edition 2021, rust-version, and the workflow unchanged; added no tools or lint tables. Stated that cargo deny check was not run (not installed, offline) and verified the edit by parsing plus re-running the CI's clippy/test/machete steps. Surfaced the unmaintained-scope and notice behavior changes as user decisions, and suggested pinning cargo-deny as an optional follow-up. The schema migration itself was not executed against a cargo-deny binary."
+    },
+    {
+      "id": "ratchet-existing-lints",
+      "status": "pass",
+      "level": "routing-only"
+    },
+    {
+      "id": "unsafe-parser-risk",
+      "status": "pass",
+      "level": "routing-only"
+    },
+    {
+      "id": "agent-candidate-gate",
+      "status": "pass",
+      "level": "routing-only"
+    },
+    {
+      "id": "neighbor-borrow-error",
+      "status": "pass",
+      "level": "routing-only",
+      "notes": "rust-project-setup not selected; the evaluator selected rust-idioms instead"
+    },
+    {
+      "id": "neighbor-rust-review",
+      "status": "pass",
+      "level": "routing-only",
+      "notes": "Routed to code-review"
+    }
+  ],
+  "evidence": [
+    "deny.toml.after",
+    "../../../rust-idioms/runs/2026-10-28/routing.md"
+  ],
+  "limits": [
+    "cargo-deny was unavailable, so the migrated configuration is unexecuted",
+    "Synthetic fixture; one evaluator; no matched baseline"
+  ]
+}

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Writing for Agents"
+  short_description: "Clear agent instructions and prose without LLM-isms"

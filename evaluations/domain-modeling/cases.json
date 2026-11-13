@@ -1,0 +1,37 @@
+{
+  "skill": "domain-modeling",
+  "cases": [
+    {
+      "id": "align-ambiguous-tenant-terms",
+      "activate": true,
+      "request": "Our codebase uses Account, Workspace, and Organization interchangeably for the billable customer boundary, and there is no GLOSSARY.md yet. Propose clean domain definitions.",
+      "inputs": [],
+      "output": "Domain-perspective glossary proposal with confirmation before creating new repo files",
+      "completion": "Defines each term from its business meaning and invariants rather than database column types, identifies synonyms to retire, checks existing documentation paths first, and asks before creating a new GLOSSARY.md file."
+    },
+    {
+      "id": "adr-gate-filtering",
+      "activate": true,
+      "request": "Should we write ADRs for (1) renaming a private helper in billing.py and (2) moving tenant data isolation from shared-table tenant_id filters to per-tenant SQLite databases?",
+      "inputs": [],
+      "output": "ADR gate evaluation and scoped ADR draft or prompt",
+      "completion": "Applies the three-part ADR gate (durable, non-obvious with viable alternatives, wide blast radius): declines an ADR for the private helper rename, supports an ADR for the tenant isolation architecture, and checks existing ADR directories or confirms before creating docs/adr/."
+    },
+    {
+      "id": "read-only-term-question",
+      "activate": true,
+      "request": "Explain how SettlementWindow differs from BillingPeriod in this repository. Do not modify files.",
+      "inputs": [],
+      "output": "Read-only domain explanation",
+      "completion": "Answers from existing code and docs without creating or editing GLOSSARY.md or ADR files."
+    },
+    {
+      "id": "neighbor-local-helper-extract",
+      "activate": false,
+      "request": "Extract the duplicated ISO-date parsing lines in report.py into a private helper.",
+      "inputs": [],
+      "output": "Local code refactor",
+      "completion": "Performs the narrow code edit without creating glossary entries or ADRs."
+    }
+  ]
+}

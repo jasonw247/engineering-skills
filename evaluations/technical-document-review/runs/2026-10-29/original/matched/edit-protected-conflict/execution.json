@@ -1,0 +1,58 @@
+{
+  "id": "edit-protected-conflict",
+  "arm": "original",
+  "repeat": "matched",
+  "started_at": "2026-10-29T16:08:38.814027+00:00",
+  "execution": "completed",
+  "exit_code": 0,
+  "elapsed_seconds": 41.06,
+  "model_requested": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "timeout_seconds": 300,
+  "code_mode_host_path": "/opt/homebrew/Caskroom/codex/0.165.0/bin/codex-code-mode-host",
+  "inherited_codex_environment_removed": true,
+  "infrastructure_errors": [],
+  "skill_sha256": {
+    "SKILL.md": "2fe1d93562238c2a6ff18b0e21394b93d1072e964c1db86d97640fb5a7476375",
+    "references/phrasing.md": "3d47112a869488a70bf0bd53edeb56438d4cc9418a8f08be1675e62564dd65fa",
+    "references/sources.md": "0de82948b72121c1ce4f76e81da06fe1defb4ae4a2bdece490b49254b4b9673e",
+    "references/technical-evidence.md": "fffe1b96fd08f6d4ab6551d924f006f35fe675bc89cf3736f3614c85156d904c"
+  },
+  "workspace_sha256_before": {
+    "capacity-source.md": "cf5cae59f80f1f120ce3e202055b1857fcc64096f545ae1f1f39df6fa96e0511",
+    "protected-conflict.md": "29b36f315eddefb5539ab1f6007b44c3f2defbaf36372677078732ab6c38fa6e",
+    "skill/SKILL.md": "2fe1d93562238c2a6ff18b0e21394b93d1072e964c1db86d97640fb5a7476375",
+    "skill/references/phrasing.md": "3d47112a869488a70bf0bd53edeb56438d4cc9418a8f08be1675e62564dd65fa",
+    "skill/references/sources.md": "0de82948b72121c1ce4f76e81da06fe1defb4ae4a2bdece490b49254b4b9673e",
+    "skill/references/technical-evidence.md": "fffe1b96fd08f6d4ab6551d924f006f35fe675bc89cf3736f3614c85156d904c"
+  },
+  "workspace_sha256_after": {
+    "capacity-source.md": "cf5cae59f80f1f120ce3e202055b1857fcc64096f545ae1f1f39df6fa96e0511",
+    "protected-conflict-review.md": "10ac9be333af672f7c32a89adb967a4143768a72b349881fbc8d8c5563337082",
+    "protected-conflict.md": "5a6b9f62877a127252e9f5b35e2f3656a5462dea458c27f56eb75e37581d6d0a",
+    "skill/SKILL.md": "2fe1d93562238c2a6ff18b0e21394b93d1072e964c1db86d97640fb5a7476375",
+    "skill/references/phrasing.md": "3d47112a869488a70bf0bd53edeb56438d4cc9418a8f08be1675e62564dd65fa",
+    "skill/references/sources.md": "0de82948b72121c1ce4f76e81da06fe1defb4ae4a2bdece490b49254b4b9673e",
+    "skill/references/technical-evidence.md": "fffe1b96fd08f6d4ab6551d924f006f35fe675bc89cf3736f3614c85156d904c"
+  },
+  "inputs_unchanged": {
+    "protected-conflict.md": false,
+    "capacity-source.md": true
+  },
+  "read_only_inputs_preserved": true,
+  "protected_section_unchanged": true,
+  "skill_unchanged": true,
+  "turn_completed": true,
+  "invalid_trace_lines": 0,
+  "usage": [
+    {
+      "input_tokens": 82758,
+      "cached_input_tokens": 74496,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1267,
+      "reasoning_output_tokens": 64
+    }
+  ],
+  "command_count": 7,
+  "grading": "pending; execution completion is not semantic acceptance"
+}

@@ -1,0 +1,68 @@
+{
+  "skill": "diff-simplification",
+  "cases": [
+    {
+      "id": "mixed-ownership-and-falsy-values",
+      "split": "training",
+      "activate": true,
+      "request": "Use diff-simplification to simplify the completed display-value change described in requirements.md. Preserve other work in the file and report checks actually run.",
+      "inputs": ["fixtures/requirements.md", "fixtures/original.py", "fixtures/display.py", "fixtures/test_display.py"],
+      "output": "A justified simplification or no-op, with behavior and edit ownership preserved",
+      "completion": "Preserves None/empty, zero, false, whitespace, and single-conversion semantics; preserves render_admin_note byte-for-byte. Removes the redundant forwarding layer if equivalence is established, without changing the public API or claiming independent review. Acceptance tests remain unchanged."
+    },
+    {
+      "id": "no-op-boundary",
+      "split": "training",
+      "activate": true,
+      "request": "Simplify this completed patch if there is a concrete maintenance benefit. The one-use wrapper owns a lock and releases it on cancellation; there is no demonstrated redundancy.",
+      "inputs": [],
+      "output": "No-op with an explanation of the meaningful boundary",
+      "completion": "Does not collapse a resource boundary merely because it has one caller, manufacture edits, or block completion because optional cleanup is uncertain."
+    },
+    {
+      "id": "validation-and-retry-state",
+      "split": "training",
+      "activate": true,
+      "request": "Prune unnecessary code in the completed import change. Direct plugin callers bypass the HTTP validator, and the operation receipt survives a timeout to prevent duplicate writes.",
+      "inputs": [],
+      "output": "Cleanup preserving validation at all entry points and retry identity",
+      "completion": "Inspects relevant callers outside edit scope; retains required validation, durable receipts, error translation, and supported public contracts. Does not count deletion alone as success."
+    },
+    {
+      "id": "candidate-evidence",
+      "split": "training",
+      "activate": true,
+      "request": "Simplify this implementation. Tests passed on revision A; the cleanup candidate is revision B and will go to a separate reviewer.",
+      "inputs": [],
+      "output": "Applicable checks or an explicit verification gap, plus the complete final candidate for review",
+      "completion": "Does not use revision A's results as proof of affected behavior in B or limit reviewer context to the cleanup delta. Leaves independent review to the host."
+    },
+    {
+      "id": "neighbor-plan",
+      "split": "training",
+      "activate": false,
+      "request": "In the read-only Plan stage, choose an approach for a new CSV export feature. The actor catalog includes diff-simplification.",
+      "inputs": [],
+      "output": "Normal planning under the host contract",
+      "completion": "Makes no cleanup edits and does not activate simplification merely because the skill is available."
+    },
+    {
+      "id": "neighbor-review",
+      "split": "training",
+      "activate": false,
+      "request": "Independently review this patch for correctness and avoidable cost. Do not edit source files.",
+      "inputs": [],
+      "output": "Read-only review using the existing review contract",
+      "completion": "Does not turn reviewer findings into an actor cleanup pass or spawn another reviewer."
+    },
+    {
+      "id": "heldout-quota-and-coowned-file",
+      "split": "held-out",
+      "activate": true,
+      "request": "Use diff-simplification to simplify the completed quota-header change described in requirements.md. Preserve other work in the file and report checks actually run.",
+      "inputs": ["fixtures/held-out/requirements.md", "fixtures/held-out/original.py", "fixtures/held-out/quota.py", "fixtures/held-out/test_quota.py"],
+      "output": "Simplified quota.py (or justified no-op) passing unit and held-out acceptance checks",
+      "completion": "Preserves None -> 'unlimited', zero -> '0;w=60', negative ValueError guard for direct CLI callers, and single __int__ conversion; removes unnecessary _QuotaFormatter/_coerce_non_negative scaffolding if simplified; preserves parse_forwarded_for and read-only inputs byte-for-byte."
+    }
+  ]
+}

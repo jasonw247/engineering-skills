@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-12",
+  "skill": "technical-document-review",
+  "version": "0.1.1",
+  "scope": "Author walkthroughs and deterministic fixture execution for assessment-driven changes; not an independent forward trial",
+  "skill_sha256": {
+    "SKILL.md": "2fe1d93562238c2a6ff18b0e21394b93d1072e964c1db86d97640fb5a7476375",
+    "references/phrasing.md": "3d47112a869488a70bf0bd53edeb56438d4cc9418a8f08be1675e62564dd65fa",
+    "references/sources.md": "0de82948b72121c1ce4f76e81da06fe1defb4ae4a2bdece490b49254b4b9673e",
+    "references/technical-evidence.md": "fffe1b96fd08f6d4ab6551d924f006f35fe675bc89cf3736f3614c85156d904c"
+  },
+  "input_sha256": {
+    "source-reuse.md": "ba5f240e6a8a61f412ec613a707f971a8bd961d851408718e46171a67eae907a",
+    "example-semantics.md": "efb2f78b017c86c5ae84401e75bd153171b0dc916eb4b6d494947f226f1243e1"
+  },
+  "inputs_unchanged": true,
+  "packaging": {
+    "frontmatter": "Skill is valid!",
+    "relative_references": "valid",
+    "declared_acceptance_cases": 8
+  },
+  "cases": [
+    {
+      "id": "source-reuse-boundaries",
+      "status": "pass",
+      "level": "author-walkthrough",
+      "evidence": "source-assessment.md"
+    },
+    {
+      "id": "example-resource-semantics",
+      "status": "pass",
+      "level": "author-walkthrough-and-fixture-execution",
+      "evidence": [
+        "example-assessment.md",
+        "example-output.json"
+      ]
+    },
+    {
+      "id": "neighbor-isolated-typo",
+      "status": "not run",
+      "level": "routing-only"
+    }
+  ],
+  "limits": [
+    "Author had access to the assessment and acceptance criteria; these are regression checks, not blind trials.",
+    "Earlier cases were not independently rerun against the revised skill.",
+    "No current SDK/product audit, production benchmark, or comparison with an unskilled baseline.",
+    "Host automatic discovery and the new neighboring routing case were not exercised."
+  ]
+}

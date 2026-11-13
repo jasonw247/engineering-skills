@@ -1,0 +1,51 @@
+{
+  "skill": "rag-evaluation",
+  "cases": [
+    {
+      "id": "design-only",
+      "split": "training",
+      "activate": true,
+      "request": "Design a comparison of parent expansion and our current RAG baseline for revision-sensitive procedures. We have no runner or reviewed labels yet.",
+      "inputs": [],
+      "output": "Implementable evaluation protocol and missing prerequisites",
+      "completion": "Defines labels, alternative sufficient sources, splits, controls, measures and decision criteria; clearly reports a plan with no collected results or universal sample-size/threshold defaults."
+    },
+    {
+      "id": "run-synthetic-system",
+      "split": "training",
+      "activate": true,
+      "request": "Evaluate both variants of fixture_system.py on queries.json using corpus.json. This is a synthetic functionality exercise, not a production benchmark. Execute the available implementation, report per-query evidence and answer outcomes, and state what decisions these results support. Use only these files and the standard library; do not modify inputs.",
+      "inputs": ["fixtures/fixture_system.py", "fixtures/queries.json", "fixtures/corpus.json"],
+      "output": "Evaluation code, per-query results, aggregate report and limitations",
+      "completion": "Executes both variants, recognizes candidate improvement on the exception and unsupported case, accepts either valid exception source, separates relevance/sufficiency/citation/abstention, and makes no production-quality or latency claim from toy data.",
+      "checks": ["Baseline correct on 1 of 2 answerable questions; candidate correct on 2 of 2", "Baseline fails unanswerable abstention; candidate abstains", "Alternative exception passage counts as sufficient", "No invented latency, confidence interval, or benchmark population"]
+    },
+    {
+      "id": "confounded-comparison",
+      "split": "training",
+      "activate": true,
+      "request": "Can we attribute a gain to reranking when the candidate also changed its reader and token budget? Assess the existing experiment.",
+      "inputs": [],
+      "output": "Comparison-validity assessment",
+      "completion": "Distinguishes a system comparison from component attribution and proposes an isolating control without discarding useful system evidence."
+    },
+    {
+      "id": "neighbor-component-fix",
+      "split": "training",
+      "activate": false,
+      "request": "Fix the parser dropping table headers; keep the existing evaluation protocol.",
+      "inputs": [],
+      "output": "Focused engineering repair",
+      "completion": "Does not turn a parser fix into a new evaluation-design project."
+    },
+    {
+      "id": "heldout-assess-packer-and-split",
+      "split": "held-out",
+      "activate": true,
+      "request": "Assess support_bench_report.md against run_summary.json before we approve the hybrid-v2 production cutover. Leave both input files unchanged.",
+      "inputs": ["fixtures/held-out/support_bench_report.md", "fixtures/held-out/run_summary.json"],
+      "output": "Evaluation audit identifying invalid metrics, split/tuning leakage, judge bias, and omitted refresh cost",
+      "completion": "Identifies that top-15 retrieved sufficiency (94%) masks a drop in top-4 delivered-to-reader sufficiency (71% vs 76% baseline), that question-random splitting leaked all 18 policy manuals across dev/test and tuned the 0.62 abstention threshold directly on test_100, that the LLM judge lacked human calibration and randomized slot order (candidate always slot A), and that omitting $180/day vs $4.50/day index refresh invalidates the equal-cost claim; leaves inputs unchanged."
+    }
+  ]
+}

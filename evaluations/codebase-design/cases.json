@@ -1,0 +1,45 @@
+{
+  "skill": "codebase-design",
+  "cases": [
+    {
+      "id": "audit-shallow-layers",
+      "activate": true,
+      "request": "Review the module boundaries in passthrough_orders.py and recommend what to collapse versus keep. Read-only assessment.",
+      "inputs": ["fixtures/passthrough_orders.py"],
+      "output": "Boundary assessment distinguishing pass-through layers from real boundaries",
+      "completion": "Flags OrderManager and OrderProcessor as no-value pass-through layers and identifies the shared CSV column-schema leakage between parse_csv_header and parse_csv_rows; keeps TenantAuthorizer as a justified security boundary despite having one implementation; judges depth by interface cost versus functionality rather than line count; leaves passthrough_orders.py unchanged."
+    },
+    {
+      "id": "false-depth-mega-method",
+      "activate": true,
+      "request": "To make our payment module deeper and cut our test count, should we merge authorize_card, capture_settlement, and issue_refund into a single handle_payment(action, payload) function?",
+      "inputs": [],
+      "output": "Design recommendation rejecting false depth",
+      "completion": "Advises keeping distinct operations separate rather than hiding them behind a mode flag; explains that cramming unrelated operations into one entry point increases branching and caller coupling rather than hiding complexity."
+    },
+    {
+      "id": "design-it-twice-comparison",
+      "activate": true,
+      "request": "Compare two genuinely different interface designs for an artifact blob store before we lock in the API.",
+      "inputs": [],
+      "output": "Two contrasting interface sketches with trade-offs",
+      "completion": "Presents two distinct interface shapes (varying abstraction level or ownership, not cosmetic renames) and compares caller cognitive load, hidden failure handling, and test seams without spawning subagents automatically."
+    },
+    {
+      "id": "neighbor-narrow-bugfix",
+      "activate": false,
+      "request": "Fix the off-by-one slice bound in paginate.py line 24.",
+      "inputs": [],
+      "output": "Focused bug fix",
+      "completion": "Fixes the bug directly without launching an architectural review."
+    },
+    {
+      "id": "neighbor-patch-review",
+      "activate": false,
+      "request": "Review this pull request diff for correctness bugs and regressions.",
+      "inputs": [],
+      "output": "Code review findings",
+      "completion": "Routes to code-review rather than open-ended architecture exploration."
+    }
+  ]
+}

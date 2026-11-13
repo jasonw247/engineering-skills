@@ -1,0 +1,7 @@
+{
+  "decision": "retain original runtime package",
+  "reason": "All twelve original-arm tasks satisfy the declared conditions on author semantic review. No instruction defect warrants a speculative rewrite. Candidate trials independently rerun the retained package.",
+  "runtime_package_changed": false,
+  "improvement_claim": "Evaluation coverage and provenance only; no runtime or no-skill superiority claim.",
+  "unscored_observation": "Original version-sensitive actor raised chronology clarification. Fixture does not specify amendment history; do not count it as a confirmed extra defect or as evidence for a runtime change."
+}

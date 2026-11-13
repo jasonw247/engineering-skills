@@ -1,0 +1,5 @@
+{
+  "general": {"source":"P-17","revision":"B","entity":"K-42","text":"Maximum operating pressure is 10 MPa. See section 7 for temperature restrictions."},
+  "exception": {"source":"P-17","revision":"B","entity":"K-42","text":"For K-42 above 60 C, maximum operating pressure is 8 MPa."},
+  "exception-copy": {"source":"P-17","revision":"B","entity":"K-42","text":"Section 7 independently states: K-42 above 60 C has an 8 MPa maximum operating pressure."}
+}

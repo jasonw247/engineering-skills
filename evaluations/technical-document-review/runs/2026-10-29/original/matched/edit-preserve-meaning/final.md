@@ -1,0 +1,3 @@
+Updated [report.md](/var/folders/6t/qzw8ch3s0q72y0bmdzm32k8w0000gn/T/document-trial-smorzqf6/work/report.md) using only the supplied materials. Corrected the pilot attribution, percentage-point wording, experiment status, and timing description; clarified the pressure limit.
+
+Verified that the Compatibility note is preserved verbatim. Remaining evidence and planning gaps are recorded separately in [unresolved-issues.md](/var/folders/6t/qzw8ch3s0q72y0bmdzm32k8w0000gn/T/document-trial-smorzqf6/work/unresolved-issues.md).

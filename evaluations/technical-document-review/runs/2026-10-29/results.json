@@ -1,0 +1,477 @@
+{
+  "date": "2026-10-29",
+  "skill": "technical-document-review",
+  "scope": "Fresh isolated actors with author semantic grading and deterministic artifact checks",
+  "version_before": "0.1.1",
+  "version_after": "0.1.1",
+  "runtime_changed": false,
+  "runtime_sha256": {
+    "SKILL.md": "2fe1d93562238c2a6ff18b0e21394b93d1072e964c1db86d97640fb5a7476375",
+    "references/phrasing.md": "3d47112a869488a70bf0bd53edeb56438d4cc9418a8f08be1675e62564dd65fa",
+    "references/sources.md": "0de82948b72121c1ce4f76e81da06fe1defb4ae4a2bdece490b49254b4b9673e",
+    "references/technical-evidence.md": "fffe1b96fd08f6d4ab6551d924f006f35fe675bc89cf3736f3614c85156d904c"
+  },
+  "declared_cases_before": 8,
+  "declared_cases_after": 16,
+  "primary_behavioral_trials": 36,
+  "additional_infrastructure_confirmation_trials": 1,
+  "metadata_trials": 2,
+  "comparison": {
+    "original": {
+      "behavioral_pass": 12,
+      "behavioral_total": 12,
+      "routing_correct": 16,
+      "routing_total": 16,
+      "package_changed_from_original": false,
+      "command_count": 71,
+      "sum_task_elapsed_seconds": 588.477,
+      "reported_usage": {
+        "input_tokens": 942048,
+        "cached_input_tokens": 814208,
+        "output_tokens": 17916,
+        "reasoning_output_tokens": 2254
+      }
+    },
+    "candidate": {
+      "behavioral_pass": 12,
+      "behavioral_total": 12,
+      "routing_correct": 16,
+      "routing_total": 16,
+      "package_changed_from_original": false,
+      "command_count": 65,
+      "sum_task_elapsed_seconds": 521.693,
+      "reported_usage": {
+        "input_tokens": 904276,
+        "cached_input_tokens": 796032,
+        "output_tokens": 16712,
+        "reasoning_output_tokens": 1797
+      }
+    },
+    "no-skill": {
+      "behavioral_pass": 12,
+      "behavioral_total": 12,
+      "routing_correct": null,
+      "routing_total": null,
+      "package_changed_from_original": null,
+      "command_count": 49,
+      "sum_task_elapsed_seconds": 516.323,
+      "reported_usage": {
+        "input_tokens": 631276,
+        "cached_input_tokens": 557440,
+        "output_tokens": 13596,
+        "reasoning_output_tokens": 2069
+      }
+    }
+  },
+  "cases": [
+    {
+      "id": "assess-evidence",
+      "level": "behavioral",
+      "original": {
+        "status": "pass",
+        "evidence": [
+          "original/matched/assess-evidence/artifacts/assessment.md"
+        ]
+      },
+      "candidate": {
+        "status": "pass",
+        "evidence": [
+          "candidate/matched/assess-evidence/artifacts/assessment.md"
+        ]
+      },
+      "no-skill": {
+        "status": "pass",
+        "evidence": [
+          "no-skill/matched/assess-evidence/artifacts/assessment.md"
+        ]
+      }
+    },
+    {
+      "id": "edit-preserve-meaning",
+      "level": "behavioral",
+      "original": {
+        "status": "pass",
+        "evidence": [
+          "original/matched/edit-preserve-meaning/artifacts/report.md",
+          "original/matched/edit-preserve-meaning/artifacts/unresolved-issues.md",
+          "original/matched/edit-preserve-meaning/final.md"
+        ]
+      },
+      "candidate": {
+        "status": "pass",
+        "evidence": [
+          "candidate/matched/edit-preserve-meaning/artifacts/report.md",
+          "candidate/matched/edit-preserve-meaning/artifacts/unresolved-issues.md",
+          "candidate/matched/edit-preserve-meaning/final.md"
+        ]
+      },
+      "no-skill": {
+        "status": "pass",
+        "evidence": [
+          "no-skill/matched/edit-preserve-meaning/artifacts/report.md",
+          "no-skill/matched/edit-preserve-meaning/artifacts/unresolved-issues.md",
+          "no-skill/matched/edit-preserve-meaning/final.md"
+        ]
+      }
+    },
+    {
+      "id": "reassess-clean",
+      "level": "behavioral",
+      "original": {
+        "status": "pass",
+        "evidence": [
+          "original/matched/reassess-clean/artifacts/reassessment.md"
+        ]
+      },
+      "candidate": {
+        "status": "pass",
+        "evidence": [
+          "candidate/matched/reassess-clean/artifacts/reassessment.md"
+        ]
+      },
+      "no-skill": {
+        "status": "pass",
+        "evidence": [
+          "no-skill/matched/reassess-clean/artifacts/reassessment.md"
+        ]
+      }
+    },
+    {
+      "id": "verification-unavailable",
+      "level": "behavioral",
+      "original": {
+        "status": "pass",
+        "evidence": [
+          "original/matched/verification-unavailable/final.md"
+        ]
+      },
+      "candidate": {
+        "status": "pass",
+        "evidence": [
+          "candidate/matched/verification-unavailable/final.md"
+        ]
+      },
+      "no-skill": {
+        "status": "pass",
+        "evidence": [
+          "no-skill/matched/verification-unavailable/final.md"
+        ]
+      }
+    },
+    {
+      "id": "source-reuse-boundaries",
+      "level": "behavioral",
+      "original": {
+        "status": "pass",
+        "evidence": [
+          "original/matched/source-reuse-boundaries/artifacts/source-assessment.md"
+        ]
+      },
+      "candidate": {
+        "status": "pass",
+        "evidence": [
+          "candidate/matched/source-reuse-boundaries/artifacts/source-assessment.md"
+        ]
+      },
+      "no-skill": {
+        "status": "pass",
+        "evidence": [
+          "no-skill/matched/source-reuse-boundaries/artifacts/source-assessment.md"
+        ]
+      }
+    },
+    {
+      "id": "example-resource-semantics",
+      "level": "behavioral",
+      "original": {
+        "status": "pass",
+        "evidence": [
+          "original/matched/example-resource-semantics/artifacts/example-assessment.md",
+          "original/matched/example-resource-semantics/trace.jsonl"
+        ]
+      },
+      "candidate": {
+        "status": "pass",
+        "evidence": [
+          "candidate/matched/example-resource-semantics/artifacts/example-assessment.md",
+          "candidate/matched/example-resource-semantics/trace.jsonl"
+        ]
+      },
+      "no-skill": {
+        "status": "pass",
+        "evidence": [
+          "no-skill/matched/example-resource-semantics/artifacts/example-assessment.md",
+          "no-skill/matched/example-resource-semantics/trace.jsonl"
+        ]
+      }
+    },
+    {
+      "id": "neighbor-code-implementation",
+      "level": "metadata-routing-only",
+      "original": {
+        "status": "pass",
+        "evidence": [
+          "original/initial/routing/final.md"
+        ],
+        "limitation": "Task implementation and actual host automatic selection not run"
+      },
+      "candidate": {
+        "status": "pass",
+        "evidence": [
+          "candidate/matched/routing/final.md"
+        ],
+        "limitation": "Task implementation and actual host automatic selection not run"
+      },
+      "no-skill": {
+        "status": "not applicable"
+      }
+    },
+    {
+      "id": "neighbor-isolated-typo",
+      "level": "metadata-routing-only",
+      "original": {
+        "status": "pass",
+        "evidence": [
+          "original/initial/routing/final.md"
+        ],
+        "limitation": "Task implementation and actual host automatic selection not run"
+      },
+      "candidate": {
+        "status": "pass",
+        "evidence": [
+          "candidate/matched/routing/final.md"
+        ],
+        "limitation": "Task implementation and actual host automatic selection not run"
+      },
+      "no-skill": {
+        "status": "not applicable"
+      }
+    },
+    {
+      "id": "edit-contract-semantics",
+      "level": "behavioral",
+      "original": {
+        "status": "pass",
+        "evidence": [
+          "original/matched/edit-contract-semantics/artifacts/contract-edit.md",
+          "original/matched/edit-contract-semantics/artifacts/contract-edit-review.md"
+        ]
+      },
+      "candidate": {
+        "status": "pass",
+        "evidence": [
+          "candidate/matched/edit-contract-semantics/artifacts/contract-edit.md",
+          "candidate/matched/edit-contract-semantics/artifacts/contract-edit-review.md"
+        ]
+      },
+      "no-skill": {
+        "status": "pass",
+        "evidence": [
+          "no-skill/matched/edit-contract-semantics/artifacts/contract-edit.md",
+          "no-skill/matched/edit-contract-semantics/artifacts/contract-edit-issues.md"
+        ]
+      }
+    },
+    {
+      "id": "edit-protected-conflict",
+      "level": "behavioral",
+      "original": {
+        "status": "pass",
+        "evidence": [
+          "original/matched/edit-protected-conflict/artifacts/protected-conflict.md",
+          "original/matched/edit-protected-conflict/artifacts/protected-conflict-review.md"
+        ]
+      },
+      "candidate": {
+        "status": "pass",
+        "evidence": [
+          "candidate/matched/edit-protected-conflict/artifacts/protected-conflict.md",
+          "candidate/matched/edit-protected-conflict/artifacts/protected-conflict-review.md"
+        ]
+      },
+      "no-skill": {
+        "status": "pass",
+        "evidence": [
+          "no-skill/matched/edit-protected-conflict/artifacts/protected-conflict.md",
+          "no-skill/matched/edit-protected-conflict/artifacts/unresolved-issues.md"
+        ]
+      }
+    },
+    {
+      "id": "reassess-mixed",
+      "level": "behavioral",
+      "original": {
+        "status": "pass",
+        "evidence": [
+          "original/matched/reassess-mixed/artifacts/reassessment.md"
+        ]
+      },
+      "candidate": {
+        "status": "pass",
+        "evidence": [
+          "candidate/matched/reassess-mixed/artifacts/reassessment.md"
+        ]
+      },
+      "no-skill": {
+        "status": "pass",
+        "evidence": [
+          "no-skill/matched/reassess-mixed/artifacts/reassessment.md"
+        ]
+      }
+    },
+    {
+      "id": "assess-clean",
+      "level": "behavioral",
+      "original": {
+        "status": "pass",
+        "evidence": [
+          "original/matched/assess-clean/artifacts/assessment.md"
+        ]
+      },
+      "candidate": {
+        "status": "pass",
+        "evidence": [
+          "candidate/matched/assess-clean/artifacts/assessment.md"
+        ]
+      },
+      "no-skill": {
+        "status": "pass",
+        "evidence": [
+          "no-skill/matched/assess-clean/artifacts/assessment.md"
+        ]
+      }
+    },
+    {
+      "id": "citation-support",
+      "level": "behavioral",
+      "original": {
+        "status": "pass",
+        "evidence": [
+          "original/matched/citation-support/artifacts/assessment.md"
+        ]
+      },
+      "candidate": {
+        "status": "pass",
+        "evidence": [
+          "candidate/matched/citation-support/artifacts/assessment.md"
+        ]
+      },
+      "no-skill": {
+        "status": "pass",
+        "evidence": [
+          "no-skill/matched/citation-support/artifacts/assessment.md"
+        ]
+      }
+    },
+    {
+      "id": "version-sensitive",
+      "level": "behavioral",
+      "original": {
+        "status": "pass",
+        "evidence": [
+          "original/matched/version-sensitive/artifacts/assessment.md"
+        ]
+      },
+      "candidate": {
+        "status": "pass",
+        "evidence": [
+          "candidate/matched/version-sensitive/artifacts/assessment.md"
+        ]
+      },
+      "no-skill": {
+        "status": "pass",
+        "evidence": [
+          "no-skill/matched/version-sensitive/artifacts/assessment.md"
+        ]
+      }
+    },
+    {
+      "id": "neighbor-format-conversion",
+      "level": "metadata-routing-only",
+      "original": {
+        "status": "pass",
+        "evidence": [
+          "original/initial/routing/final.md"
+        ],
+        "limitation": "Task implementation and actual host automatic selection not run"
+      },
+      "candidate": {
+        "status": "pass",
+        "evidence": [
+          "candidate/matched/routing/final.md"
+        ],
+        "limitation": "Task implementation and actual host automatic selection not run"
+      },
+      "no-skill": {
+        "status": "not applicable"
+      }
+    },
+    {
+      "id": "neighbor-wording-only",
+      "level": "metadata-routing-only",
+      "original": {
+        "status": "pass",
+        "evidence": [
+          "original/initial/routing/final.md"
+        ],
+        "limitation": "Task implementation and actual host automatic selection not run"
+      },
+      "candidate": {
+        "status": "pass",
+        "evidence": [
+          "candidate/matched/routing/final.md"
+        ],
+        "limitation": "Task implementation and actual host automatic selection not run"
+      },
+      "no-skill": {
+        "status": "not applicable"
+      }
+    }
+  ],
+  "validation": "See checks.json for actual executed commands and outcomes",
+  "diagnostic_limits": "Token and timing totals are descriptive, affected by cache and scheduling; model service price and backend build are unknown. Identical runtime arms do not measure a prompt revision.",
+  "unscored_observations": [
+    "Chronology clarification depends on unspecified archival amendment history; not counted as a confirmed extra defect or a runtime failure.",
+    "Optional phrasing and measurement-boundary comments do not establish perfect finding precision or optimal concision."
+  ],
+  "conclusion": "Supported improvement is evaluation coverage and reproducibility. No runtime quality or efficiency improvement, or advantage over the no-skill arm, is established.",
+  "limits": [
+    "One matched execution per case per arm; no statistical reliability estimate.",
+    "Actors did not receive acceptance keys; semantic grader knew them.",
+    "Host discovery disabled with an experimental flag; complete injected server prompt not exposed.",
+    "Neighboring cases exercised as metadata decisions only, not task execution or host-selection tests.",
+    "No production documents, live vendor audit, rendering or publication readiness tested.",
+    "Initial interruptions and concurrency deviations retained in protocol.md.",
+    "No commit, publication, global configuration change or skill installation."
+  ],
+  "blocked_or_interrupted_infrastructure_trials": [
+    {
+      "path": "original/initial/verification-unavailable",
+      "status": "infrastructure-interrupted"
+    },
+    {
+      "path": "original/initial/assess-evidence",
+      "status": "infrastructure-blocked"
+    },
+    {
+      "path": "original/initial/reassess-clean",
+      "status": "infrastructure-interrupted"
+    },
+    {
+      "path": "original/initial/edit-preserve-meaning",
+      "status": "infrastructure-interrupted"
+    },
+    {
+      "path": "no-skill/initial/assess-evidence",
+      "status": "infrastructure-interrupted"
+    },
+    {
+      "path": "no-skill/initial/reassess-clean",
+      "status": "infrastructure-interrupted"
+    },
+    {
+      "path": "no-skill/initial/edit-preserve-meaning",
+      "status": "infrastructure-interrupted"
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+{
+  "skill": "technical-document-review",
+  "cases": [
+    {
+      "id": "assess-evidence",
+      "split": "training",
+      "activate": true,
+      "request": "Assess report.md for technical accuracy and clarity for an engineering reader using only source-note.md. Report findings in assessment.md. Do not edit either input. This is an editorial and supplied-evidence review, not an external source audit.",
+      "inputs": ["fixtures/report.md", "fixtures/source-note.md"],
+      "output": "assessment.md with located findings and supported corrections",
+      "completion": "Explains the numerical and causal overclaims, missing comparison context, and measurement mismatch; input hashes unchanged; does not invent results or external verification.",
+      "checks": ["70% to 75% is 5 percentage points, approximately 7.14% relative", "Cannot isolate reranking when reader and budget change", "Proposal is not a measured result", "Warmup precedes the labeled cold-start timing", "Does not object to the sufficient exception merely because the general rule is omitted"]
+    },
+    {
+      "id": "edit-preserve-meaning",
+      "split": "training",
+      "activate": true,
+      "request": "Edit report.md using source-note.md to correct technical claims and improve clarity. Preserve the Compatibility note section verbatim. Use only these materials, and report unresolved issues separately from the revised document.",
+      "inputs": ["fixtures/report.md", "fixtures/source-note.md"],
+      "output": "Revised report.md plus a short delivery report",
+      "completion": "Corrects supported errors, preserves uncertainty and the protected section, leaves source-note.md unchanged, and does not publish or commit.",
+      "checks": ["Numeric correction preserves sample and comparison conditions", "Planned experiment remains hypothetical", "Cold-start example is corrected or accurately relabeled", "No invented actor or explanation", "Compatibility note byte-for-byte unchanged"]
+    },
+    {
+      "id": "reassess-clean",
+      "split": "training",
+      "activate": true,
+      "request": "Reassess revised.md against prior-findings.md using source-note.md. Report remaining material issues in reassessment.md; do not edit the files or introduce optional prose preferences as new requirements.",
+      "inputs": ["fixtures/revised.md", "fixtures/prior-findings.md", "fixtures/source-note.md"],
+      "output": "reassessment.md with resolution of each prior finding",
+      "completion": "Recognizes all supplied material findings as resolved without inventing new acceptance criteria; input files unchanged.",
+      "checks": ["Allows a sufficient exception without an unnecessary general-rule citation", "Reports no remaining material findings if no demonstrated issue exists"]
+    },
+    {
+      "id": "verification-unavailable",
+      "split": "training",
+      "activate": true,
+      "request": "Check the vendor's claimed current API retirement date in unavailable-source.md. No primary source or network access is available. Assess only; do not edit.",
+      "inputs": ["fixtures/unavailable-source.md"],
+      "output": "Bounded assessment identifying the unverifiable claim",
+      "completion": "Reports that the retirement date cannot be verified, identifies needed primary evidence, and does not replace it with a guessed date."
+    },
+    {
+      "id": "source-reuse-boundaries",
+      "split": "training",
+      "activate": true,
+      "request": "Assess source-reuse.md as an extraction plan using only the supplied note. Report in source-assessment.md. Do not edit the note, access the network, or treat this as a current-product audit.",
+      "inputs": ["fixtures/source-reuse.md"],
+      "output": "Read-only assessment with source, verification-scope, and planning-evidence findings",
+      "completion": "Identifies the unrecoverable citation and unsupported ranking/API currency; separates packaging and planning checks from measured pipeline results; input unchanged and no invented sources or current API facts.",
+      "checks": ["A source title containing 2026 does not establish version-specific API behavior", "Ranking needs criteria, workload, date, and support", "Unresolved citation token is not a recoverable source", "Passing schema and invented-score plot are utility checks, not answer-accuracy results", "Extraction review does not establish current SDK compatibility"]
+    },
+    {
+      "id": "example-resource-semantics",
+      "split": "training",
+      "activate": true,
+      "request": "Assess the concurrency claim in example-semantics.md. You may run its self-contained code in a temporary directory. Write example-assessment.md; leave the input and implementation unchanged and distinguish executed fixture observations from general deployment claims.",
+      "inputs": ["fixtures/example-semantics.md"],
+      "output": "Located finding with a corrected resource claim and scope of any execution evidence",
+      "completion": "Distinguishes two active fetches from twelve created worker tasks and twelve retained results; does not convert assessment into a service rewrite or claim production validation.",
+      "checks": ["Executed fixture, if run, reports peak_active=2, created_tasks=12, results=12", "Semaphore does not by itself bound task creation", "No new dependency, architecture, or implementation changes are imposed", "Input hash unchanged"]
+    },
+    {
+      "id": "neighbor-code-implementation",
+      "split": "training",
+      "activate": false,
+      "request": "Implement the retry function specified in this design document; leave the prose alone.",
+      "inputs": [],
+      "output": "Normal code implementation workflow",
+      "completion": "Does not turn the implementation request into a document review."
+    },
+    {
+      "id": "neighbor-isolated-typo",
+      "split": "training",
+      "activate": false,
+      "request": "Fix only the spelling of 'teh' in this sentence; do not review its technical claims.",
+      "inputs": [],
+      "output": "Requested spelling correction",
+      "completion": "Does not expand an isolated typo correction into substantive document review or factual verification."
+    },
+    {
+      "id": "edit-contract-semantics",
+      "split": "training",
+      "activate": true,
+      "request": "Edit contract-edit.md for clarity and concision for integration engineers. Preserve the contract and command meanings. Use only the supplied document; report unresolved issues separately from the edited document.",
+      "inputs": ["fixtures/contract-edit.md"],
+      "output": "Edited contract-edit.md and a delivery report",
+      "completion": "Improves inflated wording without changing requirements or guessing the unresolved referent.",
+      "checks": ["Preserves MUST NOT, MAY, both retry prerequisites, and at most two retries", "Dry-run remains non-transmitting", "LEDGER_PATH, /var/lib/batch/ledger, --dry-run, and job.json retain their meanings", "Does not invent an antecedent for it; reports the ambiguity", "No unsupported technical facts or unrelated changes"]
+    },
+    {
+      "id": "edit-protected-conflict",
+      "split": "training",
+      "activate": true,
+      "request": "Edit protected-conflict.md for accuracy and clarity using capacity-source.md. Preserve the Approved statement section verbatim. Report unresolved issues separately, and complete the other edits that the supplied evidence supports.",
+      "inputs": ["fixtures/protected-conflict.md", "fixtures/capacity-source.md"],
+      "output": "Edited protected-conflict.md and a delivery report",
+      "completion": "Preserves the erroneous protected section, improves unprotected repetition, and reports the unresolved contradiction without certifying the whole note as corrected.",
+      "checks": ["Approved statement section byte-for-byte unchanged", "Unprotected summary keeps 64 items per worker and loses redundant sentence", "Reports protected 640 versus supported 64 conflict and needed authorization", "capacity-source.md unchanged", "Does not ask a question instead of completing authorized work"]
+    },
+    {
+      "id": "reassess-mixed",
+      "split": "training",
+      "activate": true,
+      "request": "Reassess mixed-revision.md against mixed-findings.md using mixed-source.md. Write reassessment.md without editing inputs. Identify resolved and remaining material issues and any demonstrated regressions within this document's technical scope.",
+      "inputs": ["fixtures/mixed-revision.md", "fixtures/mixed-findings.md", "fixtures/mixed-source.md"],
+      "output": "reassessment.md with supported disposition of prior findings and any regression",
+      "completion": "Accepts the corrected arithmetic and attribution, retains the task-creation finding, rejects the blanket robust-word objection, and identifies the weakened receipt contract.",
+      "checks": ["Pilot finding resolved", "Semaphore does not bound the 100 created tasks to four", "Robust estimator wording is legitimate; prior stylistic objection is unsupported", "MAY versus required receipt ID is a new demonstrated regression", "All inputs unchanged; no new stylistic acceptance conditions"]
+    },
+    {
+      "id": "assess-clean",
+      "split": "training",
+      "activate": true,
+      "request": "Assess clean-note.md for material technical accuracy, evidence, and clarity issues for service engineers. Use only its supplied record. Write assessment.md; do not edit the note.",
+      "inputs": ["fixtures/clean-note.md"],
+      "output": "Bounded assessment with no material findings",
+      "completion": "Accepts correct arithmetic, scoped experimental conclusions, technical terminology, and the sufficient exception; reports no material issues without demanding unrelated experiments.",
+      "checks": ["Input unchanged", "No fabricated factual or stylistic defect", "No mandatory general-rule citation", "Does not treat acknowledged production uncertainty as a document defect", "No external audit or experiment claimed"]
+    },
+    {
+      "id": "citation-support",
+      "split": "training",
+      "activate": true,
+      "request": "Assess citation-note.md against transport-record.md for technical correctness and source support. Write assessment.md, leaving both inputs unchanged. Use only those materials.",
+      "inputs": ["fixtures/citation-note.md", "fixtures/transport-record.md"],
+      "output": "Located citation-support findings and supported corrections",
+      "completion": "Finds unsupported causal isolation and the explicitly contradicted exactly-once guarantee despite an identifiable citation.",
+      "checks": ["Attributes latency change to the configuration rather than pooling alone", "Source permits duplicates after restart, contradicting exactly-once claim", "Delivery correctness was not benchmarked", "Recommendation exceeds measured evidence", "Does not confuse a false guarantee with merely unavailable evidence; inputs unchanged"]
+    },
+    {
+      "id": "version-sensitive",
+      "split": "training",
+      "activate": true,
+      "request": "Assess version-note.md using only vendor-records.md. This is an archival SDK 2.4 record, not a request to migrate the code. Write assessment.md without editing inputs or accessing the network; distinguish version-specific correctness from current verification.",
+      "inputs": ["fixtures/version-note.md", "fixtures/vendor-records.md"],
+      "output": "Version-scoped assessment and unresolved current-support finding",
+      "completion": "Accepts the historical 2.4 method and documented 3.0 removal, flags unverified support today, and avoids inferring the latest release or rewriting the archive as a migration guide.",
+      "checks": ["Does not mark Session.resume invalid for 2.4", "Does not assume 3.0 is the current latest release", "V24 gives no lifecycle promise; today's support remains unverified rather than disproved", "Does not replace archive examples with Client.restore", "All inputs unchanged"]
+    },
+    {
+      "id": "neighbor-format-conversion",
+      "split": "training",
+      "activate": false,
+      "request": "Convert this Markdown document to HTML, preserving its wording. Do not review or revise its claims.",
+      "inputs": [],
+      "output": "Format conversion workflow",
+      "completion": "Does not activate substantive document review for format conversion alone."
+    },
+    {
+      "id": "neighbor-wording-only",
+      "split": "training",
+      "activate": false,
+      "request": "Polish only the wording of this short team update. Keep the facts as supplied; do not assess technical accuracy or evidence.",
+      "inputs": [],
+      "output": "Wording-only prose refinement",
+      "completion": "Does not expand wording-only refinement of a team update into substantive technical review."
+    },
+    {
+      "id": "heldout-assess-wal-replication",
+      "split": "held-out",
+      "activate": true,
+      "request": "Assess wal-replication-memo.md against bench-log.md for technical accuracy, unit/population consistency, and source support. Write wal-assessment.md and leave both input files unchanged.",
+      "inputs": ["fixtures/held-out/wal-replication-memo.md", "fixtures/held-out/bench-log.md"],
+      "output": "wal-assessment.md with located findings and supported corrections",
+      "completion": "Catches the tenant population exclusion between R1 and R2, the MiB/s vs MB/s binary-to-decimal error (54.36 TB decimal / 49.44 TiB binary vs 51.84 TB), and the confounded + contradicted durability claim from synchronous_commit = local; accepts the scoped Maint-Bypass clause without demanding online retention citations; leaves inputs untouched.",
+      "checks": ["Identifies R2 excluded >10k-row bulk-import tenants present in R1", "Catches MiB/s vs MB/s unit mismatch on bandwidth and 30-day retention", "Separates lz4 compression from synchronous_commit = local and flags the contradicted zero-data-loss durability claim", "Accepts Maint-Bypass as self-contained for offline reseed windows", "Inputs unchanged"]
+    },
+    {
+      "id": "heldout-edit-cli-contract",
+      "split": "held-out",
+      "activate": true,
+      "request": "Edit backup-cli-spec.md for clarity and concision for storage engineers while preserving every normative requirement, command meaning, and technical term. Report unresolved ambiguities separately.",
+      "inputs": ["fixtures/held-out/backup-cli-spec.md"],
+      "output": "Edited backup-cli-spec.md and a brief separate delivery report",
+      "completion": "Tightens bureaucratic phrasing while keeping SHALL NOT, MAY, AT MOST 3 retries, both retry conditions, PGSNAP_KEYRING, /etc/pgsnap/keys.d, /var/lib/pgsnap/spool, --verify-only non-network semantics, and monotonic LSN intact; flags the ambiguous referent of 'it' in item 4 without guessing; does not commit or publish.",
+      "checks": ["Preserves SHALL NOT, MAY, AT MOST 3, valid lease, and >10% free disk prerequisites", "Preserves --verify-only offline guarantee and all paths/env vars", "Retains monotonic LSN terminology", "Flags ambiguous 'it' (lease vs manifest upload) in delivery note without inventing an answer"]
+    },
+    {
+      "id": "heldout-edit-protected-sla",
+      "split": "held-out",
+      "activate": true,
+      "protected_section": ["failover-runbook.md", "Contractual SLA notice"],
+      "request": "Edit failover-runbook.md for accuracy and clarity using drill-results.md. Keep the Contractual SLA notice section verbatim. Report unresolved conflicts separately.",
+      "inputs": ["fixtures/held-out/failover-runbook.md", "fixtures/held-out/drill-results.md"],
+      "output": "Edited failover-runbook.md plus a separate conflict report",
+      "completion": "Leaves Contractual SLA notice byte-for-byte identical, updates unprotected overview text to reflect the 380-second (6m 20s) measured drill duration and removes duplicate phrasing, leaves drill-results.md untouched, and reports the 120s contractual SLA vs 380s measured RTO conflict requiring VP Engineering and Legal sign-off.",
+      "checks": ["Contractual SLA notice byte-for-byte unchanged", "Unprotected intro reflects 380s / 6m 20s measured duration without repetition", "Reports 2-minute SLA vs 6m 20s measured RTO conflict and required sign-off", "drill-results.md unchanged"]
+    },
+    {
+      "id": "heldout-reassess-tls-memo",
+      "split": "held-out",
+      "activate": true,
+      "request": "Reassess tls-ticket-revised.md against tls-prior-findings.md using tls-lab-notes.md. Write tls-reassessment.md without editing any input file.",
+      "inputs": ["fixtures/held-out/tls-ticket-revised.md", "fixtures/held-out/tls-prior-findings.md", "fixtures/held-out/tls-lab-notes.md"],
+      "output": "tls-reassessment.md with explicit dispositions and regression report",
+      "completion": "Marks F-1 resolved, keeps F-2 open/remaining because 0-RTT is still forwarded to POST /v1/transfers under a false transport-anti-replay claim, marks F-3 unsupported because 'forward secrecy' is accurate domain terminology, and flags the new STEK rotation regression (SHOULD rotate every 24h vs MUST rotate at most every 2h).",
+      "checks": ["F-1 marked resolved", "F-2 kept remaining due to 0-RTT replay risk on POST /v1/transfers", "F-3 rejected/unsupported so forward secrecy is retained", "Flags 24-hour SHOULD vs 2-hour MUST STEK rotation regression", "All input files unchanged"]
+    },
+    {
+      "id": "heldout-executable-batcher-claim",
+      "split": "held-out",
+      "activate": true,
+      "request": "Assess the byte-limit and zero-loss shutdown claims in microbatch-design.md. You may run the self-contained snippet in a temporary directory. Write batcher-assessment.md and leave microbatch-design.md unchanged.",
+      "inputs": ["fixtures/held-out/microbatch-design.md"],
+      "output": "batcher-assessment.md with verified code-vs-prose findings",
+      "completion": "Identifies that len(event) counts Unicode codepoints rather than UTF-8 bytes (emitting a 1,536-byte packet above the 1,024-byte ceiling) and that close() discards buffered items without calling flush() (dropping 'tail-event'); leaves microbatch-design.md unchanged.",
+      "checks": ["Catches len(event) codepoint count vs UTF-8 byte length (1536 > 1024)", "Catches close() clearing _buf without flushing 'tail-event'", "Does not rewrite microbatch-design.md in place"]
+    },
+    {
+      "id": "heldout-version-pinned-sqlite",
+      "split": "held-out",
+      "activate": true,
+      "request": "Assess sqlite-335-note.md using only sqlite-changelog-excerpt.md. Do not edit either file or use network access.",
+      "inputs": ["fixtures/held-out/sqlite-335-note.md", "fixtures/held-out/sqlite-changelog-excerpt.md"],
+      "output": "Version-scoped assessment separating historical accuracy from unverified distro claims",
+      "completion": "Accepts RETURNING and the absence of STRICT tables as accurate for SQLite 3.35.0 without demanding migration to 3.37+, and flags the Debian/Ubuntu SQLITE_ENABLE_PREUPDATE_HOOK claim as unverified from the supplied materials without guessing.",
+      "checks": ["Accepts RETURNING and CHECK fallback as valid on SQLite 3.35.0", "Flags Debian/Ubuntu compile-flag claim as unverified rather than confirmed or falsified", "Inputs unchanged"]
+    },
+    {
+      "id": "heldout-assess-clean-raft",
+      "split": "held-out",
+      "activate": true,
+      "request": "Assess raft-lease-note.md for material technical, mathematical, or scope defects. Write raft-assessment.md and leave raft-lease-note.md unchanged.",
+      "inputs": ["fixtures/held-out/raft-lease-note.md"],
+      "output": "Clean assessment reporting no material defects",
+      "completion": "Verifies 1000 / 1.02 = 980.39 ms and the 80.39 ms margin at 900 ms, accepts the acknowledged VM live-migration caveat and self-contained ReadIndex-Fallback rule, and reports no material defects without inventing stylistic complaints.",
+      "checks": ["Input unchanged", "No fabricated defect on valid lease math or acknowledged VM limit", "Accepts ReadIndex-Fallback without requiring redundant lease background"]
+    },
+    {
+      "id": "heldout-neighbor-sql-migration",
+      "split": "held-out",
+      "activate": false,
+      "request": "Write the SQL migration script described in section 2 of schema-plan.md; do not review or edit the document.",
+      "inputs": [],
+      "output": "SQL migration implementation",
+      "completion": "Implements the requested SQL script without turning the task into a document review."
+    }
+  ]
+}

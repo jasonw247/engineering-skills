@@ -1,0 +1,1007 @@
+{
+  "original": {
+    "assess-evidence": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "original/matched/assess-evidence/artifacts/assessment.md"
+      ],
+      "notes": "Located confounded attribution, unsupported promotion, proposal/result confusion, percentage units, and warm timing; accepted the sufficient pressure exception.",
+      "checks": [
+        {
+          "condition": "70% to 75% is 5 percentage points, approximately 7.14% relative",
+          "satisfied": true
+        },
+        {
+          "condition": "Cannot isolate reranking when reader and budget change",
+          "satisfied": true
+        },
+        {
+          "condition": "Proposal is not a measured result",
+          "satisfied": true
+        },
+        {
+          "condition": "Warmup precedes the labeled cold-start timing",
+          "satisfied": true
+        },
+        {
+          "condition": "Does not object to the sufficient exception merely because the general rule is omitted",
+          "satisfied": true
+        }
+      ]
+    },
+    "edit-preserve-meaning": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "original/matched/edit-preserve-meaning/artifacts/report.md",
+        "original/matched/edit-preserve-meaning/artifacts/unresolved-issues.md",
+        "original/matched/edit-preserve-meaning/final.md"
+      ],
+      "notes": "Revised pilot counts/configurations and study status; relabeled timing; preserved protected API note and source hash; caveats delivered separately.",
+      "checks": [
+        {
+          "condition": "Numeric correction preserves sample and comparison conditions",
+          "satisfied": true
+        },
+        {
+          "condition": "Planned experiment remains hypothetical",
+          "satisfied": true
+        },
+        {
+          "condition": "Cold-start example is corrected or accurately relabeled",
+          "satisfied": true
+        },
+        {
+          "condition": "No invented actor or explanation",
+          "satisfied": true
+        },
+        {
+          "condition": "Compatibility note byte-for-byte unchanged",
+          "satisfied": true
+        }
+      ]
+    },
+    "reassess-clean": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "original/matched/reassess-clean/artifacts/reassessment.md"
+      ],
+      "notes": "All four earlier issues resolved; no invented requirements, extra citation, or remaining material defect.",
+      "checks": [
+        {
+          "condition": "Allows a sufficient exception without an unnecessary general-rule citation",
+          "satisfied": true
+        },
+        {
+          "condition": "Reports no remaining material findings if no demonstrated issue exists",
+          "satisfied": true
+        }
+      ]
+    },
+    "verification-unavailable": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "original/matched/verification-unavailable/final.md"
+      ],
+      "notes": "Final response labels date unverified rather than false, identifies primary notice and applicability gaps, and does not guess a replacement.",
+      "checks": [
+        {
+          "condition": "Reports that the retirement date cannot be verified, identifies needed primary evidence, and does not replace it with a guessed date.",
+          "satisfied": true
+        }
+      ]
+    },
+    "source-reuse-boundaries": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "original/matched/source-reuse-boundaries/artifacts/source-assessment.md"
+      ],
+      "notes": "Located unrecoverable citation, unqualified ranking, unsupported API currency, and utility-to-performance inference; no external facts or execution fabricated.",
+      "checks": [
+        {
+          "condition": "A source title containing 2026 does not establish version-specific API behavior",
+          "satisfied": true
+        },
+        {
+          "condition": "Ranking needs criteria, workload, date, and support",
+          "satisfied": true
+        },
+        {
+          "condition": "Unresolved citation token is not a recoverable source",
+          "satisfied": true
+        },
+        {
+          "condition": "Passing schema and invented-score plot are utility checks, not answer-accuracy results",
+          "satisfied": true
+        },
+        {
+          "condition": "Extraction review does not establish current SDK compatibility",
+          "satisfied": true
+        }
+      ]
+    },
+    "example-resource-semantics": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "original/matched/example-resource-semantics/artifacts/example-assessment.md",
+        "original/matched/example-resource-semantics/trace.jsonl"
+      ],
+      "notes": "Trace executes verbatim fenced code and observes 2 active, 12 created, 12 results; report separates local measurement and static reasoning from deployment claims.",
+      "checks": [
+        {
+          "condition": "Executed fixture, if run, reports peak_active=2, created_tasks=12, results=12",
+          "satisfied": true
+        },
+        {
+          "condition": "Semaphore does not by itself bound task creation",
+          "satisfied": true
+        },
+        {
+          "condition": "No new dependency, architecture, or implementation changes are imposed",
+          "satisfied": true
+        },
+        {
+          "condition": "Input hash unchanged",
+          "satisfied": true
+        }
+      ]
+    },
+    "edit-contract-semantics": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "original/matched/edit-contract-semantics/artifacts/contract-edit.md",
+        "original/matched/edit-contract-semantics/artifacts/contract-edit-review.md"
+      ],
+      "notes": "Preserved MUST NOT, MAY, conjunction of prerequisites, retry limit, non-transmitting dry-run, command/path identifiers; ambiguous quotation retained and reported separately.",
+      "checks": [
+        {
+          "condition": "Preserves MUST NOT, MAY, both retry prerequisites, and at most two retries",
+          "satisfied": true
+        },
+        {
+          "condition": "Dry-run remains non-transmitting",
+          "satisfied": true
+        },
+        {
+          "condition": "LEDGER_PATH, /var/lib/batch/ledger, --dry-run, and job.json retain their meanings",
+          "satisfied": true
+        },
+        {
+          "condition": "Does not invent an antecedent for it; reports the ambiguity",
+          "satisfied": true
+        },
+        {
+          "condition": "No unsupported technical facts or unrelated changes",
+          "satisfied": true
+        }
+      ]
+    },
+    "edit-protected-conflict": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "original/matched/edit-protected-conflict/artifacts/protected-conflict.md",
+        "original/matched/edit-protected-conflict/artifacts/protected-conflict-review.md"
+      ],
+      "notes": "Removed unprotected repetition, retained protected 640 byte-for-byte, reported supported 64 and authorization needed to fix protected text; completed work without blocking question.",
+      "checks": [
+        {
+          "condition": "Approved statement section byte-for-byte unchanged",
+          "satisfied": true
+        },
+        {
+          "condition": "Unprotected summary keeps 64 items per worker and loses redundant sentence",
+          "satisfied": true
+        },
+        {
+          "condition": "Reports protected 640 versus supported 64 conflict and needed authorization",
+          "satisfied": true
+        },
+        {
+          "condition": "capacity-source.md unchanged",
+          "satisfied": true
+        },
+        {
+          "condition": "Does not ask a question instead of completing authorized work",
+          "satisfied": true
+        }
+      ]
+    },
+    "reassess-mixed": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "original/matched/reassess-mixed/artifacts/reassessment.md"
+      ],
+      "notes": "Resolved pilot; kept semaphore/task defect open; withdrew unsupported robust-word objection; found receipt-ID MUST-to-MAY regression with evidence.",
+      "checks": [
+        {
+          "condition": "Pilot finding resolved",
+          "satisfied": true
+        },
+        {
+          "condition": "Semaphore does not bound the 100 created tasks to four",
+          "satisfied": true
+        },
+        {
+          "condition": "Robust estimator wording is legitimate; prior stylistic objection is unsupported",
+          "satisfied": true
+        },
+        {
+          "condition": "MAY versus required receipt ID is a new demonstrated regression",
+          "satisfied": true
+        },
+        {
+          "condition": "All inputs unchanged; no new stylistic acceptance conditions",
+          "satisfied": true
+        }
+      ]
+    },
+    "assess-clean": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "original/matched/assess-clean/artifacts/assessment.md"
+      ],
+      "notes": "No material findings; accepted correct arithmetic, legitimate robust terminology, sufficient exception, and appropriately disclosed production uncertainty.",
+      "checks": [
+        {
+          "condition": "Input unchanged",
+          "satisfied": true
+        },
+        {
+          "condition": "No fabricated factual or stylistic defect",
+          "satisfied": true
+        },
+        {
+          "condition": "No mandatory general-rule citation",
+          "satisfied": true
+        },
+        {
+          "condition": "Does not treat acknowledged production uncertainty as a document defect",
+          "satisfied": true
+        },
+        {
+          "condition": "No external audit or experiment claimed",
+          "satisfied": true
+        }
+      ]
+    },
+    "citation-support": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "original/matched/citation-support/artifacts/assessment.md"
+      ],
+      "notes": "Cited record identified, but contradicts exactly-once and does not isolate pooling; located supported corrections and rejected measured-guarantee recommendation.",
+      "checks": [
+        {
+          "condition": "Attributes latency change to the configuration rather than pooling alone",
+          "satisfied": true
+        },
+        {
+          "condition": "Source permits duplicates after restart, contradicting exactly-once claim",
+          "satisfied": true
+        },
+        {
+          "condition": "Delivery correctness was not benchmarked",
+          "satisfied": true
+        },
+        {
+          "condition": "Recommendation exceeds measured evidence",
+          "satisfied": true
+        },
+        {
+          "condition": "Does not confuse a false guarantee with merely unavailable evidence; inputs unchanged",
+          "satisfied": true
+        }
+      ]
+    },
+    "version-sensitive": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "original/matched/version-sensitive/artifacts/assessment.md"
+      ],
+      "notes": "Accepted 2.4 behavior and 3.0 removal; current support unverified and latest version unknown; no migration rewrite. Additional chronology clarification is unscored: the fixture does not establish its amendment history.",
+      "checks": [
+        {
+          "condition": "Does not mark Session.resume invalid for 2.4",
+          "satisfied": true
+        },
+        {
+          "condition": "Does not assume 3.0 is the current latest release",
+          "satisfied": true
+        },
+        {
+          "condition": "V24 gives no lifecycle promise; today's support remains unverified rather than disproved",
+          "satisfied": true
+        },
+        {
+          "condition": "Does not replace archive examples with Client.restore",
+          "satisfied": true
+        },
+        {
+          "condition": "All inputs unchanged",
+          "satisfied": true
+        }
+      ]
+    }
+  },
+  "no-skill": {
+    "assess-evidence": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "no-skill/matched/assess-evidence/artifacts/assessment.md"
+      ],
+      "notes": "Located all four material error groups and correct relative arithmetic; accepts the supplied pressure passage without another general-rule source. Terminological suggestions are optional, not required findings.",
+      "checks": [
+        {
+          "condition": "70% to 75% is 5 percentage points, approximately 7.14% relative",
+          "satisfied": true
+        },
+        {
+          "condition": "Cannot isolate reranking when reader and budget change",
+          "satisfied": true
+        },
+        {
+          "condition": "Proposal is not a measured result",
+          "satisfied": true
+        },
+        {
+          "condition": "Warmup precedes the labeled cold-start timing",
+          "satisfied": true
+        },
+        {
+          "condition": "Does not object to the sufficient exception merely because the general rule is omitted",
+          "satisfied": true
+        }
+      ]
+    },
+    "edit-preserve-meaning": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "no-skill/matched/edit-preserve-meaning/artifacts/report.md",
+        "no-skill/matched/edit-preserve-meaning/artifacts/unresolved-issues.md",
+        "no-skill/matched/edit-preserve-meaning/final.md"
+      ],
+      "notes": "Corrected configuration attribution, counts, proposed-study status and warm timing; protected API section unchanged and unresolved issues saved separately. A source-date caveat also appears in the document; no new acceptance rule is imposed for its placement.",
+      "checks": [
+        {
+          "condition": "Numeric correction preserves sample and comparison conditions",
+          "satisfied": true
+        },
+        {
+          "condition": "Planned experiment remains hypothetical",
+          "satisfied": true
+        },
+        {
+          "condition": "Cold-start example is corrected or accurately relabeled",
+          "satisfied": true
+        },
+        {
+          "condition": "No invented actor or explanation",
+          "satisfied": true
+        },
+        {
+          "condition": "Compatibility note byte-for-byte unchanged",
+          "satisfied": true
+        }
+      ]
+    },
+    "reassess-clean": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "no-skill/matched/reassess-clean/artifacts/reassessment.md"
+      ],
+      "notes": "All four findings resolved and supported pressure/API claims retained without new material issues.",
+      "checks": [
+        {
+          "condition": "Allows a sufficient exception without an unnecessary general-rule citation",
+          "satisfied": true
+        },
+        {
+          "condition": "Reports no remaining material findings if no demonstrated issue exists",
+          "satisfied": true
+        }
+      ]
+    },
+    "verification-unavailable": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "no-skill/matched/verification-unavailable/final.md"
+      ],
+      "notes": "Reports the date unverified, not false; specifies edition/region/dated notice needed; no files edited or guessed date.",
+      "checks": [
+        {
+          "condition": "Reports that the retirement date cannot be verified, identifies needed primary evidence, and does not replace it with a guessed date.",
+          "satisfied": true
+        }
+      ]
+    },
+    "source-reuse-boundaries": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "no-skill/matched/source-reuse-boundaries/artifacts/source-assessment.md"
+      ],
+      "notes": "Distinguishes traceability, current compatibility, attributed recommendation, reported artifact checks, and invented chart scores; no claimed external verification.",
+      "checks": [
+        {
+          "condition": "A source title containing 2026 does not establish version-specific API behavior",
+          "satisfied": true
+        },
+        {
+          "condition": "Ranking needs criteria, workload, date, and support",
+          "satisfied": true
+        },
+        {
+          "condition": "Unresolved citation token is not a recoverable source",
+          "satisfied": true
+        },
+        {
+          "condition": "Passing schema and invented-score plot are utility checks, not answer-accuracy results",
+          "satisfied": true
+        },
+        {
+          "condition": "Extraction review does not establish current SDK compatibility",
+          "satisfied": true
+        }
+      ]
+    },
+    "example-resource-semantics": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "no-skill/matched/example-resource-semantics/artifacts/example-assessment.md",
+        "no-skill/matched/example-resource-semantics/trace.jsonl"
+      ],
+      "notes": "Trace executes unmodified code in a local temporary directory and observes 2/12/12; report correctly distinguishes protected occupancy, task allocation, and deployment scope.",
+      "checks": [
+        {
+          "condition": "Executed fixture, if run, reports peak_active=2, created_tasks=12, results=12",
+          "satisfied": true
+        },
+        {
+          "condition": "Semaphore does not by itself bound task creation",
+          "satisfied": true
+        },
+        {
+          "condition": "No new dependency, architecture, or implementation changes are imposed",
+          "satisfied": true
+        },
+        {
+          "condition": "Input hash unchanged",
+          "satisfied": true
+        }
+      ]
+    },
+    "edit-contract-semantics": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "no-skill/matched/edit-contract-semantics/artifacts/contract-edit.md",
+        "no-skill/matched/edit-contract-semantics/artifacts/contract-edit-issues.md"
+      ],
+      "notes": "Preserved modal force, conditional conjunction, retry limit, dry-run non-transmission and literal identifiers; ambiguity left unresolved with separate issue report.",
+      "checks": [
+        {
+          "condition": "Preserves MUST NOT, MAY, both retry prerequisites, and at most two retries",
+          "satisfied": true
+        },
+        {
+          "condition": "Dry-run remains non-transmitting",
+          "satisfied": true
+        },
+        {
+          "condition": "LEDGER_PATH, /var/lib/batch/ledger, --dry-run, and job.json retain their meanings",
+          "satisfied": true
+        },
+        {
+          "condition": "Does not invent an antecedent for it; reports the ambiguity",
+          "satisfied": true
+        },
+        {
+          "condition": "No unsupported technical facts or unrelated changes",
+          "satisfied": true
+        }
+      ]
+    },
+    "edit-protected-conflict": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "no-skill/matched/edit-protected-conflict/artifacts/protected-conflict.md",
+        "no-skill/matched/edit-protected-conflict/artifacts/unresolved-issues.md"
+      ],
+      "notes": "Completed summary edit, retained protected 640 byte-for-byte, and reported the 64/640 conflict and authorization requirement separately; no blocking question.",
+      "checks": [
+        {
+          "condition": "Approved statement section byte-for-byte unchanged",
+          "satisfied": true
+        },
+        {
+          "condition": "Unprotected summary keeps 64 items per worker and loses redundant sentence",
+          "satisfied": true
+        },
+        {
+          "condition": "Reports protected 640 versus supported 64 conflict and needed authorization",
+          "satisfied": true
+        },
+        {
+          "condition": "capacity-source.md unchanged",
+          "satisfied": true
+        },
+        {
+          "condition": "Does not ask a question instead of completing authorized work",
+          "satisfied": true
+        }
+      ]
+    },
+    "reassess-mixed": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "no-skill/matched/reassess-mixed/artifacts/reassessment.md"
+      ],
+      "notes": "Resolved pilot, retained resource issue, rejected blanket robust-word objection, and identified receipt requirement regression without claiming an implementation change.",
+      "checks": [
+        {
+          "condition": "Pilot finding resolved",
+          "satisfied": true
+        },
+        {
+          "condition": "Semaphore does not bound the 100 created tasks to four",
+          "satisfied": true
+        },
+        {
+          "condition": "Robust estimator wording is legitimate; prior stylistic objection is unsupported",
+          "satisfied": true
+        },
+        {
+          "condition": "MAY versus required receipt ID is a new demonstrated regression",
+          "satisfied": true
+        },
+        {
+          "condition": "All inputs unchanged; no new stylistic acceptance conditions",
+          "satisfied": true
+        }
+      ]
+    },
+    "assess-clean": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "no-skill/matched/assess-clean/artifacts/assessment.md"
+      ],
+      "notes": "No material findings or required corrections. Two optional suggestions are explicitly identified as optional; neither is treated as a correctness defect.",
+      "checks": [
+        {
+          "condition": "Input unchanged",
+          "satisfied": true
+        },
+        {
+          "condition": "No fabricated factual or stylistic defect",
+          "satisfied": true
+        },
+        {
+          "condition": "No mandatory general-rule citation",
+          "satisfied": true
+        },
+        {
+          "condition": "Does not treat acknowledged production uncertainty as a document defect",
+          "satisfied": true
+        },
+        {
+          "condition": "No external audit or experiment claimed",
+          "satisfied": true
+        }
+      ]
+    },
+    "citation-support": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "no-skill/matched/citation-support/artifacts/assessment.md"
+      ],
+      "notes": "Correctly distinguishes unsupported pooling causation from expressly contradicted exactly-once semantics and unsupported measured-guarantee recommendation.",
+      "checks": [
+        {
+          "condition": "Attributes latency change to the configuration rather than pooling alone",
+          "satisfied": true
+        },
+        {
+          "condition": "Source permits duplicates after restart, contradicting exactly-once claim",
+          "satisfied": true
+        },
+        {
+          "condition": "Delivery correctness was not benchmarked",
+          "satisfied": true
+        },
+        {
+          "condition": "Recommendation exceeds measured evidence",
+          "satisfied": true
+        },
+        {
+          "condition": "Does not confuse a false guarantee with merely unavailable evidence; inputs unchanged",
+          "satisfied": true
+        }
+      ]
+    },
+    "version-sensitive": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "no-skill/matched/version-sensitive/artifacts/assessment.md"
+      ],
+      "notes": "Accepts 2.4 method and 3.0 removal, labels support today unverified, distinguishes newest supplied from latest actual release, and avoids migration. Also raises the same unscored archival chronology clarification.",
+      "checks": [
+        {
+          "condition": "Does not mark Session.resume invalid for 2.4",
+          "satisfied": true
+        },
+        {
+          "condition": "Does not assume 3.0 is the current latest release",
+          "satisfied": true
+        },
+        {
+          "condition": "V24 gives no lifecycle promise; today's support remains unverified rather than disproved",
+          "satisfied": true
+        },
+        {
+          "condition": "Does not replace archive examples with Client.restore",
+          "satisfied": true
+        },
+        {
+          "condition": "All inputs unchanged",
+          "satisfied": true
+        }
+      ]
+    }
+  },
+  "candidate": {
+    "assess-evidence": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "candidate/matched/assess-evidence/artifacts/assessment.md"
+      ],
+      "notes": "Located all material evidence, numerical, proposal/status, and measurement errors with supported corrections; sufficient pressure exception accepted.",
+      "checks": [
+        {
+          "condition": "70% to 75% is 5 percentage points, approximately 7.14% relative",
+          "satisfied": true
+        },
+        {
+          "condition": "Cannot isolate reranking when reader and budget change",
+          "satisfied": true
+        },
+        {
+          "condition": "Proposal is not a measured result",
+          "satisfied": true
+        },
+        {
+          "condition": "Warmup precedes the labeled cold-start timing",
+          "satisfied": true
+        },
+        {
+          "condition": "Does not object to the sufficient exception merely because the general rule is omitted",
+          "satisfied": true
+        }
+      ]
+    },
+    "edit-preserve-meaning": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "candidate/matched/edit-preserve-meaning/artifacts/report.md",
+        "candidate/matched/edit-preserve-meaning/artifacts/unresolved-issues.md",
+        "candidate/matched/edit-preserve-meaning/final.md"
+      ],
+      "notes": "Preserved protected API section; corrected counts, attribution, proposal status, and warm timing; unresolved issues saved separately.",
+      "checks": [
+        {
+          "condition": "Numeric correction preserves sample and comparison conditions",
+          "satisfied": true
+        },
+        {
+          "condition": "Planned experiment remains hypothetical",
+          "satisfied": true
+        },
+        {
+          "condition": "Cold-start example is corrected or accurately relabeled",
+          "satisfied": true
+        },
+        {
+          "condition": "No invented actor or explanation",
+          "satisfied": true
+        },
+        {
+          "condition": "Compatibility note byte-for-byte unchanged",
+          "satisfied": true
+        }
+      ]
+    },
+    "reassess-clean": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "candidate/matched/reassess-clean/artifacts/reassessment.md"
+      ],
+      "notes": "All four prior material findings resolved without new acceptance criteria or further correction requirement.",
+      "checks": [
+        {
+          "condition": "Allows a sufficient exception without an unnecessary general-rule citation",
+          "satisfied": true
+        },
+        {
+          "condition": "Reports no remaining material findings if no demonstrated issue exists",
+          "satisfied": true
+        }
+      ]
+    },
+    "verification-unavailable": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "candidate/matched/verification-unavailable/final.md"
+      ],
+      "notes": "Labels date unverified and applicability unresolved; does not guess or reject it; input unchanged.",
+      "checks": [
+        {
+          "condition": "Reports that the retirement date cannot be verified, identifies needed primary evidence, and does not replace it with a guessed date.",
+          "satisfied": true
+        }
+      ]
+    },
+    "source-reuse-boundaries": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "candidate/matched/source-reuse-boundaries/artifacts/source-assessment.md"
+      ],
+      "notes": "Rejects unrecoverable citation, survey-title currency, universal ranking, extraction-to-compatibility inference, and utility-to-benchmark inference without inventing external evidence.",
+      "checks": [
+        {
+          "condition": "A source title containing 2026 does not establish version-specific API behavior",
+          "satisfied": true
+        },
+        {
+          "condition": "Ranking needs criteria, workload, date, and support",
+          "satisfied": true
+        },
+        {
+          "condition": "Unresolved citation token is not a recoverable source",
+          "satisfied": true
+        },
+        {
+          "condition": "Passing schema and invented-score plot are utility checks, not answer-accuracy results",
+          "satisfied": true
+        },
+        {
+          "condition": "Extraction review does not establish current SDK compatibility",
+          "satisfied": true
+        }
+      ]
+    },
+    "example-resource-semantics": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "candidate/matched/example-resource-semantics/artifacts/example-assessment.md",
+        "candidate/matched/example-resource-semantics/trace.jsonl"
+      ],
+      "notes": "Executed exact code reports 2/12/12 and identifies unbounded task creation. A separate finding elaborates the active-work boundary; no new architecture is imposed. Do not infer perfect finding precision from passing the declared conditions.",
+      "checks": [
+        {
+          "condition": "Executed fixture, if run, reports peak_active=2, created_tasks=12, results=12",
+          "satisfied": true
+        },
+        {
+          "condition": "Semaphore does not by itself bound task creation",
+          "satisfied": true
+        },
+        {
+          "condition": "No new dependency, architecture, or implementation changes are imposed",
+          "satisfied": true
+        },
+        {
+          "condition": "Input hash unchanged",
+          "satisfied": true
+        }
+      ]
+    },
+    "edit-contract-semantics": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "candidate/matched/edit-contract-semantics/artifacts/contract-edit.md",
+        "candidate/matched/edit-contract-semantics/artifacts/contract-edit-review.md"
+      ],
+      "notes": "Preserved MUST NOT and MAY, conjunctive retry prerequisites, retry bound, dry-run behavior, and literal identifiers; unresolved referent retained and explained separately.",
+      "checks": [
+        {
+          "condition": "Preserves MUST NOT, MAY, both retry prerequisites, and at most two retries",
+          "satisfied": true
+        },
+        {
+          "condition": "Dry-run remains non-transmitting",
+          "satisfied": true
+        },
+        {
+          "condition": "LEDGER_PATH, /var/lib/batch/ledger, --dry-run, and job.json retain their meanings",
+          "satisfied": true
+        },
+        {
+          "condition": "Does not invent an antecedent for it; reports the ambiguity",
+          "satisfied": true
+        },
+        {
+          "condition": "No unsupported technical facts or unrelated changes",
+          "satisfied": true
+        }
+      ]
+    },
+    "edit-protected-conflict": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "candidate/matched/edit-protected-conflict/artifacts/protected-conflict.md",
+        "candidate/matched/edit-protected-conflict/artifacts/protected-conflict-review.md"
+      ],
+      "notes": "Summary simplified to supported 64 items; protected 640 preserved byte-for-byte; discrepancy and authorization needed to resolve it reported separately without blocking other edits.",
+      "checks": [
+        {
+          "condition": "Approved statement section byte-for-byte unchanged",
+          "satisfied": true
+        },
+        {
+          "condition": "Unprotected summary keeps 64 items per worker and loses redundant sentence",
+          "satisfied": true
+        },
+        {
+          "condition": "Reports protected 640 versus supported 64 conflict and needed authorization",
+          "satisfied": true
+        },
+        {
+          "condition": "capacity-source.md unchanged",
+          "satisfied": true
+        },
+        {
+          "condition": "Does not ask a question instead of completing authorized work",
+          "satisfied": true
+        }
+      ]
+    },
+    "reassess-mixed": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "candidate/matched/reassess-mixed/artifacts/reassessment.md"
+      ],
+      "notes": "Pilot resolved, task-creation issue open, unsupported sampling objection withdrawn, and mandatory receipt regression located with supported correction.",
+      "checks": [
+        {
+          "condition": "Pilot finding resolved",
+          "satisfied": true
+        },
+        {
+          "condition": "Semaphore does not bound the 100 created tasks to four",
+          "satisfied": true
+        },
+        {
+          "condition": "Robust estimator wording is legitimate; prior stylistic objection is unsupported",
+          "satisfied": true
+        },
+        {
+          "condition": "MAY versus required receipt ID is a new demonstrated regression",
+          "satisfied": true
+        },
+        {
+          "condition": "All inputs unchanged; no new stylistic acceptance conditions",
+          "satisfied": true
+        }
+      ]
+    },
+    "assess-clean": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "candidate/matched/assess-clean/artifacts/assessment.md"
+      ],
+      "notes": "No material findings and no corrections required; arithmetic, robust terminology, scoped evidence, and sufficient exception accepted.",
+      "checks": [
+        {
+          "condition": "Input unchanged",
+          "satisfied": true
+        },
+        {
+          "condition": "No fabricated factual or stylistic defect",
+          "satisfied": true
+        },
+        {
+          "condition": "No mandatory general-rule citation",
+          "satisfied": true
+        },
+        {
+          "condition": "Does not treat acknowledged production uncertainty as a document defect",
+          "satisfied": true
+        },
+        {
+          "condition": "No external audit or experiment claimed",
+          "satisfied": true
+        }
+      ]
+    },
+    "citation-support": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "candidate/matched/citation-support/artifacts/assessment.md"
+      ],
+      "notes": "Explicitly contradicts false exactly-once guarantee, limits pooling attribution, and withdraws unsupported selection rationale while preserving observed latency change.",
+      "checks": [
+        {
+          "condition": "Attributes latency change to the configuration rather than pooling alone",
+          "satisfied": true
+        },
+        {
+          "condition": "Source permits duplicates after restart, contradicting exactly-once claim",
+          "satisfied": true
+        },
+        {
+          "condition": "Delivery correctness was not benchmarked",
+          "satisfied": true
+        },
+        {
+          "condition": "Recommendation exceeds measured evidence",
+          "satisfied": true
+        },
+        {
+          "condition": "Does not confuse a false guarantee with merely unavailable evidence; inputs unchanged",
+          "satisfied": true
+        }
+      ]
+    },
+    "version-sensitive": {
+      "status": "pass",
+      "reviewer": "author semantic review; expected outcomes known to grader, withheld from actor",
+      "evidence": [
+        "candidate/matched/version-sensitive/artifacts/assessment.md"
+      ],
+      "notes": "Accepts historical method and later removal; current support unresolved rather than false; does not call newest supplied version latest or migrate the archive. Same unscored chronology clarification appears.",
+      "checks": [
+        {
+          "condition": "Does not mark Session.resume invalid for 2.4",
+          "satisfied": true
+        },
+        {
+          "condition": "Does not assume 3.0 is the current latest release",
+          "satisfied": true
+        },
+        {
+          "condition": "V24 gives no lifecycle promise; today's support remains unverified rather than disproved",
+          "satisfied": true
+        },
+        {
+          "condition": "Does not replace archive examples with Client.restore",
+          "satisfied": true
+        },
+        {
+          "condition": "All inputs unchanged",
+          "satisfied": true
+        }
+      ]
+    }
+  }
+}

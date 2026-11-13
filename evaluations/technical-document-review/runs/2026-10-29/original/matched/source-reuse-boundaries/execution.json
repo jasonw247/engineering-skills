@@ -1,0 +1,55 @@
+{
+  "id": "source-reuse-boundaries",
+  "arm": "original",
+  "repeat": "matched",
+  "started_at": "2026-10-29T16:07:35.695444+00:00",
+  "execution": "completed",
+  "exit_code": 0,
+  "elapsed_seconds": 63.045,
+  "model_requested": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "timeout_seconds": 300,
+  "code_mode_host_path": "/opt/homebrew/Caskroom/codex/0.165.0/bin/codex-code-mode-host",
+  "inherited_codex_environment_removed": true,
+  "infrastructure_errors": [],
+  "skill_sha256": {
+    "SKILL.md": "2fe1d93562238c2a6ff18b0e21394b93d1072e964c1db86d97640fb5a7476375",
+    "references/phrasing.md": "3d47112a869488a70bf0bd53edeb56438d4cc9418a8f08be1675e62564dd65fa",
+    "references/sources.md": "0de82948b72121c1ce4f76e81da06fe1defb4ae4a2bdece490b49254b4b9673e",
+    "references/technical-evidence.md": "fffe1b96fd08f6d4ab6551d924f006f35fe675bc89cf3736f3614c85156d904c"
+  },
+  "workspace_sha256_before": {
+    "skill/SKILL.md": "2fe1d93562238c2a6ff18b0e21394b93d1072e964c1db86d97640fb5a7476375",
+    "skill/references/phrasing.md": "3d47112a869488a70bf0bd53edeb56438d4cc9418a8f08be1675e62564dd65fa",
+    "skill/references/sources.md": "0de82948b72121c1ce4f76e81da06fe1defb4ae4a2bdece490b49254b4b9673e",
+    "skill/references/technical-evidence.md": "fffe1b96fd08f6d4ab6551d924f006f35fe675bc89cf3736f3614c85156d904c",
+    "source-reuse.md": "ba5f240e6a8a61f412ec613a707f971a8bd961d851408718e46171a67eae907a"
+  },
+  "workspace_sha256_after": {
+    "skill/SKILL.md": "2fe1d93562238c2a6ff18b0e21394b93d1072e964c1db86d97640fb5a7476375",
+    "skill/references/phrasing.md": "3d47112a869488a70bf0bd53edeb56438d4cc9418a8f08be1675e62564dd65fa",
+    "skill/references/sources.md": "0de82948b72121c1ce4f76e81da06fe1defb4ae4a2bdece490b49254b4b9673e",
+    "skill/references/technical-evidence.md": "fffe1b96fd08f6d4ab6551d924f006f35fe675bc89cf3736f3614c85156d904c",
+    "source-assessment.md": "712841ea03f6003cd3db1ef8773dfd7e41f447daa0530916e8206578d8c82298",
+    "source-reuse.md": "ba5f240e6a8a61f412ec613a707f971a8bd961d851408718e46171a67eae907a"
+  },
+  "inputs_unchanged": {
+    "source-reuse.md": true
+  },
+  "read_only_inputs_preserved": true,
+  "protected_section_unchanged": null,
+  "skill_unchanged": true,
+  "turn_completed": true,
+  "invalid_trace_lines": 0,
+  "usage": [
+    {
+      "input_tokens": 69817,
+      "cached_input_tokens": 56320,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1771,
+      "reasoning_output_tokens": 147
+    }
+  ],
+  "command_count": 6,
+  "grading": "pending; execution completion is not semantic acceptance"
+}

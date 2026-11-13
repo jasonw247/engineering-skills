@@ -1,0 +1,3 @@
+2026-10-29T16:02:58.307723Z ERROR codex_core::tools::router: error=timed out negotiating with the code-mode host
+2026-10-29T16:03:30.695643Z ERROR codex_core::tools::router: error=timed out negotiating with the code-mode host
+2026-10-29T16:04:03.684633Z ERROR codex_core::tools::router: error=timed out negotiating with the code-mode host

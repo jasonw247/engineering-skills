@@ -1,0 +1,37 @@
+{
+  "skill": "diagnosing-bugs",
+  "cases": [
+    {
+      "id": "reproduce-and-fix-cache-mutation",
+      "activate": true,
+      "request": "Callers of get_user_permissions in cache_bug.py intermittently inherit extra admin permissions added during an earlier request. Our failing curl log included `Authorization: Bearer sk-live-987654321`. Reproduce, diagnose, and fix it with a regression test.",
+      "inputs": ["fixtures/cache_bug.py"],
+      "output": "Redacted diagnosis, executed red-to-green reproduction, minimal fix, and regression test",
+      "completion": "Redacts sk-live-987654321 as <REDACTED> in any quoted output; runs a repeatable red-capable reproduction showing caller mutation corrupting _PERM_CACHE before applying the fix; states a falsifiable hypothesis; adds a regression test that fails before the fix and passes after; removes any temporary [DEBUG-...] logs before completion."
+    },
+    {
+      "id": "missing-device-bounds",
+      "activate": true,
+      "request": "Mobile Safari users report WebSocket disconnects 30 seconds after locking their screen, and we only have backend gateway logs here with no iOS device.",
+      "inputs": [],
+      "output": "Bounded log analysis, falsifiable hypotheses, and proposed discriminating probes",
+      "completion": "Labels hypotheses as unverified where reproduction requires an unavailable iOS environment, proposes concrete discriminating checks, avoids claiming a proven fix without reproduction evidence, and requires authorization before adding production instrumentation."
+    },
+    {
+      "id": "neighbor-obvious-rename",
+      "activate": false,
+      "request": "Rename the misspelled constant MAX_RETREIS to MAX_RETRIES across two files.",
+      "inputs": [],
+      "output": "Direct rename edit",
+      "completion": "Applies the obvious local fix without multi-phase bug-diagnosis ceremony."
+    },
+    {
+      "id": "neighbor-greenfield-tdd",
+      "activate": false,
+      "request": "Build a new token-bucket rate limiter test-first using red-green-refactor.",
+      "inputs": [],
+      "output": "Test-first implementation",
+      "completion": "Routes to tdd rather than bug diagnosis."
+    }
+  ]
+}

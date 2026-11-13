@@ -1,0 +1,42 @@
+{
+  "id": "source-reuse-boundaries",
+  "arm": "no-skill",
+  "repeat": "matched",
+  "started_at": "2026-10-29T16:12:14.844610+00:00",
+  "execution": "completed",
+  "exit_code": 0,
+  "elapsed_seconds": 61.573,
+  "model_requested": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "timeout_seconds": 300,
+  "code_mode_host_path": "/opt/homebrew/Caskroom/codex/0.165.0/bin/codex-code-mode-host",
+  "inherited_codex_environment_removed": true,
+  "infrastructure_errors": [],
+  "skill_sha256": {},
+  "workspace_sha256_before": {
+    "source-reuse.md": "ba5f240e6a8a61f412ec613a707f971a8bd961d851408718e46171a67eae907a"
+  },
+  "workspace_sha256_after": {
+    "source-assessment.md": "69e57dd56ddf61609aff754b9acb949a5d7a699a8fa5832d4775a3db0cadd7ff",
+    "source-reuse.md": "ba5f240e6a8a61f412ec613a707f971a8bd961d851408718e46171a67eae907a"
+  },
+  "inputs_unchanged": {
+    "source-reuse.md": true
+  },
+  "read_only_inputs_preserved": true,
+  "protected_section_unchanged": null,
+  "skill_unchanged": true,
+  "turn_completed": true,
+  "invalid_trace_lines": 0,
+  "usage": [
+    {
+      "input_tokens": 63686,
+      "cached_input_tokens": 58112,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1630,
+      "reasoning_output_tokens": 195
+    }
+  ],
+  "command_count": 3,
+  "grading": "pending; execution completion is not semantic acceptance"
+}

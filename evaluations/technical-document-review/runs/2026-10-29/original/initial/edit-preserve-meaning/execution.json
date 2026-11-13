@@ -1,0 +1,7 @@
+{
+  "id": "edit-preserve-meaning",
+  "arm": "original",
+  "exit_code": null,
+  "execution": "infrastructure-interrupted",
+  "grading": "blocked: code-mode host negotiation failure; no semantic acceptance"
+}

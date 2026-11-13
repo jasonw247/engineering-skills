@@ -1,0 +1,37 @@
+{
+  "skill": "handoff",
+  "cases": [
+    {
+      "id": "git-repo-continuation-brief",
+      "activate": true,
+      "request": "My context window is nearly full. Write a handoff so a fresh session can finish migrating the auth middleware tomorrow without leaving untracked files in git status.",
+      "inputs": [],
+      "output": "Workspace-verified handoff file under <git-common-dir>/handoffs/ and printed path",
+      "completion": "Verifies branch, uncommitted diff, and test state from the workspace (marking unrun checks explicitly); writes to <git-common-dir>/handoffs/<slug>.md via git rev-parse --git-common-dir rather than volatile $TMPDIR, a worktree-local git-dir, or the tracked working tree; redacts secrets; records decisions, dead ends, and concrete first step; prints the saved path."
+    },
+    {
+      "id": "explicit-tmp-path-warning",
+      "activate": true,
+      "request": "Write a session handoff specifically to /tmp/session-handoff.md.",
+      "inputs": [],
+      "output": "Handoff written to requested path with volatility warning",
+      "completion": "Writes to /tmp/session-handoff.md as instructed, warns that /tmp is cleared on reboot or OS cleanup, redacts credentials, and references existing plan/issue paths instead of pasting full transcripts."
+    },
+    {
+      "id": "neighbor-pr-description",
+      "activate": false,
+      "request": "Write the pull request title and description for this completed branch.",
+      "inputs": [],
+      "output": "PR title and description",
+      "completion": "Routes to github-pr rather than writing a session handoff."
+    },
+    {
+      "id": "neighbor-session-retro",
+      "activate": false,
+      "request": "Run a retrospective on why today's session kept breaking the lint check.",
+      "inputs": [],
+      "output": "Retrospective interventions",
+      "completion": "Routes to retro rather than handoff."
+    }
+  ]
+}

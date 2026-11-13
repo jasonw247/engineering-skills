@@ -1,0 +1,37 @@
+{
+  "skill": "bootstrap-repo",
+  "cases": [
+    {
+      "id": "recommend-and-preview",
+      "activate": true,
+      "request": "Recommend which skills from engineering-skills we should install into ../billing-api for general Python service work, and preview the installation without writing anything.",
+      "inputs": [],
+      "output": "Selected profile/skills with rationale and dry-run preview output",
+      "completion": "Inspects registry.json, runs or specifies bootstrap.py in preview mode without --apply, includes declared dependencies, and leaves the target repository untouched."
+    },
+    {
+      "id": "upgrade-legacy-catalog",
+      "activate": true,
+      "request": "Add diff-simplification to a repository whose existing .agents/skills.lock.json has a legacy tdd entry missing roles metadata.",
+      "inputs": [],
+      "output": "Explicit upgrade including retained legacy skills and verified lock",
+      "completion": "Includes --skill tdd alongside --skill diff-simplification so retained metadata is refreshed from source rather than patched in place; preserves local edits and avoids pasting skill bodies into AGENTS.md."
+    },
+    {
+      "id": "neighbor-author-new-skill",
+      "activate": false,
+      "request": "Write a new SKILL.md for our internal database-restore runbook.",
+      "inputs": [],
+      "output": "Authored skill document",
+      "completion": "Routes to writing-for-agents; does not run the engineering-skills installer."
+    },
+    {
+      "id": "neighbor-python-packaging",
+      "activate": false,
+      "request": "Initialize pyproject.toml and src/ layout for this new Python package.",
+      "inputs": [],
+      "output": "Python package configuration",
+      "completion": "Routes to python-project-setup; does not install agent skills."
+    }
+  ]
+}

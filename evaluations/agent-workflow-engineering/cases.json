@@ -1,0 +1,9 @@
+{
+  "skill":"agent-workflow-engineering",
+  "cases":[
+    {"id":"lost-action-receipt","activate":true,"request":"Design recovery for the workflow in requirements.md. Provide states, retry rules, termination, and walk through the listed failures. Keep the existing application stack; do not select a framework unless a requirement forces it.","inputs":["fixtures/requirements.md"],"output":"State/operation contract and concrete failure walkthroughs","completion":"Persists intent and stable logical action identity, reconciles lost receipt using the provider contract, handles dedup expiry without blind resubmission, treats unknown as unresolved, and distinguishes compensation from proof of failure. Does not promise exactly-once effects without a mechanism."},
+    {"id":"simple-request","activate":true,"request":"Implement a request-scoped assistant that extracts a validated record with one model call and no external mutations.","inputs":[],"output":"Small implementation and validation","completion":"Does not mandate graphs, durable runtimes, multi-agent delegation, approval infrastructure, or a reference platform."},
+    {"id":"long-lived-approval","activate":true,"request":"Adapt an existing workflow to wait days for human approval and resume across worker deployment.","inputs":[],"output":"Durable state, approval identity/version, replay and recovery design or implementation","completion":"Defines persisted approval scope, duplicate events, expiry, version compatibility, bounded retries, and terminal states; keeps nondeterministic I/O outside deterministic replay where required."},
+    {"id":"neighbor-agent-use","activate":false,"request":"Use a coding agent to fix a CSS spacing bug.","inputs":[],"output":"Ordinary code change","completion":"Does not infer that the application needs an agent runtime."}
+  ]
+}

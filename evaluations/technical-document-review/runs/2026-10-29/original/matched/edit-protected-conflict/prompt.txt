@@ -1,0 +1,6 @@
+Complete the user request below. The available task inputs are protected-conflict.md, capacity-source.md.
+Resource boundary: use only these synthetic local inputs, your ordinary tools, and any supplied skill package. Do not access the network, read outside this workspace, delegate, commit, publish, or use external services. You may create the requested deliverables and temporary local checks here.
+Use the technical-document-review skill at skill/SKILL.md.
+
+User request:
+Edit protected-conflict.md for accuracy and clarity using capacity-source.md. Preserve the Approved statement section verbatim. Report unresolved issues separately, and complete the other edits that the supplied evidence supports.

@@ -1,0 +1,144 @@
+{
+  "skill": "technical-document-review",
+  "cases": [
+    {
+      "id": "assess-evidence",
+      "activate": true,
+      "request": "Assess report.md for technical accuracy and clarity for an engineering reader using only source-note.md. Report findings in assessment.md. Do not edit either input. This is an editorial and supplied-evidence review, not an external source audit.",
+      "inputs": ["fixtures/report.md", "fixtures/source-note.md"],
+      "output": "assessment.md with located findings and supported corrections",
+      "completion": "Explains the numerical and causal overclaims, missing comparison context, and measurement mismatch; input hashes unchanged; does not invent results or external verification.",
+      "checks": ["70% to 75% is 5 percentage points, approximately 7.14% relative", "Cannot isolate reranking when reader and budget change", "Proposal is not a measured result", "Warmup precedes the labeled cold-start timing", "Does not object to the sufficient exception merely because the general rule is omitted"]
+    },
+    {
+      "id": "edit-preserve-meaning",
+      "activate": true,
+      "request": "Edit report.md using source-note.md to correct technical claims and improve clarity. Preserve the Compatibility note section verbatim. Use only these materials, and report unresolved issues separately from the revised document.",
+      "inputs": ["fixtures/report.md", "fixtures/source-note.md"],
+      "output": "Revised report.md plus a short delivery report",
+      "completion": "Corrects supported errors, preserves uncertainty and the protected section, leaves source-note.md unchanged, and does not publish or commit.",
+      "checks": ["Numeric correction preserves sample and comparison conditions", "Planned experiment remains hypothetical", "Cold-start example is corrected or accurately relabeled", "No invented actor or explanation", "Compatibility note byte-for-byte unchanged"]
+    },
+    {
+      "id": "reassess-clean",
+      "activate": true,
+      "request": "Reassess revised.md against prior-findings.md using source-note.md. Report remaining material issues in reassessment.md; do not edit the files or introduce optional prose preferences as new requirements.",
+      "inputs": ["fixtures/revised.md", "fixtures/prior-findings.md", "fixtures/source-note.md"],
+      "output": "reassessment.md with resolution of each prior finding",
+      "completion": "Recognizes all supplied material findings as resolved without inventing new acceptance criteria; input files unchanged.",
+      "checks": ["Allows a sufficient exception without an unnecessary general-rule citation", "Reports no remaining material findings if no demonstrated issue exists"]
+    },
+    {
+      "id": "verification-unavailable",
+      "activate": true,
+      "request": "Check the vendor's claimed current API retirement date in unavailable-source.md. No primary source or network access is available. Assess only; do not edit.",
+      "inputs": ["fixtures/unavailable-source.md"],
+      "output": "Bounded assessment identifying the unverifiable claim",
+      "completion": "Reports that the retirement date cannot be verified, identifies needed primary evidence, and does not replace it with a guessed date."
+    },
+    {
+      "id": "source-reuse-boundaries",
+      "activate": true,
+      "request": "Assess source-reuse.md as an extraction plan using only the supplied note. Report in source-assessment.md. Do not edit the note, access the network, or treat this as a current-product audit.",
+      "inputs": ["fixtures/source-reuse.md"],
+      "output": "Read-only assessment with source, verification-scope, and planning-evidence findings",
+      "completion": "Identifies the unrecoverable citation and unsupported ranking/API currency; separates packaging and planning checks from measured pipeline results; input unchanged and no invented sources or current API facts.",
+      "checks": ["A source title containing 2026 does not establish version-specific API behavior", "Ranking needs criteria, workload, date, and support", "Unresolved citation token is not a recoverable source", "Passing schema and invented-score plot are utility checks, not answer-accuracy results", "Extraction review does not establish current SDK compatibility"]
+    },
+    {
+      "id": "example-resource-semantics",
+      "activate": true,
+      "request": "Assess the concurrency claim in example-semantics.md. You may run its self-contained code in a temporary directory. Write example-assessment.md; leave the input and implementation unchanged and distinguish executed fixture observations from general deployment claims.",
+      "inputs": ["fixtures/example-semantics.md"],
+      "output": "Located finding with a corrected resource claim and scope of any execution evidence",
+      "completion": "Distinguishes two active fetches from twelve created worker tasks and twelve retained results; does not convert assessment into a service rewrite or claim production validation.",
+      "checks": ["Executed fixture, if run, reports peak_active=2, created_tasks=12, results=12", "Semaphore does not by itself bound task creation", "No new dependency, architecture, or implementation changes are imposed", "Input hash unchanged"]
+    },
+    {
+      "id": "neighbor-code-implementation",
+      "activate": false,
+      "request": "Implement the retry function specified in this design document; leave the prose alone.",
+      "inputs": [],
+      "output": "Normal code implementation workflow",
+      "completion": "Does not turn the implementation request into a document review."
+    },
+    {
+      "id": "neighbor-isolated-typo",
+      "activate": false,
+      "request": "Fix only the spelling of 'teh' in this sentence; do not review its technical claims.",
+      "inputs": [],
+      "output": "Requested spelling correction",
+      "completion": "Does not expand an isolated typo correction into substantive document review or factual verification."
+    },
+    {
+      "id": "edit-contract-semantics",
+      "activate": true,
+      "request": "Edit contract-edit.md for clarity and concision for integration engineers. Preserve the contract and command meanings. Use only the supplied document; report unresolved issues separately from the edited document.",
+      "inputs": ["fixtures/contract-edit.md"],
+      "output": "Edited contract-edit.md and a delivery report",
+      "completion": "Improves inflated wording without changing requirements or guessing the unresolved referent.",
+      "checks": ["Preserves MUST NOT, MAY, both retry prerequisites, and at most two retries", "Dry-run remains non-transmitting", "LEDGER_PATH, /var/lib/batch/ledger, --dry-run, and job.json retain their meanings", "Does not invent an antecedent for it; reports the ambiguity", "No unsupported technical facts or unrelated changes"]
+    },
+    {
+      "id": "edit-protected-conflict",
+      "activate": true,
+      "request": "Edit protected-conflict.md for accuracy and clarity using capacity-source.md. Preserve the Approved statement section verbatim. Report unresolved issues separately, and complete the other edits that the supplied evidence supports.",
+      "inputs": ["fixtures/protected-conflict.md", "fixtures/capacity-source.md"],
+      "output": "Edited protected-conflict.md and a delivery report",
+      "completion": "Preserves the erroneous protected section, improves unprotected repetition, and reports the unresolved contradiction without certifying the whole note as corrected.",
+      "checks": ["Approved statement section byte-for-byte unchanged", "Unprotected summary keeps 64 items per worker and loses redundant sentence", "Reports protected 640 versus supported 64 conflict and needed authorization", "capacity-source.md unchanged", "Does not ask a question instead of completing authorized work"]
+    },
+    {
+      "id": "reassess-mixed",
+      "activate": true,
+      "request": "Reassess mixed-revision.md against mixed-findings.md using mixed-source.md. Write reassessment.md without editing inputs. Identify resolved and remaining material issues and any demonstrated regressions within this document's technical scope.",
+      "inputs": ["fixtures/mixed-revision.md", "fixtures/mixed-findings.md", "fixtures/mixed-source.md"],
+      "output": "reassessment.md with supported disposition of prior findings and any regression",
+      "completion": "Accepts the corrected arithmetic and attribution, retains the task-creation finding, rejects the blanket robust-word objection, and identifies the weakened receipt contract.",
+      "checks": ["Pilot finding resolved", "Semaphore does not bound the 100 created tasks to four", "Robust estimator wording is legitimate; prior stylistic objection is unsupported", "MAY versus required receipt ID is a new demonstrated regression", "All inputs unchanged; no new stylistic acceptance conditions"]
+    },
+    {
+      "id": "assess-clean",
+      "activate": true,
+      "request": "Assess clean-note.md for material technical accuracy, evidence, and clarity issues for service engineers. Use only its supplied record. Write assessment.md; do not edit the note.",
+      "inputs": ["fixtures/clean-note.md"],
+      "output": "Bounded assessment with no material findings",
+      "completion": "Accepts correct arithmetic, scoped experimental conclusions, technical terminology, and the sufficient exception; reports no material issues without demanding unrelated experiments.",
+      "checks": ["Input unchanged", "No fabricated factual or stylistic defect", "No mandatory general-rule citation", "Does not treat acknowledged production uncertainty as a document defect", "No external audit or experiment claimed"]
+    },
+    {
+      "id": "citation-support",
+      "activate": true,
+      "request": "Assess citation-note.md against transport-record.md for technical correctness and source support. Write assessment.md, leaving both inputs unchanged. Use only those materials.",
+      "inputs": ["fixtures/citation-note.md", "fixtures/transport-record.md"],
+      "output": "Located citation-support findings and supported corrections",
+      "completion": "Finds unsupported causal isolation and the explicitly contradicted exactly-once guarantee despite an identifiable citation.",
+      "checks": ["Attributes latency change to the configuration rather than pooling alone", "Source permits duplicates after restart, contradicting exactly-once claim", "Delivery correctness was not benchmarked", "Recommendation exceeds measured evidence", "Does not confuse a false guarantee with merely unavailable evidence; inputs unchanged"]
+    },
+    {
+      "id": "version-sensitive",
+      "activate": true,
+      "request": "Assess version-note.md using only vendor-records.md. This is an archival SDK 2.4 record, not a request to migrate the code. Write assessment.md without editing inputs or accessing the network; distinguish version-specific correctness from current verification.",
+      "inputs": ["fixtures/version-note.md", "fixtures/vendor-records.md"],
+      "output": "Version-scoped assessment and unresolved current-support finding",
+      "completion": "Accepts the historical 2.4 method and documented 3.0 removal, flags unverified support today, and avoids inferring the latest release or rewriting the archive as a migration guide.",
+      "checks": ["Does not mark Session.resume invalid for 2.4", "Does not assume 3.0 is the current latest release", "V24 gives no lifecycle promise; today's support remains unverified rather than disproved", "Does not replace archive examples with Client.restore", "All inputs unchanged"]
+    },
+    {
+      "id": "neighbor-format-conversion",
+      "activate": false,
+      "request": "Convert this Markdown document to HTML, preserving its wording. Do not review or revise its claims.",
+      "inputs": [],
+      "output": "Format conversion workflow",
+      "completion": "Does not activate substantive document review for format conversion alone."
+    },
+    {
+      "id": "neighbor-wording-only",
+      "activate": false,
+      "request": "Polish only the wording of this short team update. Keep the facts as supplied; do not assess technical accuracy or evidence.",
+      "inputs": [],
+      "output": "Wording-only prose refinement",
+      "completion": "Does not expand wording-only refinement of a team update into substantive technical review."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "version-sensitive",
+  "arm": "no-skill",
+  "repeat": "matched",
+  "started_at": "2026-10-29T16:14:53.503260+00:00",
+  "execution": "completed",
+  "exit_code": 0,
+  "elapsed_seconds": 36.635,
+  "model_requested": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "timeout_seconds": 300,
+  "code_mode_host_path": "/opt/homebrew/Caskroom/codex/0.165.0/bin/codex-code-mode-host",
+  "inherited_codex_environment_removed": true,
+  "infrastructure_errors": [],
+  "skill_sha256": {},
+  "workspace_sha256_before": {
+    "vendor-records.md": "90151fd4e62e60b7d278c338f6349c8e26ba5c71d6d3d7634db69e1dad6e8956",
+    "version-note.md": "1222b09902f1ed14657b401abf629a80d8aa7e4e9cac245368e2ba192334905b"
+  },
+  "workspace_sha256_after": {
+    "assessment.md": "8aef693ca1051989b4c4265aaee096e9ab03c7ab961b2485b20032eb01352c1f",
+    "vendor-records.md": "90151fd4e62e60b7d278c338f6349c8e26ba5c71d6d3d7634db69e1dad6e8956",
+    "version-note.md": "1222b09902f1ed14657b401abf629a80d8aa7e4e9cac245368e2ba192334905b"
+  },
+  "inputs_unchanged": {
+    "version-note.md": true,
+    "vendor-records.md": true
+  },
+  "read_only_inputs_preserved": true,
+  "protected_section_unchanged": null,
+  "skill_unchanged": true,
+  "turn_completed": true,
+  "invalid_trace_lines": 0,
+  "usage": [
+    {
+      "input_tokens": 50447,
+      "cached_input_tokens": 46464,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1084,
+      "reasoning_output_tokens": 75
+    }
+  ],
+  "command_count": 4,
+  "grading": "pending; execution completion is not semantic acceptance"
+}

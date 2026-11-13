@@ -1,0 +1,41 @@
+{
+  "recorded_at": "2026-10-29T16:00:19.660429+00:00",
+  "git_head": "12c90b6eef8863caed65a4159bd37b421daa26ec",
+  "skill_sha256": {
+    "SKILL.md": "2fe1d93562238c2a6ff18b0e21394b93d1072e964c1db86d97640fb5a7476375",
+    "references/phrasing.md": "3d47112a869488a70bf0bd53edeb56438d4cc9418a8f08be1675e62564dd65fa",
+    "references/sources.md": "0de82948b72121c1ce4f76e81da06fe1defb4ae4a2bdece490b49254b4b9673e",
+    "references/technical-evidence.md": "fffe1b96fd08f6d4ab6551d924f006f35fe675bc89cf3736f3614c85156d904c"
+  },
+  "input_sha256": {
+    "capacity-source.md": "cf5cae59f80f1f120ce3e202055b1857fcc64096f545ae1f1f39df6fa96e0511",
+    "citation-note.md": "60d9dac268d21cb963f0761f8eb935366d258ac2e35214586497a982fe311385",
+    "clean-note.md": "0666464962c4fd83341fd7f5ba3a463cea3a7141198f87ce755848f798f7efb3",
+    "contract-edit.md": "808c7c5581ca2a4a5bb433a0542392392e2b60e993c9b8c724b1e7f39b2d39ee",
+    "example-semantics.md": "efb2f78b017c86c5ae84401e75bd153171b0dc916eb4b6d494947f226f1243e1",
+    "mixed-findings.md": "ed097822fbe5f1ebde00d28a38db081a7ffce0af925405895740c847948374ec",
+    "mixed-revision.md": "258cd7d2cdfa3f9f6b237cb6aedbaabebd3f26f8abac1567f0a2d88b6ba37a35",
+    "mixed-source.md": "85afc229dc7bfd03ee22a00f868f487b26d82cede69a67a1511d94b2df7b399e",
+    "prior-findings.md": "2ead8d00983a459cc091f2f88541e5b891a7ce90bd45cff4cbb274c785c6054f",
+    "protected-conflict.md": "29b36f315eddefb5539ab1f6007b44c3f2defbaf36372677078732ab6c38fa6e",
+    "report.md": "7182931b33555ba825bbb8de9f939e2b8c8e26650a1d1ef6906e55ab95bd3da2",
+    "revised.md": "e2d0badf17ceaf0ec15782034552e6dd13ae16b2a3c7063171a44174492c8929",
+    "source-note.md": "8afbd33b65f11daf8286523b235738f2304c7156acfa711dfea0a2054672846a",
+    "source-reuse.md": "ba5f240e6a8a61f412ec613a707f971a8bd961d851408718e46171a67eae907a",
+    "transport-record.md": "a587a716da182ac218dcfd07f64d7c7deb595108e19470513081b8ba6aac192a",
+    "unavailable-source.md": "a56f719e9a05ea3b98672c8db9ecc40bd9dd3fa6bb7a465476603cfeb3e53bdb",
+    "vendor-records.md": "90151fd4e62e60b7d278c338f6349c8e26ba5c71d6d3d7634db69e1dad6e8956",
+    "version-note.md": "1222b09902f1ed14657b401abf629a80d8aa7e4e9cac245368e2ba192334905b"
+  },
+  "expected_sha256": "1ba5ba908b29349ab0d91f61626584a7483268529760207b80f95c54084c7ae0",
+  "baseline_checks_from_planning": {
+    "quick_validate": "pass via uv --no-project --with pyyaml",
+    "installer_tests": "25 passed",
+    "relative_links": "pass",
+    "fixture_paths": "pass",
+    "unique_case_ids": "pass",
+    "executable_fixture": "syntax parsed only",
+    "diff_check": "pass"
+  },
+  "historical_limits": "2026-10-12 initial behavioral trial used older hashes; current hashes match later author walkthrough, not a fresh independent trial."
+}

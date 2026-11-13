@@ -1,0 +1,10 @@
+{"type":"thread.started","thread_id":"01a18868-7929-7461-82de-e04d905808c0"}
+{"type":"item.completed","item":{"id":"item_0","type":"error","message":"Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.\n  session-flags: `model_info` is ignored."}}
+{"type":"item.completed","item":{"id":"item_1","type":"error","message":"Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.\n  session-flags: `model_info` is ignored."}}
+{"type":"item.completed","item":{"id":"item_2","type":"error","message":"Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /private/var/folders/6t/qzw8ch3s0q72y0bmdzm32k8w0000gn/T/document-review-preflight-5cdqt6qp/codex/config.toml."}}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_3","type":"agent_message","text":"I’ll run `pwd` in the terminal."}}
+{"type":"item.started","item":{"id":"item_4","type":"command_execution","command":"/bin/zsh -lc pwd","aggregated_output":"","exit_code":null,"status":"in_progress"}}
+{"type":"item.completed","item":{"id":"item_4","type":"command_execution","command":"/bin/zsh -lc pwd","aggregated_output":"/private/var/folders/6t/qzw8ch3s0q72y0bmdzm32k8w0000gn/T/document-review-preflight-5cdqt6qp/work\n","exit_code":0,"status":"completed"}}
+{"type":"item.completed","item":{"id":"item_5","type":"agent_message","text":"```text\n/private/var/folders/6t/qzw8ch3s0q72y0bmdzm32k8w0000gn/T/document-review-preflight-5cdqt6qp/work\n```"}}
+{"type":"turn.completed","usage":{"input_tokens":26599,"cached_input_tokens":22656,"cache_write_input_tokens":0,"output_tokens":100,"reasoning_output_tokens":0}}

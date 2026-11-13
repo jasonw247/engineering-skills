@@ -1,0 +1,37 @@
+{
+  "skill": "tdd",
+  "cases": [
+    {
+      "id": "vertical-slice-coupon-cap",
+      "activate": true,
+      "request": "Use TDD (red-green-refactor) to add `apply_percentage_coupon(subtotal_cents, percent_off, max_discount_cents)` to discount.py.",
+      "inputs": ["fixtures/discount.py"],
+      "output": "Incremental behavior tests and minimal implementation",
+      "completion": "Builds behavior in vertical one-test-at-a-time red-green-refactor slices against the public function; runs each new test before implementing to confirm it fails on the assertion; asserts independent literal expected values rather than recomputing the formula; keeps any internal helper private."
+    },
+    {
+      "id": "execution-disabled-honesty",
+      "activate": true,
+      "request": "Start a test-first fix for negative quantity validation in discount.py. Command execution is disabled in this environment.",
+      "inputs": ["fixtures/discount.py"],
+      "output": "Proposed failing test and minimal code edit with explicit unexecuted status",
+      "completion": "Supplies the concrete failing test and minimal implementation without claiming the red or green runs were executed."
+    },
+    {
+      "id": "neighbor-unknown-root-cause",
+      "activate": false,
+      "request": "Worker RSS memory climbs by 500 MB every hour in staging and we have no idea which path leaks; investigate.",
+      "inputs": [],
+      "output": "Empirical leak investigation",
+      "completion": "Routes to diagnosing-bugs before jumping into test-first feature loops."
+    },
+    {
+      "id": "neighbor-readme-edit",
+      "activate": false,
+      "request": "Fix the broken installation command in README.md.",
+      "inputs": [],
+      "output": "Documentation edit",
+      "completion": "Updates README.md directly without inventing ceremonial tests."
+    }
+  ]
+}

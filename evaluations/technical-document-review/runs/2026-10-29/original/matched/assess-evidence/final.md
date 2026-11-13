@@ -1,0 +1,1 @@
+Created [assessment.md](/private/var/folders/6t/qzw8ch3s0q72y0bmdzm32k8w0000gn/T/document-trial-bcuavp7w/work/assessment.md) with four prioritized findings and proposed corrections, using only the supplied evidence. Both inputs remain unchanged.

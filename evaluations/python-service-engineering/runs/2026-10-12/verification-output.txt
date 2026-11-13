@@ -1,0 +1,15 @@
+test_child_cancellation_stops_other_work (test_enrich.EnrichTests.test_child_cancellation_stops_other_work) ... ok
+test_empty_input (test_enrich.EnrichTests.test_empty_input) ... ok
+test_fetch_failure_stops_blocked_source_and_sibling (test_enrich.EnrichTests.test_fetch_failure_stops_blocked_source_and_sibling) ... ok
+test_invalid_limits_do_not_consume_input (test_enrich.EnrichTests.test_invalid_limits_do_not_consume_input) ... ok
+test_large_stream_has_backpressure_and_bounded_live_tasks (test_enrich.EnrichTests.test_large_stream_has_backpressure_and_bounded_live_tasks) ... ok
+test_limit_one (test_enrich.EnrichTests.test_limit_one) ... ok
+test_repeated_caller_cancellation_waits_for_cleanup (test_enrich.EnrichTests.test_repeated_caller_cancellation_waits_for_cleanup) ... ok
+test_results_preserve_order_when_completion_does_not (test_enrich.EnrichTests.test_results_preserve_order_when_completion_does_not) ... ok
+test_source_failure_stops_active_fetches (test_enrich.EnrichTests.test_source_failure_stops_active_fetches) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.195s
+
+OK
+large stream: items=20000, peak fetches=4, peak owned tasks including caller=6

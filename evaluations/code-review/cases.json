@@ -1,0 +1,68 @@
+{
+  "skill": "code-review",
+  "cases": [
+    {
+      "id": "compatibility-and-cost",
+      "split": "training",
+      "activate": true,
+      "request": "Review proposed.py against original.py and requirements.md. Assess only. Report demonstrated defects, compatibility breaks, or material avoidable cost, with locations and minimal corrections.",
+      "inputs": ["fixtures/original.py", "fixtures/proposed.py", "fixtures/requirements.md"],
+      "output": "Prioritized evidence-backed findings",
+      "completion": "Identifies incorrect deduplication of distinct events; leaves inputs unchanged. Does not report reversed tie order as an independent reachable failure after timestamps have already been deduplicated. Recognizes that sorting the full collection is pre-existing, not a new regression; any additional cost finding needs its own material evidence."
+    },
+    {
+      "id": "re-review-after-response",
+      "split": "training",
+      "activate": true,
+      "request": "Re-review revised.py after the author's response to your earlier review. previous-review.md lists your findings and response.md the author's answers. Assess only.",
+      "inputs": ["fixtures/requirements.md", "fixtures/rereview/previous-review.md", "fixtures/rereview/response.md", "fixtures/rereview/revised.py"],
+      "output": "An explicit outcome for every earlier finding, plus any new findings",
+      "completion": "Marks CR-1 resolved after inspecting revised.py. Keeps CR-2 open because removing deduplication makes timestamp ties reachable and reverse=True orders them against input order, so the rebuttal no longer holds. Withdraws CR-3 because the contract excludes negative limits. Keeps all three identifiers and drops, renames, or downgrades none. Assesses the complete revised candidate rather than only the response."
+    },
+    {
+      "id": "clean-small-change",
+      "split": "training",
+      "activate": true,
+      "request": "Review a small correct change that uses one simple helper; do not invent issues just to provide feedback.",
+      "inputs": [],
+      "output": "No qualifying findings when warranted",
+      "completion": "Does not treat a single caller/implementation as sufficient evidence of a defect."
+    },
+    {
+      "id": "fixes-requested",
+      "split": "training",
+      "activate": true,
+      "request": "Review this patch and fix confirmed findings while preserving its API.",
+      "inputs": [],
+      "output": "Scoped fixes and relevant verification",
+      "completion": "Edits only demonstrated issues, preserves API, reports checks; does not request permission again for authorized fixes."
+    },
+    {
+      "id": "neighbor-feature",
+      "split": "training",
+      "activate": false,
+      "request": "Implement a new CSV export endpoint.",
+      "inputs": [],
+      "output": "Normal implementation workflow",
+      "completion": "Does not replace implementation with a standalone review or automatically launch reviewer agents."
+    },
+    {
+      "id": "heldout-cursor-and-deepcopy",
+      "split": "held-out",
+      "activate": true,
+      "request": "Review cursor_after.py against cursor_before.py and cursor_spec.md. Assess only. Report demonstrated defects, compatibility breaks, or material avoidable cost with locations and minimal corrections.",
+      "inputs": ["fixtures/held-out/cursor_before.py", "fixtures/held-out/cursor_after.py", "fixtures/held-out/cursor_spec.md"],
+      "output": "Prioritized evidence-backed findings",
+      "completion": "Identifies boundary data loss when multiple records share created_ms (e['created_ms'] > after_ms skips remaining same-millisecond event_ids) and the unnecessary copy.deepcopy(entries) cost on read-only inputs; recognizes full-list sorting as pre-existing in cursor_before.py rather than a patch regression; does not treat the unreachable 'if not page' guard behind 'len(ordered) <= page_size' as a reachable runtime failure; leaves inputs unchanged."
+    },
+    {
+      "id": "heldout-rereview-webhook",
+      "split": "held-out",
+      "activate": true,
+      "request": "Re-review webhook_v2.py against spec.md, prior-review.md, and author-reply.md. Assess only.",
+      "inputs": ["fixtures/held-out/rereview/spec.md", "fixtures/held-out/rereview/prior-review.md", "fixtures/held-out/rereview/author-reply.md", "fixtures/held-out/rereview/webhook_v2.py"],
+      "output": "Explicit dispositions for RV-1, RV-2, and RV-3, plus any new findings",
+      "completion": "Marks RV-1 resolved, keeps RV-2 open because webhook_v2.py now exempts 429 from the 4xx early return and tight-loops without honoring Retry-After or returning ('rate_limited', seconds), and withdraws RV-3 because spec.md guarantees max_attempts is in 1..5; preserves original IDs RV-1..RV-3 and also notes if non-429 5xx retry filtering (e.g. 500 vs 502/503/504) diverges from spec.md; leaves inputs unchanged."
+    }
+  ]
+}

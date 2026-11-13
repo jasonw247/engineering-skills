@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-12",
+  "skill": "technical-document-review",
+  "scope": "Independent synthetic behavioral trial, with author semantic and input-integrity review",
+  "protocol_note": "Initial evaluator completed metadata-only routing before a server restart. A fresh evaluator resumed the task from isolated skill and raw inputs; no expected answers were supplied.",
+  "skill_sha256": {
+    "SKILL.md": "b54420dd1a2d636238dd19dcca485b6cfac8a6aff6d12d5243662a95dc4535dc",
+    "references/phrasing.md": "3d47112a869488a70bf0bd53edeb56438d4cc9418a8f08be1675e62564dd65fa",
+    "references/sources.md": "d4d2b4b6a394abafa1770c1458c75d61117dc7a2d72a1f042f64c5e2e1c3183c",
+    "references/technical-evidence.md": "d4169901cd6cace4f2bc4e3cf9886f4fe9b057cb9c2481579a4ff33fd4644288"
+  },
+  "input_sha256_before": {
+    "assess/report.md": "7182931b33555ba825bbb8de9f939e2b8c8e26650a1d1ef6906e55ab95bd3da2",
+    "assess/source-note.md": "8afbd33b65f11daf8286523b235738f2304c7156acfa711dfea0a2054672846a",
+    "edit/report.md": "7182931b33555ba825bbb8de9f939e2b8c8e26650a1d1ef6906e55ab95bd3da2",
+    "edit/source-note.md": "8afbd33b65f11daf8286523b235738f2304c7156acfa711dfea0a2054672846a",
+    "reassess/revised.md": "e2d0badf17ceaf0ec15782034552e6dd13ae16b2a3c7063171a44174492c8929",
+    "reassess/prior-findings.md": "2ead8d00983a459cc091f2f88541e5b891a7ce90bd45cff4cbb274c785c6054f",
+    "reassess/source-note.md": "8afbd33b65f11daf8286523b235738f2304c7156acfa711dfea0a2054672846a",
+    "unavailable/unavailable-source.md": "a56f719e9a05ea3b98672c8db9ecc40bd9dd3fa6bb7a465476603cfeb3e53bdb"
+  },
+  "input_unchanged_checks": {
+    "assess/report.md": true,
+    "assess/source-note.md": true,
+    "edit/report.md": false,
+    "edit/source-note.md": true,
+    "reassess/revised.md": true,
+    "reassess/prior-findings.md": true,
+    "reassess/source-note.md": true,
+    "unavailable/unavailable-source.md": true
+  },
+  "protected_compatibility_section_unchanged": true,
+  "cases": [
+    {
+      "id": "assess-evidence",
+      "status": "pass",
+      "level": "behavioral"
+    },
+    {
+      "id": "edit-preserve-meaning",
+      "status": "pass",
+      "level": "behavioral"
+    },
+    {
+      "id": "reassess-clean",
+      "status": "pass",
+      "level": "behavioral"
+    },
+    {
+      "id": "verification-unavailable",
+      "status": "pass",
+      "level": "behavioral"
+    },
+    {
+      "id": "neighbor-code-implementation",
+      "status": "pass",
+      "level": "routing-only"
+    }
+  ],
+  "evidence": [
+    "routing.md",
+    "assess/assessment.md",
+    "edit/report.md",
+    "edit/delivery.md",
+    "reassess/reassessment.md",
+    "unavailable/assessment.md"
+  ],
+  "limits": [
+    "No external source audit",
+    "No comparison with an unskilled baseline",
+    "Routing was evaluated from metadata; host automatic discovery was not exercised"
+  ]
+}

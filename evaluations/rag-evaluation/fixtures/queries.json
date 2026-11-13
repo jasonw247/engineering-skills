@@ -1,0 +1,5 @@
+[
+  {"id":"hot","question":"K-42 pressure at 70 C under P-17 B?","entity":"K-42","revision":"B","temperature":70,"answerable":true,"expected_mpa":8,"sufficient_sets":[["exception"],["exception-copy"]]},
+  {"id":"ordinary","question":"K-42 pressure at 20 C under P-17 B?","entity":"K-42","revision":"B","temperature":20,"answerable":true,"expected_mpa":10,"sufficient_sets":[["general"]]},
+  {"id":"missing","question":"K-99 pressure at 20 C under P-17 B?","entity":"K-99","revision":"B","temperature":20,"answerable":false,"expected_mpa":null,"sufficient_sets":[]}
+]

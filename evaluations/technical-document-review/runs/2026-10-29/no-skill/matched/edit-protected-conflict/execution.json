@@ -1,0 +1,45 @@
+{
+  "id": "edit-protected-conflict",
+  "arm": "no-skill",
+  "repeat": "matched",
+  "started_at": "2026-10-29T16:14:13.241868+00:00",
+  "execution": "completed",
+  "exit_code": 0,
+  "elapsed_seconds": 25.752,
+  "model_requested": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "timeout_seconds": 300,
+  "code_mode_host_path": "/opt/homebrew/Caskroom/codex/0.165.0/bin/codex-code-mode-host",
+  "inherited_codex_environment_removed": true,
+  "infrastructure_errors": [],
+  "skill_sha256": {},
+  "workspace_sha256_before": {
+    "capacity-source.md": "cf5cae59f80f1f120ce3e202055b1857fcc64096f545ae1f1f39df6fa96e0511",
+    "protected-conflict.md": "29b36f315eddefb5539ab1f6007b44c3f2defbaf36372677078732ab6c38fa6e"
+  },
+  "workspace_sha256_after": {
+    "capacity-source.md": "cf5cae59f80f1f120ce3e202055b1857fcc64096f545ae1f1f39df6fa96e0511",
+    "protected-conflict.md": "3544127998e4ec9309d40e8fbe11a44a96be7abcfba6aa0c1faf9cb64ee6f8ec",
+    "unresolved-issues.md": "6b2fab0c37507b55b27e6b6b4a3bed5190d0b1defbcc3a468492e0a5b7cf0dcc"
+  },
+  "inputs_unchanged": {
+    "protected-conflict.md": false,
+    "capacity-source.md": true
+  },
+  "read_only_inputs_preserved": true,
+  "protected_section_unchanged": true,
+  "skill_unchanged": true,
+  "turn_completed": true,
+  "invalid_trace_lines": 0,
+  "usage": [
+    {
+      "input_tokens": 49366,
+      "cached_input_tokens": 42880,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 912,
+      "reasoning_output_tokens": 63
+    }
+  ],
+  "command_count": 5,
+  "grading": "pending; execution completion is not semantic acceptance"
+}

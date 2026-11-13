@@ -1,0 +1,12 @@
+{
+  "question":"Under P-17 revision B, what is K-42's maximum operating pressure at 70 C?",
+  "scope":{"user":"U","revision":"B","entity":"K-42"},
+  "lexical":["P17:B:s2","P17:B:s7"],
+  "dense":["P17:B:s7","P17:B:s2"],
+  "fused":["P17:B:s2","P17:B:s7"],
+  "reranked":[{"id":"P17:B:s2","score":0.94},{"id":"P17:B:s7","score":0.91}],
+  "packing_policy":"Take the first source only; no reference expansion or condition check",
+  "delivered":["P17:B:s2"],
+  "answer":"The maximum is 10 MPa [P17:B:s2].",
+  "answer_check":"Citation ID exists"
+}

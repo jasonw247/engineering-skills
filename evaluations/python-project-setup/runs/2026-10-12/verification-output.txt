@@ -1,0 +1,18 @@
+
+Processing <repo>/evaluations/python-project-setup/runs/2026-10-12/work/dist/range_tools-0.1.0-py3-none-any.whl
+Installing collected packages: range-tools
+Successfully installed range-tools-0.1.0
+WARNING: The directory '~/Library/Caches/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+
+Installed import outside checkout: PASS
+
+test_float_interval (test_clip.ClipTests) ... ok
+test_integer_interval (test_clip.ClipTests) ... ok
+test_inverted_interval_always_raises (test_clip.ClipTests) ... ok
+test_mixed_integer_and_float_inputs (test_clip.ClipTests) ... ok
+test_single_point_interval (test_clip.ClipTests) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK

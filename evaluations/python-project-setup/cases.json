@@ -1,0 +1,9 @@
+{
+  "skill": "python-project-setup",
+  "cases": [
+    {"id":"minimal-library","activate":true,"request":"Create an installable pure-Python library from requirements.md. Work offline and use available tools. Demonstrate an import from outside the checkout and run tests for its public behavior.","inputs":["fixtures/requirements.md"],"output":"Installable package, appropriate project configuration, focused tests, and validation report","completion":"Imports the installed package outside the source tree; tests normal values, bounds, and invalid bounds; adds no service framework or unrelated layers; accurately reports checks unavailable offline."},
+    {"id":"existing-toolchain","activate":true,"request":"Repair package discovery in this Poetry-managed library, preserving its supported interpreters and existing mypy configuration.","inputs":[],"output":"Narrow packaging correction with installation check","completion":"Does not migrate to uv, add Pyright, raise the Python minimum, or reorganize unrelated code."},
+    {"id":"accelerator-environments","activate":true,"request":"Plan project packaging for training and serving components with incompatible native-runtime dependencies.","inputs":[],"output":"Concrete packaging and environment plan with compatibility checks","completion":"Inspects requirements before choosing shared or separate environments; does not promise a single compatible lock without resolution evidence."},
+    {"id":"neighbor-small-edit","activate":false,"request":"Fix an off-by-one bug in a Python helper; project setup is already working.","inputs":[],"output":"Focused code fix","completion":"Does not trigger a project/toolchain modernization."}
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "repository": "example/sync-service",
+  "default_branch": "main",
+  "base_branch": "main",
+  "source_issue": 41,
+  "commit_convention": "conventional",
+  "diff_summary": "Adds a RetryBudget shared by all requests on a SyncClient (default 10 retries per minute, refilled continuously). SyncClient.send raises RetryBudgetExceeded, a SyncError subclass, when the budget is empty or attempts are exhausted. Adds tests for exhaustion and refill using a fake clock.",
+  "verification": [
+    {"command": "pytest tests/test_client.py", "result": "14 passed"}
+  ],
+  "output_schema": {"pr_title": "string", "pr_description": "string"}
+}

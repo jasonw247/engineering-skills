@@ -1,0 +1,73 @@
+{
+  "skill": "writing-for-agents",
+  "cases": [
+    {
+      "id": "agent-instructions",
+      "activate": true,
+      "request": "Review the receipt-recovery skill for selection and sufficient execution guidance. Do not edit it.",
+      "inputs": [
+        "fixtures/instructions.md"
+      ],
+      "output": "Prioritized assessment",
+      "completion": "Identifies the vague trigger, missing reference, unspecified actions, missing completion evidence, and missing recovery contract. Leaves the source unchanged and does not invent provider guarantees."
+    },
+    {
+      "id": "llm-cleanup",
+      "activate": true,
+      "request": "Remove LLM-isms from draft.md, including it's not X, it's Y, dense jargon, unclear sentences, and defensive caveats. Edit the file.",
+      "inputs": [
+        "fixtures/draft.md"
+      ],
+      "output": "Revised service note",
+      "completion": "Removes empty staging and abstraction; preserves 30 seconds, error exclusion, 70 ms, 20 synthetic requests, unmeasured production performance, timeout semantics, retry constraint, command, and link target. Adds no cache guarantees or production claims."
+    },
+    {
+      "id": "plain-drafting",
+      "activate": true,
+      "request": "Use a plain-language writing guide to draft a short note: requests time out after 30 seconds; a timeout does not cancel the remote write; check the write outcome before retrying.",
+      "inputs": [],
+      "output": "A concise note for service callers",
+      "completion": "States supplied facts clearly, keeps the consequential timeout distinction, and invents no lookup endpoint, provider guarantee, or result."
+    },
+    {
+      "id": "ambiguous-sentence",
+      "activate": true,
+      "request": "Clarify this sentence without guessing: The worker hands the batch to the coordinator after it records the receipt, which retries it if needed.",
+      "inputs": [],
+      "output": "Clarification or explicit ambiguity",
+      "completion": "Identifies unresolved ownership and retry referents rather than silently choosing a fluent but unsupported interpretation."
+    },
+    {
+      "id": "effective-prose",
+      "activate": true,
+      "request": "Remove LLM-isms if needed: A timeout stops waiting for a response. The remote write may still complete. Check its outcome before retrying.",
+      "inputs": [],
+      "output": "Unchanged or minimally revised prose",
+      "completion": "Accepts an effective passage, preserves necessary uncertainty, and does not manufacture edits or add personality."
+    },
+    {
+      "id": "neighbor-code",
+      "activate": false,
+      "request": "Implement an HTTP cache with a 30-second TTL and add behavior tests.",
+      "inputs": [],
+      "output": "Normal implementation",
+      "completion": "Does not select a writing workflow merely because the implementation involves a technical concept."
+    },
+    {
+      "id": "neighbor-factual-audit",
+      "activate": false,
+      "request": "Verify every factual claim and citation in this benchmark report against the original papers. Do not rewrite its prose.",
+      "inputs": [],
+      "output": "Evidence audit under the appropriate workflow",
+      "completion": "Does not substitute prose cleanup or skill instruction design for factual verification."
+    },
+    {
+      "id": "neighbor-agent-runtime",
+      "activate": false,
+      "request": "Debug why the agent runner retries completed jobs after a restart.",
+      "inputs": [],
+      "output": "Runtime diagnosis",
+      "completion": "Does not select the skill merely because the request mentions an agent."
+    }
+  ]
+}

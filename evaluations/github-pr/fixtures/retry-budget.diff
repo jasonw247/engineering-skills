@@ -1,0 +1,79 @@
+diff --git a/src/sync/client.py b/src/sync/client.py
+--- a/src/sync/client.py
++++ b/src/sync/client.py
+@@ -1,20 +1,38 @@
+ import time
+ 
+-from .errors import SyncError
++from .errors import RetryBudgetExceeded, SyncError
++
++
++class RetryBudget:
++    """Retries shared by every request on one client, refilled over time."""
++
++    def __init__(self, per_minute, clock=time.monotonic):
++        self.per_minute = per_minute
++        self.clock = clock
++        self.tokens = float(per_minute)
++        self.updated = clock()
++
++    def take(self):
++        now = self.clock()
++        self.tokens = min(self.per_minute, self.tokens + (now - self.updated) * self.per_minute / 60)
++        self.updated = now
++        if self.tokens < 1:
++            return False
++        self.tokens -= 1
++        return True
+ 
+ 
+ class SyncClient:
+-    def __init__(self, transport, max_attempts=5):
++    def __init__(self, transport, max_attempts=5, retry_budget=10):
+         self.transport = transport
+         self.max_attempts = max_attempts
++        self.budget = RetryBudget(retry_budget)
+ 
+     def send(self, request):
+         for attempt in range(self.max_attempts):
+             try:
+                 return self.transport.send(request)
+             except SyncError:
+-                time.sleep(2 ** attempt)
++                if attempt + 1 == self.max_attempts or not self.budget.take():
++                    raise RetryBudgetExceeded(request.id)
++                time.sleep(2 ** attempt)
+-        raise SyncError("exhausted attempts")
+diff --git a/src/sync/errors.py b/src/sync/errors.py
+--- a/src/sync/errors.py
++++ b/src/sync/errors.py
+@@ -1,2 +1,6 @@
+ class SyncError(Exception):
+     pass
++
++
++class RetryBudgetExceeded(SyncError):
++    """Raised when a client has no retries left in its budget."""
+diff --git a/tests/test_client.py b/tests/test_client.py
+--- a/tests/test_client.py
++++ b/tests/test_client.py
+@@ -30,3 +30,21 @@ def test_retries_then_succeeds(fake_transport):
+     assert client.send(req) == "ok"
++
++
++def test_budget_exhaustion_fails_fast(fake_transport, fake_clock):
++    fake_transport.fail_always()
++    client = SyncClient(fake_transport, retry_budget=2)
++    client.budget.clock = fake_clock
++    with pytest.raises(RetryBudgetExceeded):
++        client.send(req)
++    assert fake_transport.calls == 3
++
++
++def test_budget_refills(fake_clock):
++    budget = RetryBudget(per_minute=6, clock=fake_clock)
++    for _ in range(6):
++        assert budget.take()
++    assert not budget.take()
++    fake_clock.advance(10)
++    assert budget.take()

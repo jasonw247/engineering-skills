@@ -1,0 +1,37 @@
+{
+  "corpus_documents": 18,
+  "total_questions": 200,
+  "split_method": "uniform_random_by_question_id_50_50",
+  "shared_documents_across_dev_and_test": 18,
+  "abstention_threshold_selection": {
+    "swept_range": [0.40, 0.80],
+    "selected": 0.62,
+    "tuned_on_split": "test_100"
+  },
+  "judge": {
+    "model": "judge-llm-2026-08",
+    "presentation_order": "candidate_always_slot_a",
+    "position_swap_checked": false,
+    "human_calibration_examples": 0
+  },
+  "variants": {
+    "bm25-v1": {
+      "retrieved_k": 15,
+      "delivered_to_reader_k": 4,
+      "retrieved_top15_sufficiency": "81 / 100",
+      "delivered_top4_sufficiency": "76 / 100",
+      "judge_preferred_or_correct": "74 / 100",
+      "reader_cost_usd_per_query": 0.0018,
+      "daily_index_refresh_cost_usd": 4.50
+    },
+    "hybrid-v2": {
+      "retrieved_k": 15,
+      "delivered_to_reader_k": 4,
+      "retrieved_top15_sufficiency": "94 / 100",
+      "delivered_top4_sufficiency": "71 / 100",
+      "judge_preferred_or_correct": "83 / 100",
+      "reader_cost_usd_per_query": 0.0019,
+      "daily_index_refresh_cost_usd": 180.00
+    }
+  }
+}

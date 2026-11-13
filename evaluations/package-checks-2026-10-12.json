@@ -1,0 +1,91 @@
+[
+  {
+    "skill": "technical-document-review",
+    "frontmatter": "Skill is valid!",
+    "files": 4,
+    "relative_links": 3,
+    "acceptance_cases": 5,
+    "sha256": {
+      "SKILL.md": "b54420dd1a2d636238dd19dcca485b6cfac8a6aff6d12d5243662a95dc4535dc",
+      "references/phrasing.md": "3d47112a869488a70bf0bd53edeb56438d4cc9418a8f08be1675e62564dd65fa",
+      "references/sources.md": "d4d2b4b6a394abafa1770c1458c75d61117dc7a2d72a1f042f64c5e2e1c3183c",
+      "references/technical-evidence.md": "d4169901cd6cace4f2bc4e3cf9886f4fe9b057cb9c2481579a4ff33fd4644288"
+    }
+  },
+  {
+    "skill": "python-project-setup",
+    "frontmatter": "Skill is valid!",
+    "files": 3,
+    "relative_links": 2,
+    "acceptance_cases": 4,
+    "sha256": {
+      "SKILL.md": "d9087a82eb0f3f90a4e2bd7079d2be965c058fd86dd0e99fea3fb009e19be34d",
+      "references/sources.md": "282f7f1628031cd2496391b87f05728c08fb49a6a6dc01f323bece9766e52f63",
+      "references/workload-choices.md": "d89088d68e37dd44335ba844a9645c6c5a43548e21b266e3f8228279335082f9"
+    }
+  },
+  {
+    "skill": "python-service-engineering",
+    "frontmatter": "Skill is valid!",
+    "files": 3,
+    "relative_links": 2,
+    "acceptance_cases": 4,
+    "sha256": {
+      "SKILL.md": "55392936c44ae3db2359e23b92ad06730d484fc65ce98a2946a9547ea3168a38",
+      "references/lifecycle-and-concurrency.md": "9d7e9750b7c06f951a4ae7cf446d099b848bf07e4ed93ecad6d9e80d304b0c85",
+      "references/sources.md": "8871d25b4786a67f37ab1b537a93b81b102a28cc1bcdaaef060f4e129403a00b"
+    }
+  },
+  {
+    "skill": "code-review",
+    "frontmatter": "Skill is valid!",
+    "files": 3,
+    "relative_links": 2,
+    "acceptance_cases": 4,
+    "sha256": {
+      "SKILL.md": "11d28fe9353e3a1dbb5b943a6d3e6d451d8e4334a6cdd5003f374a2fd92d1c9c",
+      "references/finding-criteria.md": "a5d0f6b8d8d57f77203cdf5ba509e0004012118d90da15786184007e2feaac89",
+      "references/sources.md": "15a5529bc4d3cfc5ce475c9baea77fa64ed010e034eb8b315affab4d8ad56ea5"
+    }
+  },
+  {
+    "skill": "rag-evaluation",
+    "frontmatter": "Skill is valid!",
+    "files": 4,
+    "relative_links": 3,
+    "acceptance_cases": 4,
+    "sha256": {
+      "SKILL.md": "b097deab11afbab684c1d0d03adefa64311fe06c88a607105fc05604b167edfc",
+      "references/comparison-protocols.md": "659e8ec6d13d8582bafd0db6bc8c06a51dcfde9352f1b118dcd7e6085dcc9a70",
+      "references/metrics-and-reporting.md": "ec7c289148303a382cc8dee43e2310bc6ae2dd126f67eae4d6282b1ab22a3924",
+      "references/sources.md": "2c4e51ccc055a1192a5fd721b0c74701e8502f36a6ac755a08641d07e86f579f"
+    }
+  },
+  {
+    "skill": "rag-engineering",
+    "frontmatter": "Skill is valid!",
+    "files": 5,
+    "relative_links": 4,
+    "acceptance_cases": 4,
+    "sha256": {
+      "SKILL.md": "23207399e1c063439af02c91bc562bcf15d36a35c59c0849dde79933db92aa46",
+      "references/adaptation-and-lifecycle.md": "f30a4ec0c156811272277b53309eb86b9fe7d503c843008f30102a3b30421b66",
+      "references/extended-evidence.md": "b612b7f800dce367c3a21f5a647753c74b3b43ef03f125546172c67b669e7a42",
+      "references/sources.md": "da288b6a40dbb18a6ac673f9ecec4f34f447a2e5a492a97dff46b4dd72d524a8",
+      "references/validation-contract.md": "fb15cb19c284c28a72f6de3cec8ee7b9e256a5e21b5c2eedc273c43c304aad54"
+    }
+  },
+  {
+    "skill": "agent-workflow-engineering",
+    "frontmatter": "Skill is valid!",
+    "files": 4,
+    "relative_links": 3,
+    "acceptance_cases": 4,
+    "sha256": {
+      "SKILL.md": "875ca534b2fddad8e9e52953e93a1d3c2a71a69354b615c85dd4e8a776af2e45",
+      "references/runtime-selection.md": "6072f63588a8787e30ec78933f71e30c5fecd9031b2a8031fd1bb5f1a9c4517e",
+      "references/side-effects-and-recovery.md": "54cdc7f67feb84f60825d545d7b7f9f3704cfd4de9bb8715e0751f7ea536af14",
+      "references/sources.md": "6b85039a265eda7fed0872ccfbbc485b64087f51d6660f3eb666c7102e382b8a"
+    }
+  }
+]

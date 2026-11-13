@@ -1,0 +1,1 @@
+Created [assessment.md](assessment.md) with four prioritized findings, evidence references, and proposed corrections. The review used only `source-note.md`; both input files remain unchanged.

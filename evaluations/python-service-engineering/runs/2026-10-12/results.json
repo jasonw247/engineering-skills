@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-12",
+  "skill": "python-service-engineering",
+  "scope": "Isolated synthetic task completed by an independent evaluator, with author review",
+  "skill_sha256": {
+    "SKILL.md": "55392936c44ae3db2359e23b92ad06730d484fc65ce98a2946a9547ea3168a38",
+    "references/lifecycle-and-concurrency.md": "9d7e9750b7c06f951a4ae7cf446d099b848bf07e4ed93ecad6d9e80d304b0c85",
+    "references/sources.md": "8871d25b4786a67f37ab1b537a93b81b102a28cc1bcdaaef060f4e129403a00b"
+  },
+  "input_sha256_before": {
+    "enrich.py": "04e9b73e8fc7797003a00c754c293f0ceeb77831bbf5c414fb7a0c0b1047965e"
+  },
+  "input_sha256_after": {
+    "enrich.py": "99179e3c40a42053d566e233f08a19751cbcb8b87eace08af242f92e510d56b7"
+  },
+  "input_unchanged_checks": {
+    "enrich.py": false
+  },
+  "authorized_input_changes": [
+    "enrich.py"
+  ],
+  "cases": [
+    {
+      "id": "bounded-stream",
+      "status": "pass",
+      "level": "behavioral"
+    },
+    {
+      "id": "client-lifespan",
+      "status": "not-run",
+      "level": "scenario-only"
+    },
+    {
+      "id": "boundary-models",
+      "status": "not-run",
+      "level": "scenario-only"
+    },
+    {
+      "id": "neighbor-pure-function",
+      "status": "pass",
+      "level": "routing-only"
+    }
+  ],
+  "evidence": [
+    "work/enrich.py",
+    "work/test_enrich.py",
+    "work/delivery.md",
+    "routing.md"
+  ],
+  "limits": [
+    "No unskilled baseline comparison",
+    "Metadata routing only; no host auto-discovery test",
+    "Unexecuted scenario cases remain not-run"
+  ],
+  "author_verification": {
+    "command": "python3.12 -B -m unittest -v",
+    "exit_code": 0,
+    "tests": 9,
+    "output": "verification-output.txt",
+    "observed": {
+      "items": 20000,
+      "peak_active_fetches": 4,
+      "peak_tasks_including_caller": 6
+    }
+  }
+}

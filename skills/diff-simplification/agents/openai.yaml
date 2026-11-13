@@ -1,0 +1,3 @@
+interface:
+  display_name: "Diff simplification"
+  short_description: "Simplify task-owned changes while preserving behavior"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Bootstrap Repository"
+  short_description: "Select and install curated repository skills"
+  default_prompt: "Use $bootstrap-repo to select and install skills for this repository."

@@ -1,0 +1,72 @@
+Decide whether the following skill should be selected for each request, using only its name and description. Do not perform the tasks, read files, or use tools. Return a JSON array with id, select (boolean), and a short reason.
+
+name: technical-document-review
+description: Assess, revise, or reassess technical documents for correctness, evidence, organization, and comprehensibility. Use for substantive document review or editing; not for implementing code described by a document, isolated typo fixes, or format conversion alone.
+
+Requests:
+[
+  {
+    "id": "assess-evidence",
+    "request": "Assess report.md for technical accuracy and clarity for an engineering reader using only source-note.md. Report findings in assessment.md. Do not edit either input. This is an editorial and supplied-evidence review, not an external source audit."
+  },
+  {
+    "id": "edit-preserve-meaning",
+    "request": "Edit report.md using source-note.md to correct technical claims and improve clarity. Preserve the Compatibility note section verbatim. Use only these materials, and report unresolved issues separately from the revised document."
+  },
+  {
+    "id": "reassess-clean",
+    "request": "Reassess revised.md against prior-findings.md using source-note.md. Report remaining material issues in reassessment.md; do not edit the files or introduce optional prose preferences as new requirements."
+  },
+  {
+    "id": "verification-unavailable",
+    "request": "Check the vendor's claimed current API retirement date in unavailable-source.md. No primary source or network access is available. Assess only; do not edit."
+  },
+  {
+    "id": "source-reuse-boundaries",
+    "request": "Assess source-reuse.md as an extraction plan using only the supplied note. Report in source-assessment.md. Do not edit the note, access the network, or treat this as a current-product audit."
+  },
+  {
+    "id": "example-resource-semantics",
+    "request": "Assess the concurrency claim in example-semantics.md. You may run its self-contained code in a temporary directory. Write example-assessment.md; leave the input and implementation unchanged and distinguish executed fixture observations from general deployment claims."
+  },
+  {
+    "id": "neighbor-code-implementation",
+    "request": "Implement the retry function specified in this design document; leave the prose alone."
+  },
+  {
+    "id": "neighbor-isolated-typo",
+    "request": "Fix only the spelling of 'teh' in this sentence; do not review its technical claims."
+  },
+  {
+    "id": "edit-contract-semantics",
+    "request": "Edit contract-edit.md for clarity and concision for integration engineers. Preserve the contract and command meanings. Use only the supplied document; report unresolved issues separately from the edited document."
+  },
+  {
+    "id": "edit-protected-conflict",
+    "request": "Edit protected-conflict.md for accuracy and clarity using capacity-source.md. Preserve the Approved statement section verbatim. Report unresolved issues separately, and complete the other edits that the supplied evidence supports."
+  },
+  {
+    "id": "reassess-mixed",
+    "request": "Reassess mixed-revision.md against mixed-findings.md using mixed-source.md. Write reassessment.md without editing inputs. Identify resolved and remaining material issues and any demonstrated regressions within this document's technical scope."
+  },
+  {
+    "id": "assess-clean",
+    "request": "Assess clean-note.md for material technical accuracy, evidence, and clarity issues for service engineers. Use only its supplied record. Write assessment.md; do not edit the note."
+  },
+  {
+    "id": "citation-support",
+    "request": "Assess citation-note.md against transport-record.md for technical correctness and source support. Write assessment.md, leaving both inputs unchanged. Use only those materials."
+  },
+  {
+    "id": "version-sensitive",
+    "request": "Assess version-note.md using only vendor-records.md. This is an archival SDK 2.4 record, not a request to migrate the code. Write assessment.md without editing inputs or accessing the network; distinguish version-specific correctness from current verification."
+  },
+  {
+    "id": "neighbor-format-conversion",
+    "request": "Convert this Markdown document to HTML, preserving its wording. Do not review or revise its claims."
+  },
+  {
+    "id": "neighbor-wording-only",
+    "request": "Polish only the wording of this short team update. Keep the facts as supplied; do not assess technical accuracy or evidence."
+  }
+]

@@ -1,0 +1,18 @@
+feat(sync): limit retries with a per-client retry budget
+
+Each request could retry up to max_attempts times on its own, so a
+failing backend drew retries from every in-flight request at once and
+the client kept adding load while the backend was down.
+
+SyncClient now shares a token-bucket RetryBudget across all of its
+requests. The budget holds retry_budget retries (default 10) and refills
+at that rate per minute. When a retry is needed and the budget is empty,
+send() fails at once instead of sleeping and trying again.
+
+Both budget exhaustion and running out of attempts now raise
+RetryBudgetExceeded with the request id, in place of the generic
+SyncError("exhausted attempts"). It subclasses SyncError, so existing
+handlers still catch it. The client no longer sleeps after the final
+failed attempt.
+
+Signed-off-by: Dana Lee <dana@example.com>

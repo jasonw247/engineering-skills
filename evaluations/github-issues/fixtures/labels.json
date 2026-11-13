@@ -1,0 +1,10 @@
+[
+  {"name": "type:bug", "description": "Something is broken"},
+  {"name": "type:feature", "description": "New capability"},
+  {"name": "type:chore", "description": "Maintenance"},
+  {"name": "area:api", "description": ""},
+  {"name": "area:web", "description": ""},
+  {"name": "area:jobs", "description": ""},
+  {"name": "area:db", "description": ""},
+  {"name": "good first issue", "description": ""}
+]

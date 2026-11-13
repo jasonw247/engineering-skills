@@ -1,0 +1,37 @@
+{
+  "skill": "tui-best-practices",
+  "cases": [
+    {
+      "id": "audit-ratatui-traps",
+      "activate": true,
+      "request": "Review log_viewer_sketch.rs for terminal lifecycle, input handling, rendering, Unicode width, and non-TTY bugs. Read-only assessment.",
+      "inputs": ["fixtures/log_viewer_sketch.rs"],
+      "output": "Concrete TUI defect report with consequences and minimal fixes",
+      "completion": "Identifies missing panic/error teardown for raw mode and EnterAlternateScreen (leaving the user's shell corrupted on error or panic), unfiltered KeyEventKind causing double actions on Release/Repeat events, println! corrupting the alternate screen, panicking/misaligned UTF-8 byte slicing (&line[..width]) instead of Unicode display-cell width, and exiting on non-TTY stdout instead of clean piped/CLI behavior; leaves log_viewer_sketch.rs unchanged."
+    },
+    {
+      "id": "dual-human-and-headless-cli",
+      "activate": true,
+      "request": "Design a terminal job-queue monitor that works interactively in an 80x24 terminal and can also be driven by CI scripts and coding agents.",
+      "inputs": [],
+      "output": "Dual-mode TUI and headless CLI design",
+      "completion": "Pairs the interactive TUI (with narrow-viewport degradation, visible keybinding hints, and non-blocking background refresh) with deterministic non-interactive subcommands/flags and structured output sharing the same core logic, honoring per-stream isatty, NO_COLOR, and TERM=dumb."
+    },
+    {
+      "id": "neighbor-plain-cli-flag",
+      "activate": false,
+      "request": "Add a --dry-run flag to our batch image-resizer script.",
+      "inputs": [],
+      "output": "Ordinary CLI flag change",
+      "completion": "Adds the flag without introducing TUI layout or raw-mode machinery."
+    },
+    {
+      "id": "neighbor-web-ui",
+      "activate": false,
+      "request": "Fix keyboard arrow navigation in our React web dropdown component.",
+      "inputs": [],
+      "output": "Web component fix",
+      "completion": "Handles as a browser DOM task rather than activating terminal UI guidance."
+    }
+  ]
+}

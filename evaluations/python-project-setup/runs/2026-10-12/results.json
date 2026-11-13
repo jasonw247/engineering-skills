@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-12",
+  "skill": "python-project-setup",
+  "scope": "Isolated synthetic task completed by an independent evaluator, with author review",
+  "skill_sha256": {
+    "SKILL.md": "d9087a82eb0f3f90a4e2bd7079d2be965c058fd86dd0e99fea3fb009e19be34d",
+    "references/sources.md": "282f7f1628031cd2496391b87f05728c08fb49a6a6dc01f323bece9766e52f63",
+    "references/workload-choices.md": "d89088d68e37dd44335ba844a9645c6c5a43548e21b266e3f8228279335082f9"
+  },
+  "input_sha256_before": {
+    "requirements.md": "5d7e37b5545fca15a927205c03a10e9cce7a22a18d4e03a88f913353797483a1"
+  },
+  "input_sha256_after": {
+    "requirements.md": "5d7e37b5545fca15a927205c03a10e9cce7a22a18d4e03a88f913353797483a1"
+  },
+  "input_unchanged_checks": {
+    "requirements.md": true
+  },
+  "authorized_input_changes": [],
+  "cases": [
+    {
+      "id": "minimal-library",
+      "status": "pass",
+      "level": "behavioral"
+    },
+    {
+      "id": "existing-toolchain",
+      "status": "not-run",
+      "level": "scenario-only"
+    },
+    {
+      "id": "accelerator-environments",
+      "status": "not-run",
+      "level": "scenario-only"
+    },
+    {
+      "id": "neighbor-small-edit",
+      "status": "pass",
+      "level": "routing-only"
+    }
+  ],
+  "evidence": [
+    "work/delivery.md",
+    "work/requirements.md",
+    "work/range-tools/pyproject.toml",
+    "work/range-tools/setup.cfg",
+    "work/range-tools/README.md",
+    "work/range-tools/src/range_tools/__init__.py",
+    "work/range-tools/src/range_tools/py.typed",
+    "work/range-tools/tests/test_clip.py",
+    "work/dist/range_tools-0.1.0-py3-none-any.whl",
+    "routing.md"
+  ],
+  "limits": [
+    "No unskilled baseline comparison",
+    "Metadata routing only; no host auto-discovery test",
+    "Unexecuted scenario cases remain not-run",
+    "Ruff and mypy unavailable offline; configured but not run",
+    "Only Python 3.9.6 runtime verified"
+  ],
+  "author_verification": {
+    "wheel_sha256": "abb994fd2183fcacdf757185ca839337ecb637f5066fc3bd895b6b3647eaa94b",
+    "isolated_install": true,
+    "import_outside_checkout": true,
+    "tests": 5,
+    "exit_code": 0,
+    "output": "verification-output.txt",
+    "note": "Fresh venv without inherited system packages; installation from retained wheel with no index or dependency fetch."
+  }
+}

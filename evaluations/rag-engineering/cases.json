@@ -1,0 +1,9 @@
+{
+  "skill":"rag-engineering",
+  "cases":[
+    {"id":"trace-missing-condition","activate":true,"request":"Diagnose the wrong answer in trace.json using sources.md. Propose the narrowest repair and how to validate it. This is a supplied-trace diagnosis, not a request to build a new retrieval platform.","inputs":["fixtures/trace.json","fixtures/sources.md"],"output":"Located failure, targeted repair, and observable regression checks","completion":"Identifies packing/condition loss after successful candidate retrieval, preserves revision/access scope, accepts the self-contained exception alone, and does not recommend a new embedding model or graph as the first fix."},
+    {"id":"build-baseline","activate":true,"request":"Build a baseline for searching versioned technical procedures with exact identifiers and paraphrases.","inputs":[],"output":"Small working pipeline and representative checks, or a concrete plan if implementation inputs are absent","completion":"Preserves source/version/location/access metadata, establishes a lexical comparator, adds branches only when justified, and distinguishes actual implementation from planning."},
+    {"id":"ann-diagnosis","activate":true,"request":"Approximate search misses support; diagnose whether our embedding model is inadequate.","inputs":[],"output":"Matched exact-versus-approximate diagnostic","completion":"Uses the same vectors, similarity, eligible corpus, and depth; separates neighbor recovery from evidence relevance rather than assuming representation failure."},
+    {"id":"neighbor-answer","activate":false,"request":"Answer this question from the three attached passages.","inputs":[],"output":"Ordinary evidence-grounded answer","completion":"Does not launch a RAG architecture or pipeline assessment."}
+  ]
+}

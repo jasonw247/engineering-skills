@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-12",
+  "skill": "code-review",
+  "scope": "Isolated synthetic task completed by an independent evaluator, with author review",
+  "skill_sha256": {
+    "SKILL.md": "11d28fe9353e3a1dbb5b943a6d3e6d451d8e4334a6cdd5003f374a2fd92d1c9c",
+    "references/finding-criteria.md": "a5d0f6b8d8d57f77203cdf5ba509e0004012118d90da15786184007e2feaac89",
+    "references/sources.md": "15a5529bc4d3cfc5ce475c9baea77fa64ed010e034eb8b315affab4d8ad56ea5"
+  },
+  "input_sha256_before": {
+    "requirements.md": "e1280ce8d5c9e8f325ca1d0c935e984e7f6ba14e031b0c41788bf03a89b760fb",
+    "original.py": "56a58cb059aa44656ea8b15fdb108fd2dbe4b931ce8999a63a1160c1097d0ffc",
+    "proposed.py": "5659cc7cdafcba37cc7c6d3369efb085148155a52792d5a2bcb86f57a4ada6c3"
+  },
+  "input_sha256_after": {
+    "requirements.md": "e1280ce8d5c9e8f325ca1d0c935e984e7f6ba14e031b0c41788bf03a89b760fb",
+    "original.py": "56a58cb059aa44656ea8b15fdb108fd2dbe4b931ce8999a63a1160c1097d0ffc",
+    "proposed.py": "5659cc7cdafcba37cc7c6d3369efb085148155a52792d5a2bcb86f57a4ada6c3"
+  },
+  "input_unchanged_checks": {
+    "requirements.md": true,
+    "original.py": true,
+    "proposed.py": true
+  },
+  "authorized_input_changes": [],
+  "cases": [
+    {
+      "id": "compatibility-and-cost",
+      "status": "pass",
+      "level": "behavioral"
+    },
+    {
+      "id": "clean-small-change",
+      "status": "not-run",
+      "level": "scenario-only"
+    },
+    {
+      "id": "fixes-requested",
+      "status": "not-run",
+      "level": "scenario-only"
+    },
+    {
+      "id": "neighbor-feature",
+      "status": "pass",
+      "level": "routing-only"
+    }
+  ],
+  "evidence": [
+    "work/requirements.md",
+    "work/original.py",
+    "work/proposed.py",
+    "work/reproduce.py",
+    "work/review.md",
+    "routing.md"
+  ],
+  "limits": [
+    "No unskilled baseline comparison",
+    "Metadata routing only; no host auto-discovery test",
+    "Unexecuted scenario cases remain not-run"
+  ],
+  "author_verification": {
+    "command": "python3 -B reproduce.py",
+    "exit_code": 0,
+    "output": "verification-output.txt",
+    "observed": "Timestamp data loss reproduced; peak temporary allocations 3,200,268 versus 41,703,060 bytes on Python 3.9.6, not RSS/throughput"
+  }
+}

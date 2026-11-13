@@ -1,0 +1,16 @@
+{
+  "cli_version": "codex-cli 0.165.0",
+  "cli_path": "/opt/homebrew/Caskroom/codex/0.165.0/bin/codex",
+  "cli_sha256": "a45099154d7fb4a5ed8a56f40966a95deb938e508bab23e6985035c709e9a85a",
+  "code_mode_host_path": "/opt/homebrew/Caskroom/codex/0.165.0/bin/codex-code-mode-host",
+  "code_mode_host_sha256": "e723d01c65aba4b81451d486d57318232b2738889de67c35051734be917d96ba",
+  "model_requested": "gpt-6.1-sol",
+  "model_reasoning_effort": "high",
+  "model_provenance": "Matches user config at inspection; backend build/version and sampling seed are not exposed in retained CLI events.",
+  "python_version": "3.9.6 (default, Apr 30 2025, 02:07:17) \n[Clang 17.0.0 (clang-1700.0.13.5)]",
+  "platform": "macOS-15.6-arm64-arm-64bit",
+  "skill_authoring_guidance": "~/.codex/skills/.system/skill-creator/SKILL.md",
+  "global_configuration_changes": false,
+  "network_policy": "Actor prompt forbids external access; web_search disabled; model-service access required for trials.",
+  "temporary_authentication": "Private per-session copy, deleted on normal cleanup; interrupted copies explicitly removed."
+}

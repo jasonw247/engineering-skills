@@ -1,0 +1,108 @@
+{
+  "completed_at": "2026-10-29T16:24:34.180629+00:00",
+  "status": "pass",
+  "checks": [
+    {
+      "id": "skill-frontmatter",
+      "command": [
+        "uv",
+        "run",
+        "--no-project",
+        "--with",
+        "pyyaml",
+        "python",
+        "-B",
+        "~/.codex/skills/.system/skill-creator/scripts/quick_validate.py",
+        "skills/technical-document-review"
+      ],
+      "exit_code": 0,
+      "status": "pass",
+      "stdout": "Skill is valid!\n",
+      "stderr": ""
+    },
+    {
+      "id": "installer-tests",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "evaluations/bootstrap-repo",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "status": "pass",
+      "stdout": "",
+      "stderr": ".........................\n----------------------------------------------------------------------\nRan 25 tests in 1.861s\n\nOK\n"
+    },
+    {
+      "id": "artifact-and-routing-checks",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "evaluations/technical-document-review/check_results.py",
+        "evaluations/technical-document-review/runs/2026-10-29"
+      ],
+      "exit_code": 0,
+      "status": "pass",
+      "stdout": "{\n  \"completed_behavioral_artifact_checks\": 37,\n  \"routing\": [\n    {\n      \"arm\": \"original\",\n      \"repeat\": \"initial\",\n      \"correct\": 16,\n      \"total\": 16\n    },\n    {\n      \"arm\": \"candidate\",\n      \"repeat\": \"matched\",\n      \"correct\": 16,\n      \"total\": 16\n    }\n  ],\n  \"matched_semantic_grades_present\": 36,\n  \"snapshot_integrity\": \"pass\",\n  \"read_only_inputs\": \"pass\",\n  \"protected_sections\": \"pass\",\n  \"limit\": \"Artifact checks validate integrity, not the truth of author semantic judgments.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "integrity-links-and-scope",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "-c",
+        "\nfrom pathlib import Path\nimport ast,hashlib,json,re,subprocess\nroot=Path.cwd();base=root/'evaluations/technical-document-review';run=base/'runs/2026-10-29'\nb=json.loads((run/'baseline.json').read_text())\ncases=json.loads((base/'cases.json').read_text())['cases']\nassert len(cases)==16 and len({c['id'] for c in cases})==16\nassert all((base/p).is_file() for c in cases for p in c['inputs'])\nassert json.loads((base/'cases.json').read_text())==json.loads((run/'expected.json').read_text())\nfor name in ['original-skill','candidate-skill']:\n actual={str(p.relative_to(run/name)):hashlib.sha256(p.read_bytes()).hexdigest() for p in (run/name).rglob('*') if p.is_file()}\n assert actual==b['skill_sha256']\npackage=root/'skills/technical-document-review'\nassert {str(p.relative_to(package)):hashlib.sha256(p.read_bytes()).hexdigest() for p in package.rglob('*') if p.is_file()}==b['skill_sha256']\nfor p in run.rglob('*.json'):json.loads(p.read_text())\ndocs=list(package.rglob('*.md'))+[run/n for n in ['report.md','research.md','assessment.md','protocol.md']]+[root/'evaluations/validation.md']\nlinks=0\nfor p in docs:\n for link in re.findall(r'\\[[^\\]]*\\]\\(([^)]+)\\)',p.read_text()):\n  if '://' in link or link.startswith('#'):continue\n  assert (p.parent/link.split('#')[0]).exists(),(p,link)\n  links+=1\nfor name in ['run_trials.py','check_results.py']:ast.parse((base/name).read_text())\nassert not list(base.rglob('auth.json'))\nassert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()==b['git_head']\nchanges=subprocess.check_output(['git','status','--porcelain','--untracked-files=all'],text=True).splitlines()\nassert all(x[3:].startswith(('evaluations/technical-document-review/','evaluations/validation.md')) for x in changes)\nfixture=json.loads((run/'independent-fixture-checks.json').read_text())\nassert fixture['observed']=={'peak_active':2,'created_tasks':12,'results':12} and fixture['exit_code']==0\nprint(f'16 unique cases, declared fixtures, canonical keys, all retained JSON, {links} local documentation links, script syntax, package hashes, fixture execution record, no retained auth files, unchanged HEAD, and change scope: PASS')\n"
+      ],
+      "exit_code": 0,
+      "status": "pass",
+      "stdout": "16 unique cases, declared fixtures, canonical keys, all retained JSON, 32 local documentation links, script syntax, package hashes, fixture execution record, no retained auth files, unchanged HEAD, and change scope: PASS\n",
+      "stderr": ""
+    },
+    {
+      "id": "diff-whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "status": "pass",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "id": "final-artifact-provenance",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "evaluations/technical-document-review/check_results.py",
+        "evaluations/technical-document-review/runs/2026-10-29"
+      ],
+      "exit_code": 0,
+      "status": "pass",
+      "stdout": "{\n  \"completed_behavioral_artifact_checks\": 37,\n  \"routing\": [\n    {\n      \"arm\": \"original\",\n      \"repeat\": \"initial\",\n      \"correct\": 16,\n      \"total\": 16\n    },\n    {\n      \"arm\": \"candidate\",\n      \"repeat\": \"matched\",\n      \"correct\": 16,\n      \"total\": 16\n    }\n  ],\n  \"matched_semantic_grades_present\": 36,\n  \"snapshot_integrity\": \"pass\",\n  \"read_only_inputs\": \"pass\",\n  \"protected_sections\": \"pass\",\n  \"limit\": \"Artifact checks validate integrity, not the truth of author semantic judgments.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "id": "final-diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "status": "pass",
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "independent_fixture_execution": "independent-fixture-checks.json",
+  "behavioral_grading": "grades.json; 36 actual matched actor outputs, author semantic review",
+  "scope_note": "Frontmatter and packaging checks are not behavioral evidence."
+}

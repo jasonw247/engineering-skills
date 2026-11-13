@@ -1,0 +1,57 @@
+{
+ "date": "2026-11-10",
+ "skill": "github-pr",
+ "scope": "Isolated forward trials by fresh evaluators given a copy of the package (and change-sequencing for github-issues) and fixtures, without expected outcomes; one metadata-only routing round across three suites; author review against completion criteria.",
+ "skill_sha256": {
+  "SKILL.md": "e6eaedd6d96a21ea008fa6ef8131a44a2055fd41476be1630fd1439fbee203c5",
+  "references/commit-message.md": "8d49bf1b0c8489501fd81589753ec05852554eaed47e43d9e13e8b7f27f29911",
+  "references/pr-description.md": "5a7c9c1e61cccb6eccced9c16c9235527fda3faad3ae476ba458b7897d09462d",
+  "references/sources.md": "c6268a2fc61dd86225781d00319de5554fcd091237e146e6ef3b9815743e9068",
+  "references/writing-to-git.md": "f6e2313e106d580cf6fa45f9b789d255814439945ce7da4a760c654fafd6c1e9"
+ },
+ "trials": [
+  {
+   "case": "rewrite-file-list",
+   "status": "pass",
+   "inputs_sha256": {
+    "file-list-body.md": "835628e6246c342e7d67651c880338f4377a5d696ce778dd7fa7ac358aae8624",
+    "retry-budget.diff": "f1cc15556058ad6503f6d6cb8a29d801cb522e1fbdf94494ef1c165a8c971cd6",
+    "issue-41.md": "353124fdd58aff2102dce148c2872277a25be5d8bba19c403c27e0134b92032a"
+   },
+   "output": "outputs/rewrite-file-list-out.md",
+   "note": "Behavior-grouped Changes, outage-grounded Summary, Impact flags the changed error after max_attempts, Verification states no run record instead of carrying over \"tests: passed\", Closes #41, attribution lines removed. Read SKILL.md and pr-description.md only."
+  },
+  {
+   "case": "dco-signoff",
+   "status": "pass",
+   "inputs_sha256": {
+    "dco-repo/CONTRIBUTING.md": "0b64ff8ecd3431f2848f6a1a5002ab447e7ba1aa70ab4db48aade1caa715fbff",
+    "retry-budget.diff": "f1cc15556058ad6503f6d6cb8a29d801cb522e1fbdf94494ef1c165a8c971cd6"
+   },
+   "output": "outputs/dco-signoff-out.txt",
+   "note": "Conventional subject, explanatory body wrapped at 72, Signed-off-by for the human committer, no Co-Authored-By. Read SKILL.md only."
+  },
+  {
+   "case": "toolless-stage",
+   "status": "pass",
+   "inputs_sha256": {
+    "stage-input.json": "28cc46ad9eb6756464f833ebd8619b416e1823883004244305d7026ca8530b47"
+   },
+   "output": "outputs/toolless-stage-out.json",
+   "note": "Returned only pr_title and pr_description from SKILL.md alone; Closes #41 because base equals default; verification lists only the provided pytest result and states what was not run; no commands or attribution."
+  }
+ ],
+ "routing": "routing.md",
+ "not_run": [
+  "commit-staged-diff",
+  "pr-default-branch-closes",
+  "stacked-pr-refs",
+  "repo-rules-win",
+  "history-convention"
+ ],
+ "post_trial_changes": [
+  "After review: SKILL.md linked-issue rule keeps partially resolved issues open and closes stacked-change issues only once the change reaches the default branch or meets the release convention; squash-merge subject qualified by repository settings (GitHub's default uses a single commit's own message); references/writing-to-git.md uses the operation's --continue for in-progress merges, cherry-picks, and reverts (a reproduced two-commit cherry-pick was left half applied by git commit --no-edit) and updates only an OPEN PR; references/commit-message.md squash section qualified. The trials above ran on the earlier hashes in skill_sha256 and do not carry over to these revisions.",
+  "Second review: references/writing-to-git.md runs each --continue with GIT_EDITOR=true, because --continue opens an editor that stalls or fails without a terminal. GIT_EDITOR=true was chosen over -c core.editor=true because a GIT_EDITOR already set in the environment overrides core.editor (reproduced: the merge stayed unfinished)."
+ ],
+ "limits": "One evaluator per case, same model family as the author; no comparison with an agent without the skill; no live GitHub writes. Results do not carry over to revised file hashes."
+}

@@ -1,0 +1,22 @@
+[advisories]
+db-urls = ["https://github.com/rustsec/advisory-db"]
+# Vulnerability, unsound and notice advisories always fail in current cargo-deny
+# (the old `vulnerability` and `notice` levels were removed). Accept a specific
+# advisory with `ignore = [{ id = "RUSTSEC-YYYY-NNNN", reason = "..." }]`.
+# `unmaintained` takes a scope, not a level: fail only for direct dependencies.
+unmaintained = "workspace"
+yanked = "warn"
+
+[licenses]
+# Crates with no license, copyleft licenses, and any license not listed in
+# `allow` are always denied (replaces the removed `unlicensed`, `copyleft`
+# and `default` keys).
+allow = ["MIT", "Apache-2.0"]
+confidence-threshold = 0.8
+
+[bans]
+multiple-versions = "warn"
+
+[sources]
+unknown-registry = "deny"
+unknown-git = "deny"

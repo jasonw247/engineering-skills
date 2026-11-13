@@ -1,0 +1,3 @@
+Revised [report.md](/private/var/folders/6t/qzw8ch3s0q72y0bmdzm32k8w0000gn/T/document-trial-e1hq1c07/work/report.md) using only the supplied materials, correcting technical claims and improving clarity. Verified the Compatibility note is byte-for-byte unchanged.
+
+Remaining evidence and planning gaps are recorded separately in [unresolved-issues.md](/private/var/folders/6t/qzw8ch3s0q72y0bmdzm32k8w0000gn/T/document-trial-e1hq1c07/work/unresolved-issues.md).

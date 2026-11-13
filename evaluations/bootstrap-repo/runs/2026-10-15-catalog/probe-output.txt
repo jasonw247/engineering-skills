@@ -1,0 +1,2 @@
+Legacy catalog rejected by the consumer as expected
+Catalog loads; registered roles, retro proposal, supported packs, and TDD limit pass

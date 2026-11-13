@@ -1,0 +1,29 @@
+{
+  "repository": "example/sync-service",
+  "default_branch": "main",
+  "pr": {
+    "number": 57,
+    "state": "MERGED",
+    "mergedAt": "2026-11-09T18:22:04Z",
+    "baseRefName": "stack/retry-budget",
+    "headRefName": "feat/retry-budget-client-41",
+    "url": "https://github.com/example/sync-service/pull/57",
+    "closingIssuesReferences": [],
+    "body": "## Summary\nCaps sync retries with a per-client budget so outages no longer cause retry storms.\n\n## Linked issues\nCloses #41\nPart of #40\n\n## Follow-ups\n- Expose the remaining budget as a metric so we can alert before it empties.\n- The gateway client has the same unbounded retry loop; not changed here.",
+    "commits": [
+      {"oid": "3f2a9c1", "messageHeadline": "feat(sync): cap retries with a per-client budget"},
+      {"oid": "b81d044", "messageHeadline": "test(sync): cover budget refill with a fake clock"}
+    ],
+    "reviewThreads": [
+      {"isResolved": true, "comment": "Should the budget be configurable per environment? -> author: later, tracked in follow-ups"},
+      {"isResolved": false, "comment": "RetryBudgetExceeded loses the last transport error; consider chaining it."}
+    ],
+    "addedTodos": ["src/sync/client.py:31  # TODO: jitter the backoff"]
+  },
+  "issues": [
+    {"number": 41, "state": "OPEN", "title": "Sync clients cause retry storms during outages", "parent": 40},
+    {"number": 40, "state": "OPEN", "title": "Make sync resilient to upstream outages", "subIssuesSummary": {"total": 2, "completed": 1}},
+    {"number": 44, "state": "OPEN", "title": "Add jitter to sync backoff"}
+  ],
+  "stack": {"stack/retry-budget": "not yet merged into main"}
+}

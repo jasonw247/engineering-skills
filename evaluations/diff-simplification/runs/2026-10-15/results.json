@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-15",
+  "method": "Fresh evaluator received only an isolated skill copy, request, requirements, and raw fixtures. Parent retained acceptance checks and independently ran them against the resulting work directory.",
+  "skill_files": {
+    "SKILL.md": "ee836d275c82c134fb4232a8bd8a24eb9d6b0a535a13e4fc4046bf5e74a60a81",
+    "agents/openai.yaml": "77349efc648f458defd89c3a607cd04591d4627becbbb20f2ad64b0d5fe98f94",
+    "references/sources.md": "31b2996d71bafefa51fbfc116a009b498567117e345008393ca7293b4118c313"
+  },
+  "cases": [
+    {
+      "id": "mixed-ownership-and-falsy-values",
+      "status": "passed"
+    },
+    {
+      "id": "no-op-boundary",
+      "status": "not run"
+    },
+    {
+      "id": "validation-and-retry-state",
+      "status": "not run"
+    },
+    {
+      "id": "candidate-evidence",
+      "status": "not run"
+    },
+    {
+      "id": "neighbor-plan",
+      "status": "not run"
+    },
+    {
+      "id": "neighbor-review",
+      "status": "not run"
+    }
+  ],
+  "checks": {
+    "public_behavior_tests": 2,
+    "held_out_acceptance_tests": 4,
+    "result": "passed"
+  },
+  "artifacts": [
+    "display.py",
+    "report.md",
+    "verification-output.txt"
+  ],
+  "reproduce": "Copy fixtures to a temporary directory, replace display.py with this run's display.py, then run python3 -B evaluations/diff-simplification/acceptance.py TEMP_DIRECTORY and python3 -B -m unittest -v from TEMP_DIRECTORY.",
+  "limits": [
+    "One synthetic forward trial, not an effectiveness comparison.",
+    "No matched no-skill baseline, host routing test, or production validation.",
+    "Other declared cases remain not run.",
+    "Revisions to design, TDD, debugging, and review guidance received static validation and separate review, not behavioral performance trials."
+  ]
+}

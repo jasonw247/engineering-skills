@@ -1,0 +1,43 @@
+{
+ "date": "2026-11-10",
+ "skill": "github-issues",
+ "scope": "Isolated forward trials by fresh evaluators given a copy of the package (and change-sequencing for github-issues) and fixtures, without expected outcomes; one metadata-only routing round across three suites; author review against completion criteria.",
+ "skill_sha256": {
+  "SKILL.md": "3f08b49be88c22db3d87e11592f7df5d714d7324148bcba92ceb2ca5d5a7311b",
+  "references/gh-commands.md": "1a813870845e8eea91f506679ff8c8e43c77dc659d57763c414b7dbbf377d252",
+  "references/issue-format.md": "e426ec2d2a526fa16ab182a5540653fff22052732976d3a1905a66170a18bb08",
+  "references/merge-closeout.md": "28dede114af813c0fa137c2a32fd40cbeb53bc79f90c6d1198b15bf53e115eb1",
+  "references/sizing.md": "b49bb016d3bf325472337c01ec609e5f3c879821376f5ef145487514b22af453",
+  "references/sources.md": "42bdddef29c3bf0d581d0992f0b3154808f42918806142e58a625c3f3565e585"
+ },
+ "trials": [
+  {
+   "case": "split-large-feature",
+   "status": "pass",
+   "inputs_sha256": {
+    "feature-request.md": "7615feed07b31ee3b28206f579c9ba5acc4c0d7732d767a51bae8c239047668c",
+    "labels.json": "e8531e54d963e3988e18388d82bd873ac5f6e35e0ba2da745466e83f12a7731a"
+   },
+   "output": "outputs/split-large-feature-out.md",
+   "note": "Parent plus five children ordered expand, backfill, API, async job, UI via change-sequencing; estimates labeled; blocked-by chain; only existing labels; drafts only and asks for approval."
+  },
+  {
+   "case": "closeout-non-default-base",
+   "status": "pass",
+   "inputs_sha256": {
+    "merged-pr-57.json": "a8a3e0ffdd80615c1889a54fc4ff51c9511c4b1f5229eae844330a1b38805095"
+   },
+   "output": "outputs/closeout-non-default-base-out.md",
+   "note": "Identifies that Closes #41 did not fire because the base was stack/retry-budget; proposes closing #41 only after the stack reaches main; no change to #40 yet; drafts four follow-ups including the unresolved error-chaining thread; skips the jitter TODO as a duplicate of #44; writes nothing."
+  }
+ ],
+ "routing": "routing.md",
+ "not_run": [
+  "coherent-stays-whole",
+  "repo-threshold",
+  "old-gh-fallback",
+  "closeout-draft-only"
+ ],
+ "post_trial_changes": [],
+ "limits": "One evaluator per case, same model family as the author; no comparison with an agent without the skill; no live GitHub writes. Results do not carry over to revised file hashes."
+}

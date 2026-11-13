@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "skills": {
+    "example-design": {
+      "cues": [
+        "interface",
+        "design"
+      ],
+      "dependencies": [],
+      "files": {
+        "SKILL.md": "0b331423e138c106213aa3b6d3593b8a7f969eacd742e6999b900b7a5320b478"
+      },
+      "roles": [
+        "actor",
+        "reviewer"
+      ],
+      "use_when": "Example: choosing an interface.",
+      "version": "1.0.0"
+    },
+    "example-review": {
+      "cues": [
+        "review"
+      ],
+      "dependencies": [
+        "example-design"
+      ],
+      "files": {
+        "SKILL.md": "3ceb994286d0a650b0d20f0efa57c84f346f42f6b03de14cadfe3e16eb090c58",
+        "references/checklist.md": "667e788e30956aedc3cb1989415dc0a1f7d155fa4dc7fa208fc8bfd41aaea1a7"
+      },
+      "roles": [
+        "reviewer"
+      ],
+      "upstream": {
+        "adapted": true,
+        "license": "MIT",
+        "path": "skills/example-review",
+        "repository": "https://example.invalid/skills",
+        "revision": "0000000"
+      },
+      "use_when": "Example: reviewing a change.",
+      "version": "1.0.0"
+    }
+  }
+}

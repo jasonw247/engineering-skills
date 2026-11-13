@@ -1,0 +1,50 @@
+{
+  "skill": "python-service-engineering",
+  "cases": [
+    {
+      "id": "bounded-stream",
+      "split": "training",
+      "activate": true,
+      "request": "Repair enrich.py to process a large async input stream with bounded queued work and bounded live tasks, preserving input order. On failure or cancellation, stop owned work and propagate the error. Keep the public function signature and do not add a framework. Use Python 3.12.",
+      "inputs": ["fixtures/enrich.py"],
+      "output": "Repaired async implementation and behavior tests",
+      "completion": "Backpressures source consumption, bounds workers and queued items independently of input size, preserves order, propagates failure/cancellation, and leaves no live owned tasks after exit. An output list may grow with input size; the request does not require streaming results."
+    },
+    {
+      "id": "client-lifespan",
+      "split": "training",
+      "activate": true,
+      "request": "Implement lifecycle management for the existing service's shared HTTP and database clients, including cleanup when startup partially fails.",
+      "inputs": [],
+      "output": "Lifecycle implementation and targeted failure-path checks",
+      "completion": "Clients are owned and closed at an appropriate lifetime; partial initialization unwinds; no per-request expensive client creation or import-time network calls."
+    },
+    {
+      "id": "boundary-models",
+      "split": "training",
+      "activate": true,
+      "request": "Review input validation and internal data models in this API without changing its public schema.",
+      "inputs": [],
+      "output": "Scoped assessment",
+      "completion": "Distinguishes runtime validation from annotations; does not convert every internal object to Pydantic or introduce unnecessary interface layers."
+    },
+    {
+      "id": "neighbor-pure-function",
+      "split": "training",
+      "activate": false,
+      "request": "Rename an argument in a pure Python formatting helper and update its callers.",
+      "inputs": [],
+      "output": "Ordinary narrow edit",
+      "completion": "Does not trigger a service lifecycle or concurrency audit."
+    },
+    {
+      "id": "heldout-stream-relay-isolation",
+      "split": "held-out",
+      "activate": true,
+      "request": "Repair stream_relay.py so concurrent tenant relays cannot leak tenant identity, upstream streams always close on validation errors or task cancellation, and timeout retries do not generate duplicate mutations when a prior attempt committed. Preserve relay_tenant_stream's signature and write deterministic standard-library tests using Python 3.12.",
+      "inputs": ["fixtures/held-out/stream_relay.py"],
+      "output": "Repaired stream_relay.py and deterministic unittest suite",
+      "completion": "Removes the shared _active_tenant global race across concurrent relays, closes stream via contextlib.aclosing or try/finally on validation error and cancellation, derives a stable per-record idempotency key across retry attempts instead of regenerating uuid4 per attempt, and verifies all three behaviors deterministically without sleep timing races."
+    }
+  ]
+}
