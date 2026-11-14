@@ -29,5 +29,8 @@ jobs:
       - name: Run installer, lock-format, and package integrity tests
         run: python -m unittest discover -s evaluations/bootstrap-repo -p 'test_*.py' -v
 
+      - name: Check diff-simplification behavior and mutation acceptance
+        run: python -B -m unittest discover -s evaluations/diff-simplification -p 'test_*.py' -v
+
       - name: Verify retained evaluation snapshot integrity
         run: python evaluations/technical-document-review/check_results.py evaluations/technical-document-review/runs/2026-10-29

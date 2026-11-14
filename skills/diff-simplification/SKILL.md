@@ -9,6 +9,14 @@ Reduce the maintenance cost of a working change while keeping its behavior ident
 
 Use this pass only when source edits are permitted on an implemented change. Stay inactive during planning or read-only review, and do not spawn separate review passes.
 
+| Objective | What to inspect |
+| --- | --- |
+| Smaller task diff | Incidental edits and unnecessary new machinery |
+| Less maintained code | Duplicated logic and existing facilities the patch could reuse |
+| Simpler implementation | Unnecessary concepts, caller obligations, and control-flow branches |
+
+Prefer lower maintenance cost within the authorized scope when these objectives conflict. Fewer lines alone do not establish an improvement.
+
 ## Establish edit ownership and baseline
 
 1. Compare the implemented diff with the original request and repository conventions to identify task-owned hunks, including authorized new files.
@@ -18,6 +26,14 @@ Use this pass only when source edits are permitted on an implemented change. Sta
 ## Evaluate candidates
 
 Look for avoidable complexity introduced or stranded by the change: forwarding wrappers with no contract of their own, round-trip conversions between equivalent internal types, dead compatibility shims, speculative options with no current caller need, duplicate checks of invariants already established at every entry point, or verbose branching replaceable by an existing repository or standard-library operation.
+
+Before retaining a new helper, parser, error mapping, or test builder, search relevant neighboring modules for an existing facility with the same contract. Reuse it when doing so preserves behavior and does not couple independent policies.
+
+Inspect repetitive test setup and assertions. Consider named cases, parameterized tests, or a small local helper when they remove repetition while preserving distinct scenarios, failure-path coverage, and useful failure messages.
+
+Inspect guards, flags, conversions, and intermediate state accumulated during implementation repairs. Remove or consolidate them only when the resulting control flow preserves the established behavior and invariants.
+
+A single caller or implementation is a reason to inspect a boundary, not sufficient reason to remove it. Collapse wrappers, traits, or generic layers only when they add no useful contract, readability, policy, resource, security, or deterministic-testing boundary.
 
 For each candidate, name the maintenance burden removed and verify that observable behavior stays identical across inputs, outputs, public signatures, error types and messages, side effects, telemetry, resource lifetimes, ordering, cancellation, and retry state. Leave any candidate with uncertain equivalence unchanged; optional cleanup never blocks completion, and real defects belong in implementation or review rather than disguised as refactoring.
 
@@ -29,6 +45,9 @@ For each candidate, name the maintenance burden removed and verify that observab
 - Inlining a single-caller wrapper or `try` block that holds a lock across cancellation, closes a resource, translates boundary errors, or persists an idempotency receipt removes a real runtime guarantee.
 - Removing validation inside an internal function because one HTTP or CLI handler already validates leaves other callers (background jobs, scripts, direct callers) unguarded.
 - Merging two short code blocks that happen to look alike today couples distinct domain rules behind flags, and dense one-liners raise reading cost even when line count shrinks.
+
+- Reusing a superficially similar helper changes behavior when its error, normalization, ordering, or side-effect contract differs, even if the happy path matches.
+- Consolidating tests can lose coverage when shared state or an early failure prevents a scenario from exercising its path. Preserve independent cases and diagnostics; similar assertions alone do not establish equivalent scenarios.
 
 ## Verify and hand back
 

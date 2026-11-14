@@ -1,0 +1,146 @@
+{
+  "date": "2026-11-14",
+  "skill": "diff-simplification",
+  "version": "0.2.0",
+  "base_commit": "0fe096e",
+  "input_sha256": {
+    "skills/diff-simplification/SKILL.md": "36bb02b03d18874a0e8374e647a419e0b9276139352d8ec8aafdfb3c21a99530",
+    "skills/diff-simplification/references/sources.md": "5fbf8643568c9181ccd431f13258da5ae2cc04d8c383330e2f41f8404d24172c",
+    "skills/diff-simplification/agents/openai.yaml": "77349efc648f458defd89c3a607cd04591d4627becbbb20f2ad64b0d5fe98f94",
+    "evaluations/diff-simplification/fixtures/helper-reuse/requirements.md": "c36bda75e683a9f3a19921bc1946bbef0fc42ace0edad6bf52ac73cdb65da58b",
+    "evaluations/diff-simplification/fixtures/helper-reuse/test_loader.py": "a6341022cfc465745fcc9a09f485b283288ae347532f281d2ff0ca5ae7d473b9",
+    "evaluations/diff-simplification/fixtures/helper-reuse/loader.py": "03238a4ab061d4d15b2e3412c49c5b138a798a3e40f1e1050c82b1ae40f976ef",
+    "evaluations/diff-simplification/fixtures/helper-reuse/durations.py": "94793e9750d9b6531bc859553bd2a4d8f33ac3948ffe47d7c7f66eef39c87cef",
+    "evaluations/diff-simplification/fixtures/helper-reuse/original_loader.py": "a99a10bd407a7cc5ab412dedab23e55b11c9f04530acaf9e7a7fdc02a32570f6",
+    "evaluations/diff-simplification/fixtures/test-setup/test_retry.py": "734d8070caaec67ddba38d2ed29f8f1a661c6d9c6bcc5993689d72bcd6ce817f",
+    "evaluations/diff-simplification/fixtures/test-setup/requirements.md": "18c65b08f2149111f861ac073969b2aae0b9cdaec3d67f22e2db15456e389955",
+    "evaluations/diff-simplification/fixtures/test-setup/support.py": "acf2cec519503dbeba1011b4f1692e0e0a84a88655fa78f40d38e69713e32a1e",
+    "evaluations/diff-simplification/fixtures/test-setup/original_test_retry.py": "79985b2fe56a07deb69dbfb5c7b4345d03d5aef01d9753d999cd037942b1649f",
+    "evaluations/diff-simplification/fixtures/test-setup/retry.py": "8b2ab919019932b158cfb6eb5801e5f560ea2a7ca2a21c7e698241e328178ef0"
+  },
+  "acceptance_sha256": "b9eebd2e3c06f2923948f75438051cd344d48f047408398eef200e80437b6afe",
+  "protocol": {
+    "evaluator": "Two fresh Codex subagents, one raw-input-only trial per fixture family; no parent history.",
+    "inputs": "Each evaluator received a copy of the exact skill package and raw fixtures only. Cases, acceptance answers, author conclusions and the other trial were outside its authorized read/write scope.",
+    "isolation_limit": "Filesystem scope was instructed, not independently enforced by an OS sandbox. These trials are not evidence for Hans containment or hidden-check isolation.",
+    "checks": "Author independently ran maintenance_acceptance.py on both final candidates and reviewed maintenance removal and mutation failure diagnostics.",
+    "retained": "Only candidate source, hashes, scalar check outcomes and author assessment; no agent transcripts or reasoning."
+  },
+  "cases": [
+    {
+      "case": "helper-reuse-maintenance",
+      "status": "passed",
+      "output": "helper-reuse/loader.py",
+      "output_sha256": "9999fb03cfea89a849f0cde3a8995a5cc466d5cd843232fb78f6c10d32d71af4",
+      "independent_behavior_checks": "passed",
+      "protected_inputs": "passed",
+      "maintenance_review": "One existing duration parser owns the parsing/error contract; duplicated regex/conversion/error logic and redundant parsed flag are removed. The legacy parser and co-owned function are unchanged. Audit append still precedes the next input."
+    },
+    {
+      "case": "test-setup-maintenance",
+      "status": "passed",
+      "output": "test-setup/test_retry.py",
+      "output_sha256": "27cff97c45347a5a8b2dd79b2559d80dd772eef91d49416c6e2b5378c4c2d482",
+      "independent_behavior_checks": "passed",
+      "protected_inputs": "passed",
+      "mutation_checks": {
+        "correct": {
+          "tests": 7,
+          "failures": [],
+          "errors": [],
+          "skipped": 0
+        },
+        "empty_payload": {
+          "tests": 7,
+          "failures": [
+            "test_immediate_success (test_retry.RetryTests)"
+          ],
+          "errors": [],
+          "skipped": 0
+        },
+        "missing_429": {
+          "tests": 7,
+          "failures": [],
+          "errors": [
+            "test_retry_429 (test_retry.RetryTests)"
+          ],
+          "skipped": 0
+        },
+        "missing_503": {
+          "tests": 7,
+          "failures": [
+            "test_exhaustion (test_retry.RetryTests)"
+          ],
+          "errors": [
+            "test_cancel_closes_transport (test_retry.RetryTests)",
+            "test_retry_503_twice (test_retry.RetryTests)"
+          ],
+          "skipped": 0
+        },
+        "delay_off_by_one": {
+          "tests": 7,
+          "failures": [
+            "test_cancel_closes_transport (test_retry.RetryTests)",
+            "test_exhaustion (test_retry.RetryTests)",
+            "test_retry_429 (test_retry.RetryTests)",
+            "test_retry_503_twice (test_retry.RetryTests)"
+          ],
+          "errors": [],
+          "skipped": 0
+        },
+        "early_exhaustion": {
+          "tests": 7,
+          "failures": [
+            "test_exhaustion (test_retry.RetryTests)"
+          ],
+          "errors": [
+            "test_retry_503_twice (test_retry.RetryTests)"
+          ],
+          "skipped": 0
+        },
+        "retry_on_400": {
+          "tests": 7,
+          "failures": [
+            "test_reject_400 (test_retry.RetryTests)"
+          ],
+          "errors": [],
+          "skipped": 0
+        },
+        "cancel_leaks_transport": {
+          "tests": 7,
+          "failures": [
+            "test_cancel_closes_transport (test_retry.RetryTests)"
+          ],
+          "errors": [],
+          "skipped": 0
+        },
+        "invalid_attempts_touch_transport": {
+          "tests": 7,
+          "failures": [
+            "test_invalid_attempts (test_retry.RetryTests)"
+          ],
+          "errors": [],
+          "skipped": 0
+        }
+      },
+      "maintenance_review": "Shared setup and completion assertions replace five repeated blocks. All seven named test methods remain independent; cancellation and invalid-attempt checks keep distinct assertions. Mutation diagnostics identify the failing test/scenario."
+    }
+  ],
+  "validation": {
+    "bootstrap_lock_package_tests": 32,
+    "maintenance_acceptance_self_tests": 7,
+    "supplied_helper_tests": 3,
+    "supplied_retry_tests": 7,
+    "existing_training_acceptance_tests": 4,
+    "existing_heldout_acceptance_tests": 5,
+    "existing_document_snapshot_integrity": "passed",
+    "skill_creator_quick_validate": "passed using ephemeral uv environment with PyYAML; runtime package remains dependency-free"
+  },
+  "limits": [
+    "Two synthetic forward trials, not a matched effectiveness or Hans workflow comparison.",
+    "New fixtures are labeled training because their opportunities informed this revision.",
+    "Existing held-out quota fixture was checked for executability only; no fresh agent trial on it was run.",
+    "Scenario-only and metadata-only routing cases were not rerun. Skill name/description and routing metadata are unchanged.",
+    "No token, latency, billing or production-quality improvement is claimed."
+  ]
+}

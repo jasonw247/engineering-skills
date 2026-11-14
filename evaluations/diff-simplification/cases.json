@@ -63,6 +63,36 @@
       "inputs": ["fixtures/held-out/requirements.md", "fixtures/held-out/original.py", "fixtures/held-out/quota.py", "fixtures/held-out/test_quota.py"],
       "output": "Simplified quota.py (or justified no-op) passing unit and held-out acceptance checks",
       "completion": "Preserves None -> 'unlimited', zero -> '0;w=60', negative ValueError guard for direct CLI callers, and single __int__ conversion; removes unnecessary _QuotaFormatter/_coerce_non_negative scaffolding if simplified; preserves parse_forwarded_for and read-only inputs byte-for-byte."
+    },
+    {
+      "id": "helper-reuse-maintenance",
+      "split": "training",
+      "activate": true,
+      "request": "Use diff-simplification to simplify the completed batch-timeout change described in requirements.md. Preserve other work and report checks actually run.",
+      "inputs": [
+        "fixtures/helper-reuse/durations.py",
+        "fixtures/helper-reuse/loader.py",
+        "fixtures/helper-reuse/original_loader.py",
+        "fixtures/helper-reuse/requirements.md",
+        "fixtures/helper-reuse/test_loader.py"
+      ],
+      "output": "A behavior-preserving simplification or justified no-op, with checks and maintenance burden explained",
+      "completion": "Preserves exact errors, input conversion count, ordering, audit side effects and fail-fast iteration, direct callers, and protected material. Review whether duplicate parsing and redundant state were removed through equivalent reuse, without substituting the incompatible legacy parser. No exact patch or deletion count is required."
+    },
+    {
+      "id": "test-setup-maintenance",
+      "split": "training",
+      "activate": true,
+      "request": "Use diff-simplification to simplify the completed retry-test change described in requirements.md. Preserve coverage and useful failure diagnostics, and report checks actually run.",
+      "inputs": [
+        "fixtures/test-setup/original_test_retry.py",
+        "fixtures/test-setup/requirements.md",
+        "fixtures/test-setup/retry.py",
+        "fixtures/test-setup/support.py",
+        "fixtures/test-setup/test_retry.py"
+      ],
+      "output": "A behavior-preserving simplification or justified no-op, with checks and maintenance burden explained",
+      "completion": "Passes the correct implementation and detects every independent acceptance mutant through scenario failures or behavioral errors. Preserves negative cases, cancellation cleanup, direct-call validation, fresh state and independent scenario execution. Review whether repeated setup/assertions were reduced without obscuring diagnostics; no specific table or helper shape is required."
     }
   ]
 }
