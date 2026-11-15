@@ -272,7 +272,7 @@
       ]
     },
     "diff-simplification": {
-      "version": "0.1.2",
+      "version": "0.2.0",
       "dependencies": [],
       "use_when": "Simplifying task-owned hunks of an implemented change when a concrete maintenance reduction preserves behavior; not for planning or read-only review.",
       "roles": [
