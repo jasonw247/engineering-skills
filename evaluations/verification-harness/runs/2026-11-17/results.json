@@ -27,7 +27,7 @@
         "No coverage gate. Hypothesis, mutmut, and CI configuration reported as not run or absent; read-only protection reported as a review signal only."
       ],
       "independent_checks": [
-        "Ran `python3 -B scripts/verify fast` twice on the candidate: both exit 0 with identical step results.",
+        "Ran `python3 -B scripts/verify fast` twice on the candidate: both exited 0 (only exit codes were compared; the trial agent reported identical output across runs).",
         "Removed the min() cap in a separate copy: unit tests and the property step failed, the property step printed a minimized input and reproduce command, mutation step reported NOT RUN, overall exit 1."
       ],
       "observations": [
