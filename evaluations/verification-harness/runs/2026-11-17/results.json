@@ -1,0 +1,40 @@
+{
+  "skill": "verification-harness",
+  "date": "2026-11-17",
+  "trial": "forward",
+  "evaluator": "fresh agent given only the skill folder, the fixture project, and the case request; expected outcomes withheld",
+  "skill_hashes": {
+    "SKILL.md": "0a72de66440671a103393d57dc42eaa55410758b886cfa1a8b51438673bff4eb",
+    "references/oracles.md": "57bcc384be1e192d39b08c59577016e59859d27a0d27fb479f78d528c866b287",
+    "references/sources.md": "405837e66d49fc4b079ab3a034787091613c02308a8869db8431334ebccf6687"
+  },
+  "fixture_hashes": {
+    "token-bucket/bucket.py": "ded00f9b871fcf20d89c7fcf1bc2c7c4bcdef0ab030542d074656704f7048dcb",
+    "token-bucket/requirements.md": "5bb40622e8c7a60542ea717c34c92857253dd05dc96a4c82f05fdeb964e37e0a",
+    "token-bucket/test_bucket.py": "1feb3f53e36eeefd0ae880af823734dbe8e72581308bfdba042c94838b5f6c7e"
+  },
+  "cases": [
+    {
+      "id": "token-bucket-harness",
+      "status": "pass",
+      "evidence": [
+        "Single entrypoint `python3 -B scripts/verify fast|full`; exit 0 pass, 1 failure, 3 not run. Fast tier 1.25 s, full tier about 12.8 s as reported by the trial agent.",
+        "Clock injected through optional `clock=None` that falls back to time.monotonic on every call; sleep removed from tests; constructor and take() signatures unchanged (checked by the agent's compat step and by reading the diff).",
+        "Recomputed expectation replaced with the literal 2.0.",
+        "Fixed-seed generated take/advance sequences checked against an exact fractions model, with capacity bounds and rejected-take insertion/removal properties; two incident regression cases replayed every run.",
+        "Agent-reported planted defects caught: cap removal, lost refill after rejected take, sleep reintroduced, default clock changed, untested new method (diff-scoped mutation), generator never producing rejections, unseeded randomness.",
+        "Original tests let 9 of 36 mutants survive, including removal of the min() cap; 0 survive after the change.",
+        "No coverage gate. Hypothesis, mutmut, and CI configuration reported as not run or absent; read-only protection reported as a review signal only."
+      ],
+      "independent_checks": [
+        "Ran `python3 -B scripts/verify fast` twice on the candidate: both exit 0 with identical step results.",
+        "Removed the min() cap in a separate copy: unit tests and the property step failed, the property step printed a minimized input and reproduce command, mutation step reported NOT RUN, overall exit 1."
+      ],
+      "observations": [
+        "The harness was about 1,000 lines (tests, scripts/verify, checks/, AGENTS.md) for a 29-line module, including a hand-built standard-library mutation runner. After the trial, SKILL.md gained an 'Oversized harnesses' trap; that revision has not been trialled."
+      ]
+    }
+  ],
+  "not_run": ["rewrite-differential-oracle", "agent-tests-assert-nothing", "neighbor-single-feature-tests", "neighbor-flaky-root-cause", "neighbor-clippy-config"],
+  "limits": "One skilled trial on one synthetic fixture. No baseline without the skill, so it establishes neither improvement over an unassisted agent nor routing accuracy. Evaluator scope was instructed rather than OS-enforced. Trial artifacts were not retained."
+}

@@ -12,7 +12,7 @@ This profile covers maintaining a repository that builds a coding-agent harness,
 | `diagnosing-bugs` | Isolate non-obvious state, concurrency, process, and verification bugs via red-capable reproductions. |
 | `codebase-design` | Evaluate module depth, pass-through layers, and testability using the repository's own vocabulary. |
 
-Optional additions (`--skill <name>`): `tdd` (`codebase-design` dependency), `domain-modeling`, `code-review`, `diff-simplification`, `agent-workflow-engineering`, `agent-harness-audit`, `technical-document-review`, `change-sequencing`, and `tui-best-practices` (when the harness ships an interactive terminal UI).
+Optional additions (`--skill <name>`): `tdd` (`codebase-design` dependency), `verification-harness`, `domain-modeling`, `code-review`, `diff-simplification`, `agent-workflow-engineering`, `agent-harness-audit`, `technical-document-review`, `change-sequencing`, and `tui-best-practices` (when the harness ships an interactive terminal UI).
 
 ## Implementation and independent review
 
@@ -24,6 +24,9 @@ When a harness separates actor implementation from independent review, combine p
 | `diff-simplification` | Optional `actor` pass after implementation and initial checks pass; never run during read-only assessment or planning stages. |
 | `code-review` | Independent read-only `reviewer`: evaluate the complete final candidate against the original request and actual check outputs. |
 | `codebase-design`, `diagnosing-bugs`, `tdd`, domain skills | Selected on demand when a task involves interface design, hard debugging, test-first slices, or domain rules. |
+| `verification-harness` | Used when setting up or strengthening the checks the host runs on candidates, not during each implementation turn. |
+
+A harness without per-task selection injects every configured actor skill into every turn. Leave technique skills such as `tdd` out of that set unless a matched comparison on the host's own tasks shows a gain: in one published series of agent evaluations, test-first prompting underperformed the other testing conditions in both rounds, and the same testing skill has helped with one model and hurt with the next ([Luu, 2026](https://danluu.com/astra-testing/); small samples on spec-implementation tasks). Put verification effort into checks the host runs on every candidate instead, and rerun any skill comparison after a model or effort change.
 
 Run order: implement, optional `diff-simplification`, final checks on the simplified candidate, then independent `code-review`. Pass the reviewer the original user request, the complete final diff, and verified check outputs while withholding the implementer's internal plan, reasoning, and self-assessment so blind spots do not carry over. On re-review loops, keep stable finding IDs (`Resolved`, `Withdrawn`, `Open`).
 

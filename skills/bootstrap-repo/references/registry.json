@@ -10,7 +10,7 @@
   },
   "skills": {
     "bootstrap-repo": {
-      "version": "0.1.7",
+      "version": "0.1.8",
       "dependencies": [],
       "use_when": "Selecting, installing, or updating curated skills in a target repository or host catalog.",
       "roles": [
@@ -364,6 +364,23 @@
         "textual",
         "bubbletea"
       ]
+    },
+    "verification-harness": {
+      "version": "0.1.0",
+      "dependencies": [],
+      "use_when": "Setting up or strengthening a repository's deterministic verification for agent-written changes: a fast verify entrypoint, end-to-end drivers, property and differential oracles, mutation checks on tests, and flaky-test policy.",
+      "roles": [
+        "actor"
+      ],
+      "cues": [
+        "verify",
+        "verification",
+        "harness",
+        "property",
+        "differential",
+        "mutation",
+        "flaky"
+      ]
     }
   },
   "profiles": {
@@ -377,6 +394,7 @@
       ],
       "optional": [
         "tdd",
+        "verification-harness",
         "domain-modeling",
         "code-review",
         "agent-workflow-engineering",
@@ -396,10 +414,11 @@
         "handoff",
         "diagnosing-bugs",
         "codebase-design",
-        "tdd",
         "domain-modeling"
       ],
       "optional": [
+        "tdd",
+        "verification-harness",
         "code-review",
         "agent-workflow-engineering",
         "technical-document-review",

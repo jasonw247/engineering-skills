@@ -1,0 +1,3 @@
+interface:
+  display_name: "Verification harness"
+  short_description: "Build deterministic checks agents run on their changes"
