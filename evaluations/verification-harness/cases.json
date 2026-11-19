@@ -1,0 +1,53 @@
+{
+  "skill": "verification-harness",
+  "cases": [
+    {
+      "id": "token-bucket-harness",
+      "activate": true,
+      "request": "Agents keep breaking refill in bucket.py while test_bucket.py still passes, and CI reruns the timing test when it flakes. Set up the checks agents should run before handing back a change. Follow requirements.md.",
+      "inputs": ["fixtures/token-bucket/bucket.py", "fixtures/token-bucket/test_bucket.py", "fixtures/token-bucket/requirements.md"],
+      "output": "A single verify entrypoint, deterministic-clock tests, property checks, a planted-defect demonstration, and a report",
+      "completion": "Adds one documented verify command that exits nonzero on failure and runs in seconds; removes the sleep-based timing dependency by injecting a clock through an optional argument that defaults to time.monotonic, rather than adding retries, longer sleeps, or skips; replaces the expected value recomputed from the implementation's formula with independent literals or invariants; adds property-style checks over generated take/advance sequences for 0 <= tokens <= capacity and for refill not being lost after a rejected take, with a fixed or reported seed; shows each new check failing on at least one planted defect (such as dropping the min() cap) and passing on the original code; keeps the public constructor and take() behavior; does not add a coverage percentage gate; reports any tool it did not run."
+    },
+    {
+      "id": "rewrite-differential-oracle",
+      "activate": true,
+      "request": "We're rewriting our legacy slugify() for speed and an agent will do most of it. Output must not change except that we now strip trailing hyphens. How do we check the rewrite before merging?",
+      "inputs": [],
+      "output": "Differential check design against the legacy implementation",
+      "completion": "Uses the legacy implementation (kept in place or run from the base revision) as the oracle on generated inputs plus a corpus of real or representative inputs; normalizes or allow-lists only the stated trailing-hyphen difference, recorded in a reviewed file rather than inside the comparison logic; reports the first differing input in minimized form; keeps the check runnable by the verify entrypoint; flags that changes to the oracle, the corpus, or the allow-list need reviewer attention."
+    },
+    {
+      "id": "agent-tests-assert-nothing",
+      "activate": true,
+      "request": "Our coding agent writes lots of tests and coverage looks great, but bugs keep reaching main. How do we tell whether the agent's tests actually check anything?",
+      "inputs": [],
+      "output": "Test-strength check proposal",
+      "completion": "Recommends diff-scoped mutation testing on changed non-test code with the language's mutation tool, reported as surviving mutants rather than as a blocking score; explains that line coverage shows execution, not assertions; suggests reviewer signals for edits to existing tests, snapshots, or oracles; does not propose a coverage percentage gate."
+    },
+    {
+      "id": "neighbor-single-feature-tests",
+      "activate": false,
+      "request": "Add unit tests for the new parse_duration() function in utils.py.",
+      "inputs": [],
+      "output": "Focused tests for one function",
+      "completion": "Writes the requested tests without building verify entrypoints, mutation tooling, or harness infrastructure."
+    },
+    {
+      "id": "neighbor-flaky-root-cause",
+      "activate": false,
+      "request": "test_checkout_concurrency fails about one run in twenty with a deadlock. Find out why.",
+      "inputs": [],
+      "output": "Bug diagnosis",
+      "completion": "Routes to bug diagnosis with a red-capable reproduction rather than redesigning the repository's verification setup."
+    },
+    {
+      "id": "neighbor-clippy-config",
+      "activate": false,
+      "request": "Turn on clippy::unwrap_used across the workspace and make warnings fatal in CI.",
+      "inputs": [],
+      "output": "Rust lint configuration change",
+      "completion": "Routes to Rust project setup; does not add end-to-end drivers, property tests, or mutation testing."
+    }
+  ]
+}
